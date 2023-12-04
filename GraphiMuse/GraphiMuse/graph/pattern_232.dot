@@ -1,0 +1,30 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="writeObject()" t="ObjectOutputStream" l="204" ];
+  2 [ t="Minutes" n="test" ];
+  3 [ t="ObjectOutputStream" n="oos" ];
+  4 [ label="MC" s="close()" t="ObjectOutputStream" l="206" ];
+  5 [ label="I" t="ObjectOutputStream" l="203" ];
+  6 [ t="ByteArrayOutputStream" n="baos" ];
+  7 [ label="MC" s="toByteArray()" t="ByteArrayOutputStream" l="205" ];
+  8 [ label="I" t="ByteArrayOutputStream" l="202" ];
+  9 [ t="Minutes.THREE" v="null" n="Minutes.THREE" ];
+  8 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  9 -> 2 [ label="D" ];
+  5 -> 3 [ label="D" ];
+  3 -> 4 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  8 -> 4 [ label="O" ];
+  7 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  8 -> 5 [ label="O" ];
+  6 -> 5 [ label="P" ];
+  8 -> 6 [ label="D" ];
+  5 -> 7 [ label="O" ];
+  8 -> 7 [ label="O" ];
+  6 -> 7 [ label="R" ];
+  1 -> 7 [ label="O" ];
+}

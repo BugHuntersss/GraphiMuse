@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addChild()" t="AndFilter" l="650" ];
+  2 [ t="Filter" n="filter" ];
+  3 [ t="AndFilter" n="dummy_" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+}

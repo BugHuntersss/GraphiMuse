@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isSnapshot()" t="MavenVersion" l="150" ];
+  2 [ t="MavenVersion" n="mv" ];
+  3 [ label="MC" s="parseString()" t="MavenVersion" l="148" ];
+  4 [ label="MC" s="getOSGiVersion()" t="MavenVersion" l="149" ];
+  5 [ t="String" v="" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="P" ];
+  2 -> 4 [ label="R" ];
+  3 -> 4 [ label="O" ];
+}

@@ -1,0 +1,16 @@
+digraph "AUG" {
+
+  1 [ label="DBManager.closeStatement()" shape="box" ];
+  2 [ label="Statement" shape="ellipse" ];
+  3 [ label="Connection.createStatement()" shape="box" ];
+  4 [ label="Connection" shape="ellipse" ];
+  5 [ label="SQLException" shape="ellipse" ];
+  6 [ label="Connection.isValid()" shape="box" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="finally" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+  3 -> 5 [ label="throw" style="solid" ];
+  6 -> 3 [ label="order" style="bold" ];
+}

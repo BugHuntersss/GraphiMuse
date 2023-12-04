@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="remove()" t="List" l="3946" ];
+  2 [ t="List" n="arguments" ];
+  3 [ label="MC" s="_arguments()" t="Options" l="3944" ];
+  4 [ t="PomOptions" n="opts" ];
+  5 [ t="int" v="0" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+}

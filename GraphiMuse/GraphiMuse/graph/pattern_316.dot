@@ -1,0 +1,20 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="readStream()" t="Utils" l="86" ];
+  2 [ t="InputStream" n="dummy_" ];
+  3 [ label="MC" s="getResourceAsStream()" t="Class" l="86" ];
+  4 [ label="MC" s="copyToTempFile()" t="Utils" l="83" ];
+  5 [ t="String" v="/testdata/fragment-wibble.txt" ];
+  6 [ t="Class" v="null" n="TestStandaloneLibrary.class" ];
+  7 [ t="String" v="testdata/org.eclipse.equinox.ds-1.4.0.jar" ];
+  8 [ t="String" v="testdata/jcip-annotations.jar" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+  5 -> 3 [ label="P" ];
+  8 -> 4 [ label="P" ];
+  7 -> 4 [ label="P" ];
+}

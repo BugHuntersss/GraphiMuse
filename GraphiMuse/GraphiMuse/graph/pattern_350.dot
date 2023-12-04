@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="exists()" t="File" l="1062" ];
+  2 [ t="File" n="pkgInfoJava" ];
+  2 -> 1 [ label="R" ];
+}

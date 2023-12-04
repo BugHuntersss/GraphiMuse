@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setInterval()" t="ReadWritableInterval" l="148" ];
+  2 [ t="MockBadInterval" n="dummy_" ];
+  3 [ t="MutableInterval" n="test" ];
+  4 [ label="I" t="MutableInterval" l="147" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+}

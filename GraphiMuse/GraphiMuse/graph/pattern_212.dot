@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="withDayOfWeek()" t="DateTime" l="516" ];
+  2 [ t="int" v="3" ];
+  3 [ t="DateTime" n="dummy_" ];
+  4 [ label="MC" s="withWeekOfWeekyear()" t="DateTime" l="516" ];
+  5 [ t="DateTime" n="dummy_" ];
+  6 [ label="I" t="DateTime" l="516" ];
+  7 [ t="int" v="0" ];
+  8 [ t="int" v="2" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  6 -> 4 [ label="O" ];
+  5 -> 4 [ label="R" ];
+  8 -> 4 [ label="P" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="P" ];
+}

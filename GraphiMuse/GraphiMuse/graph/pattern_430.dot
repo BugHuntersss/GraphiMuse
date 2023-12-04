@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="error()" t="Logger" l="123" ];
+  2 [ t="String" v="Failed to determine the artifact URI" ];
+  3 [ t="Logger" n="LoggingProgressPlugin.logger" ];
+  4 [ t="Version" n="version" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+}

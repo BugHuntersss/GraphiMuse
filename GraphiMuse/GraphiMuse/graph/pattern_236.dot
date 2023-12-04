@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="minusHours()" t="DateTime" l="135" ];
+  2 [ t="DateTime" n="test" ];
+  3 [ t="int" v="0" ];
+  4 [ label="I" t="DateTime" l="132" ];
+  5 [ t="DateTimeZone" n="TestDateTimeZoneCutover.ZONE_NEW_YORK" ];
+  6 [ t="DateTimeZone" n="TestDateTimeZoneCutover.ZONE_NEW_YORK" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  4 -> 2 [ label="D" ];
+  6 -> 4 [ label="P" ];
+  5 -> 4 [ label="P" ];
+}

@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseTypeName()" t="AttributeType" l="10" ];
+  2 [ t="String" v="Long" ];
+  2 -> 1 [ label="P" ];
+}

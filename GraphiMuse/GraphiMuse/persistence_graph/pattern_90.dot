@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="Encoder.put()" shape="box" ];
+  2 [ label="Encoder" shape="ellipse" ];
+  3 [ label="Encoder.to()" shape="box" ];
+  4 [ label="Encoder" shape="ellipse" ];
+  5 [ label="MultiMap" shape="ellipse" ];
+  6 [ label="OutputStream" shape="ellipse" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  5 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+}

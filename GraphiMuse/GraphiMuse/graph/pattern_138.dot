@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isEquals()" t="ArrayUtils" l="915" ];
+  2 [ t="null" v="null" ];
+  3 [ t="{}" n="dummy_" ];
+  4 [ label="AC" t="" l="915" ];
+  5 [ t="String" v="   " ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  4 -> 2 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

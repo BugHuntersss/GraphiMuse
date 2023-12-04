@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="start()" t="StopWatch" l="75" ];
+  2 [ t="StopWatch" n="watch" ];
+  3 [ label="MC" s="stop()" t="StopWatch" l="83" ];
+  4 [ label="I" t="StopWatch" l="74" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  4 -> 2 [ label="D" ];
+  1 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+}

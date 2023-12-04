@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseLong()" t="Long" l="345" ];
+  2 [ t="String" n="tstamp" ];
+  2 -> 1 [ label="P" ];
+}

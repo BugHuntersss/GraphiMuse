@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setReporter()" t="Plugin" l="80" ];
+  2 [ t="MavenRemoteRepository" n="maven" ];
+  3 [ label="MC" s="setProperties()" t="Plugin" l="79" ];
+  4 [ t="Map" n="config" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="P" ];
+}

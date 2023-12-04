@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="write()" t="Jar" l="1912" ];
+  2 [ t="File" n="tmp" ];
+  3 [ t="Jar" n="dummy_" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+}

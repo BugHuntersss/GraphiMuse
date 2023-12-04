@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toArray()" t="Collection" l="619" ];
+  2 [ t="ArrayList" n="list" ];
+  3 [ label="MC" s="size()" t="Collection" l="619" ];
+  4 [ t="String[]" n="dummy_" ];
+  3 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+}

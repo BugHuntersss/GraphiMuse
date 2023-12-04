@@ -1,0 +1,1591 @@
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/Query.java
+method: combine(Query[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.next() L146" shape="box" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "combine(Query[])" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L146" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="HashSet.<init> L122" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<r> L145" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.size() L145" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="Iterable.iterator() L146" shape="box" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 20
+probability: 0.9999
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionSumScorer.java#explain(int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanNearQuery.java#getTerms()
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanOrQuery.java#getTerms()
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionSumScorer.java#initScorerDocQueue()
+startline: 146
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java
+method: addClause(Vector, int, int, Query)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L300" shape="box" ];
+    2 [ label="Vector" shape="ellipse" ];
+    3 [ label="Vector.elementAt() L295" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L300" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "addClause(Vector, int, int, Query)" {
+  nslimit=10000;
+
+    1 [ label="Vector.elementAt() L295" shape="box" ];
+    2 [ label="Collection.size() L294" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Vector" shape="ellipse" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L294" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="BooleanClause.setOccur() L297" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="Vector.addElement() L330" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Vector.elementAt() L305" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Collection.size() L300" shape="box" ];
+    12 [ label="Vector.addElement() L334" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Collection.size() L305" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Collection.size() L295" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Vector.addElement() L332" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="<r> L300" shape="box" ];
+    17 [ label="int" shape="ellipse" ];
+    18 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    19 [ label="BooleanClause.<cast> L305" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="BooleanClause.setOccur() L307" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="BooleanClause.isProhibited() L306" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    14 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="recv" style="solid" ];
+    3 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 17 [ label="def" style="solid" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="para" style="solid" ];
+    18 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    16 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9085714285714286
+pattern_support: 11
+probability: 0.9085714285714286
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 295
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java
+method: explain(IndexReader, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L112" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(IndexReader, int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation.setValue() L112" shape="box" ];
+    2 [ label="float" shape="ellipse" ];
+    3 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="Explanation" shape="ellipse" ];
+    6 [ label="Explanation.getValue() L114" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Explanation.<init> L101" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Explanation.addDetail() L107" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Explanation.addDetail() L106" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Explanation.addDetail() L110" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Explanation.addDetail() L116" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Explanation.getValue() L144" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Explanation.getValue() L146" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="Explanation.setDescription() L102" shape="box" color="gray" fontcolor="gray" ];
+    14 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="recv" style="solid" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 112
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java
+method: explain(IndexReader, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L230" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(IndexReader, int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation" shape="ellipse" ];
+    2 [ label="Explanation.<init> L226" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Explanation.getValue() L237" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Explanation.setDescription() L231" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Explanation.setValue() L230" shape="box" ];
+    6 [ label="Explanation.addDetail() L232" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="float" shape="ellipse" ];
+    8 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="=" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" ];
+    1 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="para" style="solid" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 230
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java
+method: explain(IndexReader, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L114" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(IndexReader, int)" {
+  nslimit=10000;
+
+    1 [ label="float" shape="ellipse" ];
+    2 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    3 [ label="=" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Explanation.setValue() L114" shape="box" ];
+    5 [ label="Explanation" shape="ellipse" ];
+    6 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="Explanation.<init> L110" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Explanation.setDescription() L115" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Explanation.addDetail() L116" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Explanation.getValue() L121" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="para" style="solid" ];
+    2 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    6 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 114
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/PhraseQuery.java
+method: explain(IndexReader, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L222" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(IndexReader, int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation" shape="ellipse" ];
+    2 [ label="Explanation.<init> L206" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Explanation.setDescription() L207" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Explanation.addDetail() L226" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<return> L232" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Explanation.setValue() L222" shape="box" ];
+    7 [ label="Explanation.getValue() L229" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Explanation.addDetail() L212" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Explanation.addDetail() L211" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="Explanation.addDetail() L220" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="float" shape="ellipse" ];
+    12 [ label="Explanation.getValue() L224" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    14 [ label="float" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="para" style="solid" ];
+    13 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 222
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/DisjunctionSumScorer.java
+method: explain(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L256" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation" shape="ellipse" ];
+    2 [ label="Explanation.<init> L239" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="<return> L261" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Explanation.setDescription() L253" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Explanation.setValue() L256" shape="box" ];
+    6 [ label="Explanation.setValue() L252" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Explanation.setDescription() L257" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Explanation.addDetail() L249" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="float" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="para" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 256
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/spans/SpanScorer.java
+method: explain(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L99" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation.setValue() L99" shape="box" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="float" shape="ellipse" ];
+    4 [ label="Explanation.<init> L94" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<return> L102" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Explanation.setDescription() L100" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Similarity.tf() L99" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 99
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/PhraseScorer.java
+method: explain(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L147" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(int)" {
+  nslimit=10000;
+
+    1 [ label="float" shape="ellipse" ];
+    2 [ label="Similarity.tf() L147" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Explanation.setValue() L147" shape="box" ];
+    4 [ label="Explanation" shape="ellipse" ];
+    5 [ label="Explanation.<init> L142" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L150" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Explanation.setDescription() L148" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 147
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/TermScorer.java
+method: explain(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ComplexExplanation.setMatch()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Explanation" shape="ellipse" ];
+    3 [ label="Explanation.setValue() L181" shape="box" ];
+    4 [ label="Boolean" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="float" shape="ellipse" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "explain(int)" {
+  nslimit=10000;
+
+    1 [ label="Explanation.setValue() L181" shape="box" ];
+    2 [ label="float" shape="ellipse" ];
+    3 [ label="Explanation" shape="ellipse" ];
+    4 [ label="Explanation.<init> L164" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Explanation.setDescription() L182" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<return> L184" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Similarity.tf() L181" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 10
+probability: 0.8400000000000001
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/search/DisjunctionMaxQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/spans/SpanWeight.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/BooleanQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/TermQuery.java#explain(IndexReader, int)
+- lucene/754/build/src/java/org/apache/lucene/search/MultiPhraseQuery.java#explain(IndexReader, int)
+startline: 181
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/DisjunctionSumScorer.java
+method: DisjunctionSumScorer(List, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L76" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L81" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "DisjunctionSumScorer(List, int)" {
+  nslimit=10000;
+
+    1 [ label="Collection.size() L76" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="<throw> L82" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="<r> L81" shape="box" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="def" style="solid" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="para" style="solid" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="para" style="solid" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 76
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/document/MapFieldSelector.java
+method: MapFieldSelector(List)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L35" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L35" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "MapFieldSelector(List)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="int" shape="ellipse" ];
+    3 [ label="<r> L35" shape="box" ];
+    4 [ label="<a> L35" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="List.get() L36" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="List" shape="ellipse" ];
+    8 [ label="Collection.size() L34" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.size() L35" shape="box" ];
+    1 -> 2 [ label="def" style="solid" ];
+    2 -> 3 [ label="para" style="solid" ];
+    2 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    3 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="def" style="solid" ];
+    7 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="recv" style="solid" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 35
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/index/IndexWriter.java
+method: addIndexes(Directory[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L851" shape="box" ];
+    2 [ label="SegmentInfos" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L851" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "addIndexes(Directory[])" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="Collection.size() L851" shape="box" ];
+    3 [ label="<r> L851" shape="box" ];
+    4 [ label="SegmentInfos" shape="ellipse" ];
+    5 [ label="SegmentInfos.info() L852" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="SegmentInfos.<init> L849" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="SegmentInfos.read() L850" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<r> L848" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="int" shape="ellipse" ];
+    10 [ label="<a> L851" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="int" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" ];
+    4 -> 2 [ label="recv" style="solid" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="para" style="solid" ];
+    3 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="def" style="solid" ];
+    9 -> 10 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 851
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/search/Query.java
+method: combine(Query[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L145" shape="box" ];
+    2 [ label="HashSet" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L145" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "combine(Query[])" {
+  nslimit=10000;
+
+    1 [ label="HashSet" shape="ellipse" ];
+    2 [ label="HashSet.<init> L122" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.add() L138" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Iterable.iterator() L148" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Iterable.iterator() L146" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Collection.add() L141" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Collection.size() L145" shape="box" ];
+    8 [ label="<r> L145" shape="box" ];
+    9 [ label="int" shape="ellipse" ];
+    10 [ label="int" shape="ellipse" ];
+    11 [ label="Query.<cast> L146" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Query.<cast> L151" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<return> L152" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="BooleanQuery.add() L151" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Iterator.next() L151" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="<return> L146" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Iterator.hasNext() L150" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="Iterator.next() L146" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" ];
+    2 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="def" style="solid" ];
+    9 -> 8 [ label="para" style="solid" ];
+    10 -> 8 [ label="para" style="solid" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 145
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/store/RAMOutputStream.java
+method: flushBuffer(byte[], int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L79" shape="box" ];
+    2 [ label="ArrayList" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L79" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "flushBuffer(byte[], int)" {
+  nslimit=10000;
+
+    1 [ label="ArrayList" shape="ellipse" ];
+    2 [ label="List.get() L82" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Collection.size() L79" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="byte[].<cast> L82" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<r> L79" shape="box" ];
+    7 [ label="int" shape="ellipse" ];
+    8 [ label="int.<cast> L73" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="def" style="solid" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="para" style="solid" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="para" style="solid" ];
+    8 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 79
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java
+method: getFieldQuery(String, String, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L122" shape="box" ];
+    2 [ label="Vector" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L122" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getFieldQuery(String, String, int)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="<r> L122" shape="box" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="<return> L124" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<return> L123" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Collection.size() L122" shape="box" ];
+    7 [ label="Vector" shape="ellipse" ];
+    8 [ label="Vector.<init> L101" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Collection.add() L119" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="def" style="solid" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 122
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/document/Document.java
+method: getFields(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L205" shape="box" ];
+    2 [ label="List" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L205" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getFields(String)" {
+  nslimit=10000;
+
+    1 [ label="<r> L205" shape="box" ];
+    2 [ label="int" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="<return> L208" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Collection.toArray() L208" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Collection.size() L208" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<return> L206" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="{Field} L208" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Field[].<cast> L208" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="List" shape="ellipse" ];
+    11 [ label="ArrayList.<init> L197" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Collection.add() L201" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Collection.size() L205" shape="box" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="def" style="solid" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="recv" style="solid" ];
+    11 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 205
+violation_from_doc: []
+---
+file: /mubench/checkouts/lucene/754/build/src/java/org/apache/lucene/index/IndexReader.java
+method: open(Directory, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Collection.size() L169" shape="box" ];
+    2 [ label="SegmentInfos" shape="ellipse" ];
+    3 [ label="Vector.elementAt()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="<r> L169" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    5 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    1 -> 3 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 4 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="def" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "open(Directory, boolean)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="<a> L169" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="<r> L169" shape="box" ];
+    4 [ label="IndexReader[].arrayget() L170" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<a> L169" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Collection.size() L169" shape="box" ];
+    7 [ label="SegmentInfos" shape="ellipse" ];
+    8 [ label="SegmentInfos.<init> L151" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="doBody()" shape="ellipse" color="gray" fontcolor="gray" ];
+    10 [ label="<r> L164" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Collection.size() L164" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Collection.size() L154" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="<r> L154" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="IndexReader.close() L170" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="int" shape="ellipse" ];
+    17 [ label="SegmentReader.get() L155" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="Collection.size() L163" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="SegmentInfos.read() L152" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="SegmentInfos.info() L155" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="MultiReader.<init> L176" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="SegmentInfos.info() L166" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="para" style="solid" ];
+    11 -> 3 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="recv" style="solid" ];
+    8 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="def" style="solid" ];
+    8 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="contains" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.4514285714285713
+pattern_support: 11
+probability: 0.4514285714285713
+pattern_examples:
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#addPendingFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteSegments(Vector, HashSet)
+- lucene/754/build/src/java/org/apache/lucene/index/SegmentInfos.java#clone()
+- lucene/754/build/src/java/org/apache/lucene/index/IndexFileDeleter.java#deleteFiles(Vector)
+- lucene/754/build/src/java/org/apache/lucene/queryParser/QueryParser.java#getBooleanQuery(Vector, boolean)
+startline: 169
+violation_from_doc: []

@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="set()" t="Domain" l="173" ];
+  2 [ t="String" v="Bundle-ClassPath" ];
+  3 [ t="Domain" n="domain" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+}

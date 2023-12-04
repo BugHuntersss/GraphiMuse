@@ -1,0 +1,147 @@
+detectionLoadTime: 13105
+detectionTime: 8789
+maxPatternSupport: 55
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 104
+numberOfPatterns: 21
+numberOfTargets: 437
+numberOfTrainingExamples: 437
+numberOfUsagesInTrainingExamples:
+  ? ''
+  : 3
+  AbstractStringBuilder: 2
+  AesExample: 1
+  AlgorithmParameters: 1
+  ArrayEncoder: 15
+  ArrayList: 4
+  Arrays: 43
+  Basis: 9
+  Basis.h: 2
+  BasisGenerationTask: 1
+  BasisType: 14
+  Benchmark: 14
+  BigDecimal: 7
+  BigDecimalPolynomial: 4
+  BigIntEuclidean: 4
+  BigIntPolynomial: 16
+  BigInteger: 30
+  BitString: 3
+  BouncyCastleProvider: 1
+  Buffer: 8
+  ByteArrayInputStream: 7
+  ByteArrayOutputStream: 2
+  ByteBuffer: 9
+  Callable: 1
+  CharSequence: 1
+  Cipher: 3
+  Class: 11
+  Collection: 3
+  Collections: 1
+  Curve25519: 21
+  Curve25519Benchmark: 3
+  DataInput: 6
+  DataInputStream: 6
+  DataOutput: 4
+  DataOutputStream: 4
+  DecimalFormat: 2
+  DenseTernaryPolynomial: 11
+  Deque: 1
+  Double: 2
+  ECGenParameterSpec: 1
+  EcdhBenchmark: 6
+  EncryptionKeyPair: 14
+  EncryptionParameters: 15
+  EncryptionPrivateKey: 8
+  EncryptionPublicKey: 12
+  Exception: 2
+  ExecutorService: 2
+  Executors: 2
+  FGBasis: 3
+  Float: 2
+  Future: 2
+  IOException: 8
+  IndexGenerator: 4
+  InputStream: 17
+  IntEuclidean: 3
+  IntEuclidean.x: 1
+  Integer: 13
+  IntegerPolynomial: 64
+  IntegerPolynomial.coeffs: 3
+  InvalidKeySpecException: 1
+  Iterable: 2
+  Iterator: 2
+  IvParameterSpec: 2
+  Key: 2
+  KeyAgreement: 2
+  KeyGenAlg: 6
+  KeyGenerator: 1
+  KeyPair: 5
+  KeyPairGenerator: 5
+  KeyPairGeneratorSpi: 3
+  KeySpec: 1
+  LinkedList: 1
+  List: 5
+  LongPolynomial2: 5
+  LongPolynomial2.coeffs: 1
+  LongPolynomial5: 2
+  Math: 17
+  MessageDigest: 12
+  ModularResultant: 3
+  ModularResultant.res: 1
+  NoSuchAlgorithmException: 9
+  NtruEncrypt: 12
+  NtruEncryptBenchmark: 6
+  NtruException: 35
+  NtruSign: 5
+  Number: 3
+  NumberFormat: 2
+  Object: 30
+  OutputStream: 11
+  PBEKeySpec: 1
+  PassphraseBasedPRNG: 3
+  PlatformUtil: 1
+  Polynomial: 17
+  PolynomialGenerator: 1
+  PrintStream: 19
+  PrivateKey: 2
+  Prng: 1
+  ProductFormPolynomial: 11
+  PublicKey: 2
+  Random: 14
+  Resultant: 2
+  RoundingMode: 2
+  RsaBenchmark: 6
+  Runtime: 2
+  RuntimeException: 2
+  "Sch\xF6nhageStrassen": 12
+  SecretKey: 3
+  SecretKeyFactory: 1
+  SecretKeySpec: 2
+  SecureRandom: 10
+  Security: 1
+  SignatureKeyPair: 8
+  SignatureParameters: 6
+  SignaturePrivateKey: 9
+  SignaturePublicKey: 12
+  SimpleExample: 1
+  SparseTernaryPolynomial: 14
+  String: 74
+  StringBuilder: 2
+  System: 31
+  TernaryPolynomial: 3
+  TernaryPolynomialType: 25
+  Throwable: 1
+  Timings: 1
+  byte: 44
+  int: 35
+  int[].length: 4
+  long: 8
+  long10: 13
+  long[].length: 1
+numberOfViolations: 0
+result: success
+runtime: 43.649598360061646
+timestamp: 1700809989
+trainingLoadTime: 19216
+trainingTime: 1080

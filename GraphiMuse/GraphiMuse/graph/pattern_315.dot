@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addRepository()" t="ResolverValidator" l="49" ];
+  2 [ t="URI" n="dummy_" ];
+  3 [ label="MC" s="toURI()" t="File" l="49" ];
+  4 [ t="ResolverValidator" n="validator" ];
+  5 [ t="File" n="dummy_" ];
+  6 [ label="MC" s="getFile()" t="IO" l="49" ];
+  7 [ t="String" v="testdata/web-experience-1.0-index.xml.gz" ];
+  4 -> 1 [ label="R" ];
+  6 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="P" ];
+}

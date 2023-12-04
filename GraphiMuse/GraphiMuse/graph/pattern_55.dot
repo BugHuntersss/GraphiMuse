@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="check()" t="ReporterAdapter" l="365" ];
+  2 [ t="Processor" n="p" ];
+  3 [ label="MC" s="process()" t="Processor" l="358" ];
+  4 [ label="I" t="Processor" l="357" ];
+  5 [ t="String" v="$<toclassname;Test.class>" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  4 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+  5 -> 3 [ label="P" ];
+}

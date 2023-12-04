@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setup()" t="ComponentTest" l="202" ];
+  2 [ t="String" v="test.activator.Activator;http=org.osgi.service.http.HttpService~" ];
+  2 -> 1 [ label="P" ];
+}

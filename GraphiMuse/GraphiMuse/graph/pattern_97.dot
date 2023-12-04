@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseHeader()" t="OSGiHeader" l="35" ];
+  2 [ t="String" n="exph" ];
+  3 [ label="MC" s="getValue()" t="Attributes" l="32" ];
+  4 [ t="String" v="Import-Package" ];
+  5 [ t="Attributes" n="attrs" ];
+  6 [ label="MC" s="getMainAttributes()" t="Manifest" l="32" ];
+  7 [ t="Manifest" n="manifest" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="O" ];
+  5 -> 3 [ label="R" ];
+  4 -> 3 [ label="P" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="R" ];
+}

@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addContent()" t="Tag" l="179" ];
+  2 [ t="Tag" n="component" ];
+  3 [ label="MC" s="addAttribute()" t="Tag" l="173" ];
+  4 [ t="Tag" n="tag" ];
+  5 [ t="Boolean" v="null" n="enabled" ];
+  6 [ label="I" t="Tag" l="170" ];
+  7 [ t="String" v="property" ];
+  2 -> 1 [ label="R" ];
+  6 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  6 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  5 -> 3 [ label="P" ];
+  7 -> 6 [ label="P" ];
+}

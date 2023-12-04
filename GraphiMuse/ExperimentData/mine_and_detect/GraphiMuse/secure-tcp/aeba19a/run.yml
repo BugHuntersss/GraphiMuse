@@ -1,0 +1,43 @@
+detectionLoadTime: 4826
+detectionTime: 583
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 8
+numberOfTrainingExamples: 8
+numberOfUsagesInTrainingExamples:
+  BadPaddingException: 1
+  ByteArrayOutputStream: 1
+  Certificate: 2
+  CertificateEncodingException: 1
+  CertificateManager: 2
+  Cipher: 1
+  Class: 1
+  ConnectionHandler: 1
+  Exception: 3
+  IOException: 1
+  IllegalBlockSizeException: 1
+  InputStream: 1
+  InvalidKeyException: 1
+  Key: 2
+  KeyStore: 1
+  NoSuchAlgorithmException: 1
+  NoSuchPaddingException: 1
+  OutputStream: 1
+  RuntimeException: 4
+  SecretKey: 1
+  SecretKeySpec: 1
+  SecureConnectionHandler: 1
+  ServerSocket: 1
+  Socket: 1
+  String: 3
+  Thread: 1
+  byte: 1
+numberOfViolations: 0
+result: success
+runtime: 16.127973794937134
+timestamp: 1700809989
+trainingLoadTime: 9273
+trainingTime: 239

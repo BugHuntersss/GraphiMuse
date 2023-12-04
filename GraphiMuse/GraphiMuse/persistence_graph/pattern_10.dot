@@ -1,0 +1,23 @@
+digraph "AUG" {
+
+  1 [ label="HashCodeBuilder.toHashCode()" shape="box" ];
+  2 [ label="HashCodeBuilder" shape="ellipse" ];
+  3 [ label="HashCodeBuilder.append()" shape="box" ];
+  4 [ label="Object" shape="ellipse" ];
+  5 [ label="HashCodeBuilder" shape="ellipse" ];
+  6 [ label="HashCodeBuilder.<init>" shape="box" ];
+  7 [ label="int" shape="ellipse" ];
+  8 [ label="Object.<cast>" shape="box" ];
+  9 [ label="byte[]" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  6 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+  6 -> 3 [ label="order" style="bold" ];
+  5 -> 3 [ label="recv" style="solid" ];
+  8 -> 4 [ label="def" style="solid" ];
+  6 -> 5 [ label="def" style="solid" ];
+  7 -> 6 [ label="para" style="solid" ];
+  9 -> 8 [ label="para" style="solid" ];
+}

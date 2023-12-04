@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="digest()" t="Digest" l="437" ];
+  2 [ t="SHA1" n="dummy_" ];
+  3 [ label="MC" s="digest()" t="SHA1" l="437" ];
+  4 [ t="File" n="f" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

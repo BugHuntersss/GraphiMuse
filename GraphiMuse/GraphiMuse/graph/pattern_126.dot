@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="longValue()" t="Number" l="50" ];
+  2 [ t="MutableLong" n="dummy_" ];
+  3 [ label="I" t="MutableLong" l="50" ];
+  4 [ t="int" v="0" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

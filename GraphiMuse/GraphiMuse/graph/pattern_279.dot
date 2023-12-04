@@ -1,0 +1,4 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="digest()" t="SHA256" l="93" ];
+}

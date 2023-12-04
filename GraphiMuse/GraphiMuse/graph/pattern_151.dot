@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="EqualsBuilder" l="782" ];
+  2 [ t="EqualsBuilder" n="dummy_" ];
+  3 [ t="int[]" n="array2" ];
+  4 [ label="I" t="EqualsBuilder" l="782" ];
+  5 [ t="float[]" n="array2" ];
+  6 [ t="int[]" n="array2" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="P" ];
+  5 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  4 -> 2 [ label="D" ];
+  6 -> 5 [ label="D" ];
+}

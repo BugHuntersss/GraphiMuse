@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="Thread.sleep()" shape="box" ];
+  2 [ label="int" shape="ellipse" ];
+  3 [ label="InterruptedException" shape="ellipse" ];
+  4 [ label="<catch>" shape="box" ];
+  2 -> 1 [ label="para" style="solid" ];
+  1 -> 3 [ label="throw" style="solid" ];
+  3 -> 4 [ label="para" style="solid" ];
+  1 -> 4 [ label="order" style="bold" ];
+}

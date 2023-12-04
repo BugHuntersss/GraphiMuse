@@ -1,0 +1,33 @@
+digraph "AUG" {
+
+  1 [ label="Flushable.flush()" shape="box" ];
+  2 [ label="ObjectOutputStream" shape="ellipse" ];
+  3 [ label="ObjectOutput.writeObject()" shape="box" ];
+  4 [ label="ObjectOutputStream.<init>" shape="box" ];
+  5 [ label="null" shape="ellipse" ];
+  6 [ label="ByteArrayOutputStream" shape="ellipse" ];
+  7 [ label="ByteArrayOutputStream.toByteArray()" shape="box" ];
+  8 [ label="ByteArrayOutputStream.<init>" shape="box" ];
+  9 [ label="Object" shape="ellipse" ];
+  10 [ label="<nullcheck>" shape="box" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="order" style="bold" ];
+  8 -> 1 [ label="order" style="bold" ];
+  4 -> 2 [ label="def" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  8 -> 3 [ label="order" style="bold" ];
+  5 -> 3 [ label="para" style="solid" ];
+  4 -> 3 [ label="order" style="bold" ];
+  8 -> 4 [ label="order" style="bold" ];
+  6 -> 4 [ label="para" style="solid" ];
+  8 -> 6 [ label="def" style="solid" ];
+  8 -> 7 [ label="order" style="bold" ];
+  6 -> 7 [ label="recv" style="solid" ];
+  4 -> 7 [ label="order" style="bold" ];
+  1 -> 7 [ label="order" style="bold" ];
+  3 -> 7 [ label="order" style="bold" ];
+  9 -> 10 [ label="para" style="solid" ];
+  9 -> 3 [ label="para" style="solid" ];
+  10 -> 3 [ label="order" style="bold" ];
+}

@@ -1,0 +1,111 @@
+file: /mubench/checkouts/minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/profile/ProfileManager.java
+method: getSelectedProfile()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L102" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getSelectedProfile()" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L102" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Profile" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="Iterable.iterator() L102" shape="box" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 12
+probability: 0.9999
+pattern_examples:
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/versions/CompleteVersion.java#appliesToCurrentEnvironment()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/ui/popups/profile/ProfileVersionPanel.java#addEventHandlers()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/authentication/BaseAuthenticationService.java#fireAuthenticationChangedEvent()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/GameLauncher.java#getProgress()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/profile/ProfileManager.java#fireRefreshEvent()
+startline: 102
+violation_from_doc: []
+---
+file: /mubench/checkouts/minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/ui/bottombar/ProfileSelectionPanel.java
+method: populateProfiles()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L152" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "populateProfiles()" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L152" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterable.iterator()" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Map.values() L134" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="ProfileManager.getProfiles() L134" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next()" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<nullcheck> L146" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Iterable.iterator() L152" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 12
+probability: 0.9999
+pattern_examples:
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/versions/CompleteVersion.java#appliesToCurrentEnvironment()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/ui/popups/profile/ProfileVersionPanel.java#addEventHandlers()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/authentication/BaseAuthenticationService.java#fireAuthenticationChangedEvent()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/GameLauncher.java#getProgress()
+- minecraft-launcher/e62d1bb/build/src/main/java/net/minecraft/launcher/profile/ProfileManager.java#fireRefreshEvent()
+startline: 152
+violation_from_doc: []

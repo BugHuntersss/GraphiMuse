@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="compareTo()" t="UNKNOWN" l="230" ];
+  2 [ t="Partial" n="test1" ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="property()" t="Partial" l="230" ];
+  5 [ t="UNKNOWN" n="dummy_" ];
+  6 [ t="Partial" n="test1" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+  6 -> 4 [ label="R" ];
+}

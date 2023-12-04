@@ -1,0 +1,18 @@
+digraph "AUG" {
+
+  1 [ label="PrintStream.println()" shape="box" ];
+  2 [ label="PrintStream" shape="ellipse" ];
+  3 [ label="PrintStream.println()" shape="box" ];
+  4 [ label="PrintStream.println()" shape="box" ];
+  5 [ label="Throwable" shape="ellipse" ];
+  6 [ label="Throwable" shape="ellipse" ];
+  7 [ label="Throwable" shape="ellipse" ];
+  8 [ label="Throwable" shape="ellipse" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  6 -> 1 [ label="para" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+  8 -> 3 [ label="para" style="solid" ];
+  7 -> 3 [ label="para" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  2 -> 4 [ label="recv" style="solid" ];
+}

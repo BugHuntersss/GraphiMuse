@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="ToStringBuilder.reflectionToString()" shape="box" ];
+  2 [ label="short[][]" shape="ellipse" ];
+  3 [ label="{}" shape="box" ];
+  4 [ label="Integer" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+}

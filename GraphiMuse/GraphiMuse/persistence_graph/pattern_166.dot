@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="BooleanUtils.xor(Boolean[])" shape="box" ];
+  2 [ label="Boolean[]" shape="ellipse" ];
+  3 [ label="{Boolean}" shape="box" ];
+  4 [ label="null" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+}

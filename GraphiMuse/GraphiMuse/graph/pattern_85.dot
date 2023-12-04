@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="build()" t="Project" l="371" ];
+  2 [ t="Project" n="p3" ];
+  3 [ label="MC" s="check()" t="Processor" l="372" ];
+  2 -> 1 [ label="R" ];
+  1 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+}

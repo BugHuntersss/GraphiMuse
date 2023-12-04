@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="set()" t="Field" l="77" ];
+  2 [ t="Object" n="xxx" ];
+  2 -> 1 [ label="P" ];
+}

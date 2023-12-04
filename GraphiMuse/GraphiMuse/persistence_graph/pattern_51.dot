@@ -1,0 +1,30 @@
+digraph "AUG" {
+
+  1 [ label="ResourceBuilder.build()" shape="box" ];
+  2 [ label="ResourceBuilder" shape="ellipse" ];
+  3 [ label="ResourceBuilder.addManifest()" shape="box" ];
+  4 [ label="ResourceBuilder.addEE()" shape="box" ];
+  5 [ label="ResourceBuilder.<init>" shape="box" ];
+  6 [ label="EE" shape="ellipse" ];
+  7 [ label="Domain" shape="ellipse" ];
+  8 [ label="OSGI_CORE.getManifest()" shape="box" ];
+  9 [ label="OSGI_CORE" shape="ellipse" ];
+  5 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="order" style="bold" ];
+  8 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  5 -> 2 [ label="def" style="solid" ];
+  8 -> 3 [ label="order" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  5 -> 3 [ label="order" style="bold" ];
+  7 -> 3 [ label="para" style="solid" ];
+  4 -> 3 [ label="order" style="bold" ];
+  5 -> 4 [ label="order" style="bold" ];
+  2 -> 4 [ label="recv" style="solid" ];
+  6 -> 4 [ label="para" style="solid" ];
+  8 -> 7 [ label="def" style="solid" ];
+  4 -> 8 [ label="order" style="bold" ];
+  5 -> 8 [ label="order" style="bold" ];
+  9 -> 8 [ label="recv" style="solid" ];
+}

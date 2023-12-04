@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="info()" t="Logger" l="114" ];
+  2 [ t="Marker" n="GradleLogging.LIFECYCLE" ];
+  3 [ t="Logger" n="LoggingProgressPlugin.logger" ];
+  4 [ label="MC" s="debug()" t="Logger" l="79" ];
+  5 [ t="String" v="null" n="message" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  3 -> 4 [ label="R" ];
+  5 -> 4 [ label="P" ];
+}

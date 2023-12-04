@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="compareTo()" t="AbstractPartialFieldProperty" l="219" ];
+  2 [ t="Property" n="dummy_" ];
+  3 [ label="MC" s="property()" t="Partial" l="219" ];
+  4 [ t="DateTimeFieldType" n="dummy_" ];
+  5 [ t="Partial" n="test1" ];
+  6 [ t="Partial" n="test1" ];
+  6 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="R" ];
+  4 -> 3 [ label="P" ];
+}

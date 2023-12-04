@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="replaceAll()" t="StrBuilder" l="797" ];
+  2 [ t="String" v="xbx" ];
+  3 [ t="StrBuilder" n="sb" ];
+  4 [ label="MC" s="toString()" t="StrBuilder" l="807" ];
+  5 [ t="StrMatcher" v="null" n="A_NUMBER_MATCHER" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  1 -> 4 [ label="O" ];
+  3 -> 4 [ label="R" ];
+}

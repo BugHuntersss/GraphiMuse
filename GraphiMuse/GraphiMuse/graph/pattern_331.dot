@@ -1,0 +1,39 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="domain()" t="Domain" l="38" ];
+  2 [ t="Manifest" n="dummy_" ];
+  3 [ label="MC" s="getManifest()" t="Jar" l="38" ];
+  4 [ label="MC" s="check()" t="Processor" l="36" ];
+  5 [ t="Jar" n="jar" ];
+  6 [ label="MC" s="build()" t="Builder" l="34" ];
+  7 [ t="Builder" n="a" ];
+  8 [ label="MC" s="addClasspath()" t="Analyzer" l="29" ];
+  9 [ label="MC" s="setProperty()" t="Processor" l="31" ];
+  10 [ t="String" v="atest;alpha=1" ];
+  11 [ t="Jar" n="bjarb" ];
+  3 -> 1 [ label="O" ];
+  9 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="O" ];
+  9 -> 3 [ label="O" ];
+  8 -> 3 [ label="O" ];
+  5 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  7 -> 4 [ label="R" ];
+  9 -> 4 [ label="O" ];
+  6 -> 4 [ label="O" ];
+  8 -> 4 [ label="O" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="R" ];
+  8 -> 6 [ label="O" ];
+  9 -> 6 [ label="O" ];
+  11 -> 8 [ label="P" ];
+  7 -> 8 [ label="R" ];
+  8 -> 9 [ label="O" ];
+  7 -> 9 [ label="R" ];
+  10 -> 9 [ label="P" ];
+}

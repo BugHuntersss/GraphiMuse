@@ -1,0 +1,24 @@
+detectionLoadTime: 5295
+detectionTime: 603
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 3
+numberOfTrainingExamples: 3
+numberOfUsagesInTrainingExamples:
+  ArrayList: 1
+  BufferedReader: 1
+  Cipher: 3
+  Collection: 1
+  Key: 1
+  List: 1
+  SecretKeySpec: 2
+  String: 3
+numberOfViolations: 0
+result: success
+runtime: 18.616248607635498
+timestamp: 1700809989
+trainingLoadTime: 9020
+trainingTime: 219

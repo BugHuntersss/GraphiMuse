@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="Flushable.flush()" shape="box" ];
+  2 [ label="Writer" shape="ellipse" ];
+  3 [ label="IO.writer()" shape="box" ];
+  4 [ label="PrintStream" shape="ellipse" ];
+  5 [ label="OutputStream" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+}

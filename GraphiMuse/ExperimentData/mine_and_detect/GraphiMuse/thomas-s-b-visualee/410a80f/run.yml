@@ -1,0 +1,97 @@
+detectionLoadTime: 7996
+detectionTime: 2278
+maxPatternSupport: 22
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 34
+numberOfPatterns: 5
+numberOfTargets: 179
+numberOfTrainingExamples: 179
+numberOfUsagesInTrainingExamples:
+  AbstractStringBuilder: 6
+  Appendable: 1
+  ArrayDeque: 1
+  ArrayList: 4
+  Arrays: 9
+  AssertionError: 1
+  AutoCloseable: 7
+  BufferedReader: 1
+  CharSequence: 2
+  Charset: 1
+  Class: 5
+  Collection: 22
+  Date: 2
+  DateFormat: 2
+  Dependency: 9
+  DependencyAnalyzer: 3
+  DependencyContainer: 5
+  DependencyFilter: 10
+  DependencyType: 29
+  Deque: 1
+  Description: 3
+  Enum: 1
+  Examiner: 16
+  ExaminerEJB: 1
+  ExaminerEvent: 1
+  ExaminerInject: 1
+  ExaminerInstance: 1
+  ExaminerJPA: 1
+  ExaminerObserves: 1
+  ExaminerProduces: 1
+  ExaminerResource: 1
+  Exception: 1
+  File: 9
+  FileManager: 2
+  FileNotFoundException: 3
+  FileVisitResult: 1
+  Files: 3
+  Graph: 5
+  GraphConfig: 3
+  GraphConfigurator: 3
+  GraphCreator: 4
+  HTMLManager: 3
+  HashMap: 2
+  HashSet: 2
+  IOException: 4
+  InputStream: 2
+  InputStreamReader: 1
+  Integer: 9
+  Iterable: 14
+  Iterator: 21
+  JavaSource: 21
+  JavaSourceContainer: 7
+  JavaSourceInspector: 3
+  Json: 4
+  JsonArrayBuilder: 3
+  JsonObject: 1
+  JsonObjectBuilder: 4
+  JsonValue: 1
+  Level: 5
+  List: 28
+  Log: 5
+  LogProvider: 11
+  Logger: 5
+  Map: 10
+  Matcher: 1
+  Object: 18
+  Objects: 4
+  Path: 6
+  Paths: 2
+  Pattern: 1
+  PrintStream: 3
+  Scanner: 16
+  Set: 6
+  SimpleDateFormat: 2
+  SimpleFileVisitor: 1
+  StandardCopyOption: 1
+  String: 81
+  StringBuilder: 6
+  System: 1
+  Throwable: 1
+  char: 18
+numberOfViolations: 1
+result: success
+runtime: 28.00266408920288
+timestamp: 1700809989
+trainingLoadTime: 14892
+trainingTime: 602

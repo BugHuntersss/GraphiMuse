@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="nextToken()" t="QuotedTokenizer" l="285" ];
+  2 [ t="QuotedTokenizer" n="qt" ];
+  3 [ label="MC" s="getSeparator()" t="QuotedTokenizer" l="260" ];
+  3 -> 1 [ label="O" ];
+  3 -> 1 [ label="Re" ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+}

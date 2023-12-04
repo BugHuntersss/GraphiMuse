@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="openInputStream()" t="Resource" l="461" ];
+  2 [ t="Resource" n="r" ];
+  2 -> 1 [ label="R" ];
+}

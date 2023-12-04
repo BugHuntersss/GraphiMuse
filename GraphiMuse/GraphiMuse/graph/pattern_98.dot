@@ -1,0 +1,20 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="item()" t="NodeList" l="41" ];
+  2 [ t="int" n="i" ];
+  3 [ t="NodeList" n="nodelist" ];
+  4 [ label="MC" s="getLength()" t="NodeList" l="40" ];
+  5 [ label="IO" l="40" o="<r>" ];
+  6 [ t="int" n="dummy_" ];
+  7 [ t="int" v="0" ];
+  3 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  5 -> 1 [ label="Re" ];
+  4 -> 1 [ label="Re" ];
+  2 -> 1 [ label="P" ];
+  7 -> 2 [ label="D" ];
+  3 -> 4 [ label="R" ];
+  6 -> 5 [ label="P" ];
+  2 -> 5 [ label="P" ];
+  4 -> 6 [ label="D" ];
+}

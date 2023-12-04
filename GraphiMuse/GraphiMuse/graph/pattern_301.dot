@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="putTyped()" t="Attrs" l="580" ];
+  2 [ t="Attrs" n="attrs" ];
+  3 [ t="String" v="long" ];
+  4 [ t="String[]" n="dummy_" ];
+  5 [ label="I" t="Attrs" l="571" ];
+  5 -> 1 [ label="O" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  5 -> 2 [ label="D" ];
+}

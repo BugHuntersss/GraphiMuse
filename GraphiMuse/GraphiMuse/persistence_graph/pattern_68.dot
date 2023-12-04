@@ -1,0 +1,18 @@
+digraph "AUG" {
+
+  1 [ label="Method.invoke()" shape="box" ];
+  2 [ label="null" shape="ellipse" ];
+  3 [ label="Method" shape="ellipse" ];
+  4 [ label="Class.getMethod()" shape="box" ];
+  5 [ label="Class" shape="ellipse" ];
+  6 [ label="char" shape="ellipse" ];
+  7 [ label="Exception" shape="ellipse" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  4 -> 3 [ label="def" style="solid" ];
+  6 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="recv" style="solid" ];
+  4 -> 7 [ label="throw" style="solid" ];
+  1 -> 7 [ label="throw" style="solid" ];
+}

@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="valueOf()" t="Integer" l="563" ];
+  2 [ t="int" v="0" ];
+  2 -> 1 [ label="P" ];
+}

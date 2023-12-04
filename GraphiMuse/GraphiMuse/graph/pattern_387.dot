@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="writer()" t="IO" l="2734" ];
+  2 [ t="Charset" n="StandardCharsets.UTF_8" ];
+  3 [ t="Charset" n="StandardCharsets.UTF_8" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+}

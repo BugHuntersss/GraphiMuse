@@ -1,0 +1,167 @@
+detectionLoadTime: 10121
+detectionTime: 17379
+maxPatternSupport: 79
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 463
+numberOfPatterns: 23
+numberOfTargets: 286
+numberOfTrainingExamples: 286
+numberOfUsagesInTrainingExamples:
+  AccumuloStore: 2
+  AccumuloStore.INSTANCE_NAME_PROPERTY: 1
+  AccumuloStore.MOCK_PROPERTY: 1
+  AccumuloStore.PASSWORD_PROPERTY: 1
+  AccumuloStore.ZOOKEEPERS_NAME_PROPERTY: 1
+  ArrayList: 9
+  Arrays: 5
+  Assert: 65
+  Assume: 1
+  AvroStore: 9
+  AvroUtils: 8
+  BeanFactory: 1
+  BeanFactoryImpl: 1
+  BinaryComparable: 5
+  BoolArrayWrapper: 3
+  BoolArrayWrapper.arr: 2
+  Buffer: 3
+  Builder: 29
+  ByteArrayInputStream: 4
+  ByteArrayOutputStream: 2
+  ByteBuffer: 10
+  ByteBufferInputStream: 1
+  ByteBufferOutputStream: 1
+  ByteUtils: 1
+  CharSequence: 22
+  Class: 24
+  Collection: 25
+  Collections: 3
+  Configurable: 3
+  Configuration: 23
+  CoreMatchers: 1
+  DataFileAvroStore: 4
+  DataInput: 3
+  DataInputBuffer: 1
+  DataInputStream: 4
+  DataOutput: 4
+  DataOutputBuffer: 1
+  DataOutputStream: 3
+  DataStore: 102
+  DataStoreBase: 2
+  DataStoreFactory: 18
+  DataStoreMapReduceTestBase: 2
+  DataStoreTestBase: 1
+  DataStoreTestUtil: 73
+  Dictionary: 1
+  Double: 1
+  EOFException: 1
+  Employee: 19
+  Encoder: 2
+  Entry: 2
+  Exception: 2
+  Field: 13
+  File: 1
+  FileBackedDataStore: 1
+  FileSystem: 1
+  Filter: 4
+  FilterOp: 6
+  Float: 1
+  Flushable: 1
+  GenericContainer: 5
+  GoraException: 1
+  GoraInputFormat: 1
+  GoraInputSplit: 3
+  GoraMapReduceUtils: 1
+  GoraTestDriver: 7
+  HadoopShim: 1
+  HadoopTestCase: 1
+  HashMap: 5
+  HashSet: 1
+  HexEncoder: 2
+  IOException: 1
+  IOUtils: 7
+  IllegalArgumentException: 2
+  IndexedRecord: 2
+  InputFormat: 1
+  InputSplit: 2
+  InputStream: 1
+  Integer: 11
+  Iterable: 9
+  Iterator: 11
+  Job: 1
+  JobConf: 1
+  JobContext: 1
+  LinkedHashSet: 1
+  List: 34
+  Logger: 69
+  Long: 3
+  Map: 16
+  Map.Entry: 2
+  MapFieldValueFilter: 3
+  MapReduceTestUtils: 2
+  Matcher: 1
+  Math: 2
+  MemStore: 6
+  Metadata: 5
+  MiniAccumuloCluster: 1
+  MockDataStore: 4
+  MockPersistent: 1
+  MockQuery: 6
+  Number: 3
+  Object: 19
+  Object[].length: 3
+  Parser: 1
+  PartitionQuery: 5
+  PartitionQueryImpl: 2
+  PartitionTest: 2
+  Path: 1
+  Persistent: 1
+  PrintStream: 1
+  Properties: 4
+  Query: 20
+  QueryBase: 2
+  QueryCounter: 1
+  RecordBuilder: 29
+  Result: 6
+  RuntimeException: 2
+  Schema: 16
+  Schema.Parser: 1
+  Set: 3
+  SignedBinaryEncoder: 5
+  SingleFieldValueFilter: 3
+  String: 137
+  StringArrayWrapper: 3
+  StringArrayWrapper.arr: 2
+  StringUtils: 1
+  String[].length: 1
+  System: 5
+  T: 2
+  TestAvroStore: 2
+  TestGoraInputFormat: 2
+  TestIOUtils: 11
+  TestWritable: 2
+  Text: 6
+  TokenDatum: 1
+  Tombstone: 1
+  UNKNOWN: 11
+  Utf8: 29
+  WSDataStoreTestBase: 1
+  WebPage: 36
+  WebPage.Builder: 1
+  WebPageDataCreator: 16
+  WordCount: 1
+  Writable: 2
+  WritableUtils: 3
+  boolean: 1
+  boolean[].length: 1
+  byte: 6
+  float: 1
+  int[].length: 1
+  long: 2
+  short: 1
+numberOfViolations: 10
+result: success
+runtime: 56.90776872634888
+timestamp: 1700809989
+trainingLoadTime: 25394
+trainingTime: 1654

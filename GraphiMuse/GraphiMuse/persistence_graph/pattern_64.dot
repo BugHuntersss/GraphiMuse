@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="Character.isWhitespace()" shape="box" ];
+  2 [ label="char" shape="ellipse" ];
+  3 [ label="CharSequence.charAt()" shape="box" ];
+  4 [ label="StringBuilder" shape="ellipse" ];
+  5 [ label="CharSequence.length()" shape="box" ];
+  6 [ label="int" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  5 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="rep" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+  5 -> 3 [ label="rep" style="bold" ];
+  5 -> 3 [ label="order" style="bold" ];
+  4 -> 3 [ label="recv" style="solid" ];
+  4 -> 5 [ label="recv" style="solid" ];
+}

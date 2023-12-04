@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="digest()" t="MessageDigest" l="310" ];
+  2 [ t="MessageDigest" n="md5" ];
+  3 [ label="MC" s="getInstance()" t="MessageDigest" l="308" ];
+  4 [ t="String" v="SHA-256" n="SHA256.ALGORITHM" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

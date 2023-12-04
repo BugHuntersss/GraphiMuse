@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="singleton()" t="Collections" l="419" ];
+  2 [ t="Requirement" n="resourceReq" ];
+  3 [ label="MC" s="buildSyntheticRequirement()" t="CapReqBuilder" l="416" ];
+  4 [ t="RequirementBuilder" n="rb" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+}

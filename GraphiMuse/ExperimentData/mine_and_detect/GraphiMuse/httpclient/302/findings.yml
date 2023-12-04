@@ -1,0 +1,1802 @@
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodDirector.java
+method: authenticateHost(HttpMethod)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="HostConfiguration" shape="ellipse" color="red" fontcolor="red" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.isDebugEnabled() L290" shape="box" ];
+    3 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "authenticateHost(HttpMethod)" {
+  nslimit=10000;
+
+    1 [ label="Log.isDebugEnabled() L290" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.info() L302" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Log.warn() L311" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 36
+probability: 0.92
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/params/DefaultHttpParams.java#setParameter(String, Object)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getContentCharSet(Header)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#shouldCloseConnection(HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/MultiThreadedHttpConnectionManager.java#handleReference(Reference)
+startline: 290
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpClient.java
+method: HttpClient(HttpClientParams)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L156" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Exception" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "HttpClient(HttpClientParams)" {
+  nslimit=10000;
+
+    1 [ label="Exception" shape="ellipse" ];
+    2 [ label="Class.newInstance() L154" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Log.warn() L156" shape="box" ];
+    4 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Log" shape="ellipse" ];
+    6 [ label="String" shape="ellipse" ];
+    7 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="throw" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 156
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/PostMethod.java
+method: addParameters(NameValuePair[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L343" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "addParameters(NameValuePair[])" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.warn() L343" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.trace() L340" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 343
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodDirector.java
+method: authenticateHost(HttpMethod)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L311" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "authenticateHost(HttpMethod)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.warn() L311" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.info() L302" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Log.isDebugEnabled() L290" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 311
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/MultiThreadedHttpConnectionManager.java
+method: getConnection(HostConfiguration)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.debug() L297" shape="box" ];
+    2 [ label="ConnectTimeoutException" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.isDebugEnabled()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getConnection(HostConfiguration)" {
+  nslimit=10000;
+
+    1 [ label="ConnectTimeoutException" shape="ellipse" ];
+    2 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Log.debug() L297" shape="box" ];
+    4 [ label="Log" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 36
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/params/DefaultHttpParams.java#setParameter(String, Object)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getContentCharSet(Header)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#shouldCloseConnection(HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/MultiThreadedHttpConnectionManager.java#handleReference(Reference)
+startline: 297
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/params/HttpMethodParams.java
+method: getCredentialCharset()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug() L302" shape="box" ];
+    5 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="recv" style="solid" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "getCredentialCharset()" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.debug() L302" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 19
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 302
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/cookie/CookiePolicy.java
+method: getDefaultSpec()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L268" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getDefaultSpec()" {
+  nslimit=10000;
+
+    1 [ label="Log.warn() L268" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Log" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 268
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/params/HttpMethodParams.java
+method: getHttpElementCharset()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L280" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getHttpElementCharset()" {
+  nslimit=10000;
+
+    1 [ label="Log.warn() L280" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 280
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/util/ExceptionUtil.java
+method: initCause(Throwable, Throwable)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L115" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Exception" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "initCause(Throwable, Throwable)" {
+  nslimit=10000;
+
+    1 [ label="Log.warn() L115" shape="box" ];
+    2 [ label="Exception" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="Method.invoke() L113" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="para" style="solid" ];
+    6 -> 2 [ label="throw" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 115
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java
+method: isOpen()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.debug() L417" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.isDebugEnabled()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "isOpen()" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.debug() L417" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 36
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/params/DefaultHttpParams.java#setParameter(String, Object)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getContentCharSet(Header)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#shouldCloseConnection(HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/MultiThreadedHttpConnectionManager.java#handleReference(Reference)
+startline: 417
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/cookie/CookieSpecBase.java
+method: match(String, int, String, boolean, Cookie)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L500" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "match(String, int, String, boolean, Cookie)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.warn() L504" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Log.warn() L500" shape="box" ];
+    4 [ label="Log.trace() L474" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 500
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/util/DateParser.java
+method: parseDate(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L135" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "parseDate(String)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.warn() L135" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 135
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/auth/DigestScheme.java
+method: processChallenge(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L209" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "processChallenge(String)" {
+  nslimit=10000;
+
+    1 [ label="Log.warn() L209" shape="box" ];
+    2 [ label="Object.equals() L205" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="Object.equals() L202" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="StringTokenizer.<init> L199" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<nullcheck> L198" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="StringTokenizer.hasMoreTokens() L200" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="StringTokenizer.nextToken() L201" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="String.trim() L201" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    6 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 209
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/HeadMethod.java
+method: readResponseBody(HttpState, HttpConnection)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L207" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readResponseBody(HttpState, HttpConnection)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.warn() L207" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug() L190" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Log.debug() L197" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Log.isDebugEnabled() L189" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Log.trace() L180" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 207
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java
+method: releaseConnection()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L1132" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "releaseConnection()" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.warn() L1132" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug() L1127" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Log.trace() L1125" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Log.debug() L1129" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 1132
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java
+method: responseBodyConsumed()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.warn() L2184" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="Log.isWarnEnabled()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "responseBodyConsumed()" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.warn() L2184" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.info() L2190" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 15
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readStatusLine(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getString(byte[], int, int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getResponseContentLength()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConstants.java#getContentBytes(String, String)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#readResponseBody(HttpConnection)
+startline: 2184
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/Wire.java
+method: wire(String, InputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug() L105" shape="box" ];
+    5 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    3 -> 4 [ label="recv" style="solid" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "wire(String, InputStream)" {
+  nslimit=10000;
+
+    1 [ label="Log.debug() L105" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="Log.debug() L119" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Object.toString() L105" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 19
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 105
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java
+method: write(int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.debug() L187" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.isDebugEnabled()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "write(int)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.debug() L187" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 36
+probability: 0.8400000000000001
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/params/DefaultHttpParams.java#setParameter(String, Object)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#getContentCharSet(Header)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java#shouldCloseConnection(HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/MultiThreadedHttpConnectionManager.java#handleReference(Reference)
+startline: 187
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java
+method: ConnectMethod()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L90" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "ConnectMethod()" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L90" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 90
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/Cookie.java
+method: Cookie(String, String, String, String, Date, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L143" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "Cookie(String, String, String, String, Date, boolean)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L143" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 143
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/GetMethod.java
+method: GetMethod(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L123" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "GetMethod(String)" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L123" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 123
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpState.java
+method: addCookie(Cookie)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L156" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "addCookie(Cookie)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L156" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 156
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/MultipartPostMethod.java
+method: addParameter(String, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L163" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "addParameter(String, String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L163" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 163
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/ExpectContinueMethod.java
+method: addRequestHeaders(HttpState, HttpConnection)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L216" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "addRequestHeaders(HttpState, HttpConnection)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L216" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 216
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/auth/DigestScheme.java
+method: authenticate(Credentials, String, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L278" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "authenticate(Credentials, String, String)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L278" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 278
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/auth/BasicScheme.java
+method: authenticate(Credentials, String, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L176" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "authenticate(Credentials, String, String)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L176" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 176
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/auth/NTLMScheme.java
+method: authenticate(NTCredentials, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L240" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "authenticate(NTCredentials, String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L240" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 240
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpClient.java
+method: executeMethod(HttpMethod)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L353" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "executeMethod(HttpMethod)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L353" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 353
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/util/HttpURLConnection.java
+method: getInputStream()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L160" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getInputStream()" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L160" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 160
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/PostMethod.java
+method: hasRequestContent()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L172" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "hasRequestContent()" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L172" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 172
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java
+method: hasRequestContent()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L170" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "hasRequestContent()" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L170" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 170
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/cookie/CookieSpecBase.java
+method: parse(String, int, String, boolean, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L142" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "parse(String, int, String, boolean, String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L142" shape="box" ];
+    3 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 142
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/cookie/NetscapeDraftSpec.java
+method: parse(String, int, String, boolean, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L138" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "parse(String, int, String, boolean, String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L138" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 138
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HeaderElement.java
+method: parseElements(char[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L221" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "parseElements(char[])" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L221" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 221
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java
+method: print(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L141" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "print(String)" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L141" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 141
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/OptionsMethod.java
+method: processResponseHeaders(HttpState, HttpConnection)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L196" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "processResponseHeaders(HttpState, HttpConnection)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L196" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 196
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpParser.java
+method: readRawLine(InputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L105" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "readRawLine(InputStream)" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L105" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 105
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/auth/HttpAuthenticator.java
+method: selectAuthScheme(Header[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L154" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "selectAuthScheme(Header[])" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L154" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 154
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/multipart/StringPart.java
+method: sendData(OutputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L157" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "sendData(OutputStream)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L157" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 157
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/multipart/FilePart.java
+method: sendDispositionHeader(OutputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L226" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "sendDispositionHeader(OutputStream)" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L226" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 226
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/methods/multipart/Part.java
+method: sendStart(OutputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L185" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "sendStart(OutputStream)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Log.trace() L185" shape="box" ];
+    3 [ label="Log" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    3 -> 2 [ label="recv" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 185
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/HttpMethodBase.java
+method: setQueryString(NameValuePair[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L460" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "setQueryString(NameValuePair[])" {
+  nslimit=10000;
+
+    1 [ label="Log" shape="ellipse" ];
+    2 [ label="Log.trace() L460" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    3 -> 2 [ label="para" style="solid" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 460
+violation_from_doc: []
+---
+file: /mubench/checkouts/httpclient/302/build/src/java/org/apache/commons/httpclient/cookie/RFC2109Spec.java
+method: validate(String, int, String, boolean, Cookie)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Log.trace() L160" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Log" shape="ellipse" ];
+    4 [ label="Log.debug()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    3 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "validate(String, int, String, boolean, Cookie)" {
+  nslimit=10000;
+
+    1 [ label="Log.trace() L160" shape="box" ];
+    2 [ label="Log" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 19
+probability: 0.19999999999999996
+pattern_examples:
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#isResponseAvailable(int)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/HttpConnection.java#releaseConnection()
+- httpclient/302/build/src/java/org/apache/commons/httpclient/methods/EntityEnclosingMethod.java#writeRequestBody(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ConnectMethod.java#execute(HttpState, HttpConnection)
+- httpclient/302/build/src/java/org/apache/commons/httpclient/ChunkedOutputStream.java#write(byte[], int, int)
+startline: 160
+violation_from_doc: []

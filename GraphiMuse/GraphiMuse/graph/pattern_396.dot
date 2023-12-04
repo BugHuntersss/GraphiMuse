@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="_arguments()" t="Options" l="100" ];
+  2 [ t="MergeOptions" n="options" ];
+  2 -> 1 [ label="R" ];
+}

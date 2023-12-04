@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toDateTime()" t="YearMonthDay" l="667" ];
+  2 [ t="YearMonthDay" n="base" ];
+  3 [ label="I" t="YearMonthDay" l="663" ];
+  4 [ t="Chronology" n="TestYearMonthDay_Basics.COPTIC_PARIS" ];
+  5 [ t="TimeOfDay" v="null" n="TimeOfDay.MIDNIGHT" ];
+  6 [ t="Chronology" n="TestYearMonthDay_Basics.COPTIC_PARIS" ];
+  7 [ t="TimeOfDay" v="null" n="TimeOfDay.MIDNIGHT" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  7 -> 1 [ label="P" ];
+  5 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="P" ];
+  4 -> 3 [ label="P" ];
+}

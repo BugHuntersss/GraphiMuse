@@ -1,0 +1,26 @@
+digraph "AUG" {
+
+  1 [ label="CharRange.toString()" shape="box" ];
+  2 [ label="CharRange" shape="ellipse" ];
+  3 [ label="CharRange.isNegated()" shape="box" ];
+  4 [ label="CharRange.getStart()" shape="box" ];
+  5 [ label="CharRange.getEnd()" shape="box" ];
+  6 [ label="CharRange.<init>" shape="box" ];
+  7 [ label="boolean" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  6 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="order" style="bold" ];
+  6 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="order" style="bold" ];
+  4 -> 3 [ label="order" style="bold" ];
+  5 -> 3 [ label="order" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  2 -> 4 [ label="recv" style="solid" ];
+  6 -> 4 [ label="order" style="bold" ];
+  6 -> 5 [ label="order" style="bold" ];
+  4 -> 5 [ label="order" style="bold" ];
+  2 -> 5 [ label="recv" style="solid" ];
+  7 -> 6 [ label="para" style="solid" ];
+}

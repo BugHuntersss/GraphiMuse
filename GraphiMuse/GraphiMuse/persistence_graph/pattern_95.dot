@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="IO.collect()" shape="box" ];
+  2 [ label="File" shape="ellipse" ];
+  3 [ label="File.isFile()" shape="box" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="sel" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+}

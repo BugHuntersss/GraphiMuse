@@ -1,0 +1,20 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="format()" t="Formatter" l="156" ];
+  2 [ t="Formatter" n="setup" ];
+  3 [ label="MC" s="close()" t="AutoCloseable" ];
+  4 [ label="MC" s="toString()" t="Object" l="158" ];
+  5 [ label="I" t="Formatter" l="150" ];
+  6 [ t="String" n="packageName" ];
+  6 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="O" ];
+  5 -> 2 [ label="D" ];
+  4 -> 3 [ label="O" ];
+  1 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+  5 -> 3 [ label="O" ];
+  2 -> 4 [ label="R" ];
+  5 -> 4 [ label="O" ];
+  1 -> 4 [ label="O" ];
+}

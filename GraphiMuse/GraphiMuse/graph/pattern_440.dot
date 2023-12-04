@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setRequestProperty()" t="URLConnection" l="89" ];
+  2 [ t="URLConnection" n="con" ];
+  3 [ t="String" n="host" ];
+  4 [ t="String" n="host" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

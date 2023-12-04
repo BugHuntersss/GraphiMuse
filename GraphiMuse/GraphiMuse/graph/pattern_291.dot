@@ -1,0 +1,41 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setRunFw()" t="BndEditModel" l="103" ];
+  2 [ t="BndEditModel" n="model" ];
+  3 [ label="I" t="BndEditModel" l="102" ];
+  4 [ t="String" v="org.apache.felix.framework;version='4.2.1'" ];
+  5 [ label="I" t="BndrunResolveContext" l="109" ];
+  6 [ t="MockRegistry" n="registry" ];
+  7 [ label="MC" s="addPlugin()" t="MockRegistry" l="99" ];
+  8 [ label="I" t="MockRegistry" l="96" ];
+  9 [ t="LogService" n="ResolveTest.log" ];
+  10 [ t="UNKNOWN" n="dummy_" ];
+  11 [ label="MC" s="createRepo()" t="Utils" l="100" ];
+  12 [ t="String" v="2" ];
+  11 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  8 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  7 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  8 -> 3 [ label="O" ];
+  7 -> 3 [ label="O" ];
+  11 -> 3 [ label="O" ];
+  8 -> 5 [ label="O" ];
+  9 -> 5 [ label="P" ];
+  2 -> 5 [ label="P" ];
+  11 -> 5 [ label="O" ];
+  1 -> 5 [ label="O" ];
+  6 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  3 -> 5 [ label="O" ];
+  8 -> 6 [ label="D" ];
+  6 -> 7 [ label="R" ];
+  11 -> 7 [ label="O" ];
+  10 -> 7 [ label="P" ];
+  8 -> 7 [ label="O" ];
+  11 -> 10 [ label="D" ];
+  12 -> 11 [ label="P" ];
+  8 -> 11 [ label="O" ];
+}

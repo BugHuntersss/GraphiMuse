@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="Iterator.next()" shape="box" ];
+  2 [ label="Iterator" shape="ellipse" ];
+  3 [ label="Iterator.hasNext()" shape="box" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="rep" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+}

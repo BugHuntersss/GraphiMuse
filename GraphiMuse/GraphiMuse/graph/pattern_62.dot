@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setManifest()" t="Jar" l="309" ];
+  2 [ t="Jar" n="outer" ];
+  3 [ t="Manifest" n="manifest" ];
+  4 [ label="MC" s="getMainAttributes()" t="Manifest" l="298" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  3 -> 4 [ label="R" ];
+}

@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setIgnoredMatcher()" t="StrTokenizer" l="176" ];
+  2 [ t="StrTokenizer" n="tok" ];
+  3 [ label="MC" s="setIgnoreEmptyTokens()" t="StrTokenizer" l="177" ];
+  4 [ label="I" t="StrTokenizer" l="173" ];
+  5 [ t="StrMatcher" n="dummy_" ];
+  6 [ t="boolean" v="true" ];
+  7 [ t="String" n="input" ];
+  8 [ t="String" v="a   b c "d e" f " ];
+  5 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  4 -> 2 [ label="D" ];
+  6 -> 3 [ label="P" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+  1 -> 3 [ label="O" ];
+  7 -> 4 [ label="P" ];
+  8 -> 7 [ label="D" ];
+}

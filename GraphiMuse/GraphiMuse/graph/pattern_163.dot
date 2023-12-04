@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setByteBoolean()" t="BitField" l="200" ];
+  2 [ t="byte" n="dummy_" ];
+  3 [ label="C" t="byte" l="200" ];
+  4 [ t="int" v="0" ];
+  5 [ t="BitField" n="dummy_" ];
+  6 [ label="I" t="BitField" l="200" ];
+  7 [ t="int" v="0" ];
+  8 [ t="boolean" v="true" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  5 -> 1 [ label="R" ];
+  8 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="P" ];
+}

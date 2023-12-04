@@ -1,0 +1,30 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isEffective()" t="AbstractResolveContext" l="156" ];
+  2 [ t="BndrunResolveContext" n="context" ];
+  3 [ t="Requirement" n="anotherFilteredActiveReq" ];
+  4 [ label="MC" s="buildSyntheticRequirement()" t="UNKNOWN" l="148" ];
+  5 [ t="UNKNOWN" n="dummy_" ];
+  6 [ label="MC" s="addDirective()" t="CapReqBuilder" l="148" ];
+  7 [ t="Namespace.EFFECTIVE_RESOLVE" v="null" n="Namespace.EFFECTIVE_RESOLVE" ];
+  8 [ t="Namespace.EFFECTIVE_RESOLVE" v="null" n="Namespace.EFFECTIVE_RESOLVE" ];
+  9 [ t="CapReqBuilder" n="dummy_" ];
+  10 [ label="I" t="CapReqBuilder" l="148" ];
+  11 [ t="String" v="dummy.ns" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  10 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  10 -> 4 [ label="O" ];
+  5 -> 4 [ label="R" ];
+  6 -> 4 [ label="O" ];
+  6 -> 5 [ label="D" ];
+  9 -> 6 [ label="R" ];
+  10 -> 6 [ label="O" ];
+  7 -> 6 [ label="P" ];
+  8 -> 6 [ label="P" ];
+  10 -> 9 [ label="D" ];
+  11 -> 10 [ label="P" ];
+}

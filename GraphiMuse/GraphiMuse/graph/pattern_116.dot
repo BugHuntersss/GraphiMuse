@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="replaceEach()" t="StringUtils" l="1049" ];
+  2 [ t="String[]" n="dummy_" ];
+  3 [ t="String[]" n="dummy_" ];
+  4 [ label="AC" t="String" l="1049" ];
+  5 [ t="int" v="0" ];
+  6 [ t="String[]" n="dummy_" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

@@ -1,0 +1,91 @@
+detectionLoadTime: 4792
+detectionTime: 529
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 285
+numberOfTrainingExamples: 285
+numberOfUsagesInTrainingExamples:
+  AESUtils: 4
+  AbstractStringBuilder: 1
+  Appendable: 1
+  ArrayList: 11
+  AutoCloseable: 4
+  Base64: 4
+  Boolean: 10
+  CharSequence: 2
+  Cipher: 1
+  Class: 3
+  Collection: 5
+  ConfigUtils: 11
+  Configuration: 1
+  ConfigurationParser: 1
+  Cookie: 3
+  Date: 20
+  DateFormat: 3
+  DefaultShellCallback: 1
+  Exception: 3
+  ExtIconTools: 1
+  FTPClient: 4
+  FTPFile: 2
+  FTPHelper: 9
+  File: 7
+  FileInputStream: 2
+  FileOutputStream: 1
+  FileWriter: 1
+  HashMap: 1
+  HttpServletRequest: 2
+  HttpServletResponse: 2
+  IOException: 5
+  InputStream: 2
+  Integer: 35
+  Iterable: 3
+  Iterator: 3
+  JsonGenerator: 2
+  JsonResult: 1
+  Key: 1
+  KeyGenerator: 1
+  List: 7
+  Locale: 1
+  Logger: 5
+  Map: 2
+  Matcher: 4
+  MessageDigest: 2
+  MyBatisGenerator: 1
+  Object: 8
+  ObjectMapper: 3
+  OutputStream: 1
+  Pagination: 2
+  ParseException: 1
+  Pattern: 4
+  Permission: 1
+  PrintStream: 1
+  Random: 1
+  SecUtils: 3
+  SecretKey: 1
+  SecretKeySpec: 1
+  SecureRandom: 1
+  ServletContext: 1
+  SimpleDateFormat: 3
+  String: 64
+  StringBuilder: 2
+  StringUtils: 1
+  SystemUtils: 1
+  Sytem: 1
+  T: 1
+  TextUtils: 2
+  Throwable: 7
+  TypeReference: 1
+  URLDecoder: 1
+  URLEncoder: 1
+  Writer: 1
+  byte: 2
+  char: 2
+numberOfViolations: 0
+result: success
+runtime: 23.79061770439148
+timestamp: 1700809989
+trainingLoadTime: 14859
+trainingTime: 373

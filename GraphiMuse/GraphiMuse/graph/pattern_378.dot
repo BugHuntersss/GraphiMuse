@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="entrySet()" t="Map" l="331" ];
+  2 [ t="Map" n="dirs" ];
+  2 -> 1 [ label="R" ];
+}

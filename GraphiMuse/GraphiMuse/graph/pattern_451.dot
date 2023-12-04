@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="putResource()" t="Jar" l="277" ];
+  2 [ t="Jar" n="outer" ];
+  3 [ t="JarResource" n="dummy_" ];
+  4 [ t="String" v="target/aopalliance.jar" ];
+  5 [ label="I" t="Jar" l="258" ];
+  6 [ t="File" n="binary" ];
+  5 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+  5 -> 2 [ label="D" ];
+  6 -> 5 [ label="P" ];
+}

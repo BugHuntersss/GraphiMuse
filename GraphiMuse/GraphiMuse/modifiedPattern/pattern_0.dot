@@ -1,0 +1,35 @@
+digraph "AUG" {
+
+  1 [ label="Iterator.next()" shape="box" ];
+  2 [ label="Iterator" shape="ellipse" ];
+  3 [ label="Iterator.hasNext()" shape="box" ];
+  4 [ label="Iterable.iterator()" shape="box" ];
+  5 [ label="List" shape="ellipse" ];
+  6 [ label="Collection.size()" shape="box" ];
+  7 [ label="<nullcheck>" shape="box" ];
+  6 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="rep" style="bold" ];
+  6 -> 1 [ label="sel" style="bold" ];
+  4 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="rep" style="bold" ];
+  3 -> 1 [ label="order" style="bold" ];
+  7 -> 1 [ label="order" style="bold" ];
+  7 -> 1 [ label="sel" style="bold" ];
+  4 -> 2 [ label="def" style="solid" ];
+  7 -> 3 [ label="sel" style="bold" ];
+  6 -> 3 [ label="sel" style="bold" ];
+  7 -> 3 [ label="order" style="bold" ];
+  4 -> 3 [ label="order" style="bold" ];
+  6 -> 3 [ label="order" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  7 -> 4 [ label="sel" style="bold" ];
+  6 -> 4 [ label="sel" style="bold" ];
+  6 -> 4 [ label="order" style="bold" ];
+  7 -> 4 [ label="order" style="bold" ];
+  5 -> 4 [ label="recv" style="solid" ];
+  7 -> 6 [ label="order" style="bold" ];
+  5 -> 6 [ label="recv" style="solid" ];
+  7 -> 6 [ label="sel" style="bold" ];
+  5 -> 7 [ label="para" style="solid" ];
+}

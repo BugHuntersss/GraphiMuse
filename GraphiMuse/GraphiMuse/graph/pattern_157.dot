@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="squeeze()" t="CharSetUtils" l="103" ];
+  2 [ t="String" v="fooffooff" ];
+  3 [ t="String" v="" ];
+  4 [ label="AC" t="" l="103" ];
+  5 [ t="String" v="e" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+  4 -> 2 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

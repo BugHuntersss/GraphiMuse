@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="entrySet()" t="Map" l="46" ];
+  2 [ t="Map" n="dummy_" ];
+  3 [ label="MC" s="getResources()" t="Jar" l="46" ];
+  4 [ t="Jar" n="jar" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+}

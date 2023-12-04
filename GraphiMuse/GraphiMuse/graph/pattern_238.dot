@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toStandardHours()" t="Period" l="1081" ];
+  2 [ t="Period" n="test" ];
+  3 [ label="I" t="Period" l="1080" ];
+  4 [ t="int" v="0" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

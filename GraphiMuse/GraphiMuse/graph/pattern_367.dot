@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="sleep()" t="Thread" l="241" ];
+  2 [ t="int" v="100" ];
+  2 -> 1 [ label="P" ];
+}

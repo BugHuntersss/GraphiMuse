@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="withFieldAdded()" t="LocalTime" l="492" ];
+  2 [ t="LocalTime" n="test" ];
+  3 [ label="I" t="LocalTime" l="491" ];
+  4 [ t="int" v="0" ];
+  5 [ t="DurationFieldType" n="dummy_" ];
+  6 [ label="MC" s="hours()" t="DurationFieldType" l="492" ];
+  7 [ t="int" v="0" ];
+  2 -> 1 [ label="R" ];
+  7 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  6 -> 5 [ label="D" ];
+  3 -> 6 [ label="O" ];
+}

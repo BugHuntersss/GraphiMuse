@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="update()" t="MessageDigest" l="43" ];
+  2 [ t="byte[]" n="b" ];
+  2 -> 1 [ label="P" ];
+}

@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addToCopy()" t="UNKNOWN" l="983" ];
+  2 [ t="int" v="22" ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="dayOfWeek()" t="DateTime" l="983" ];
+  5 [ t="DateTime" n="test" ];
+  3 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="R" ];
+}

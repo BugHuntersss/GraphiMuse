@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="readFully()" t="DataInput" l="255" ];
+  2 [ t="byte[]" n="signature" ];
+  3 [ t="DataInputStream" n="in" ];
+  4 [ label="AC" t="byte" l="254" ];
+  5 [ t="int" n="compressedSize" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 2 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

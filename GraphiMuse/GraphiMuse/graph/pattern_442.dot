@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addDirective()" t="CapReqBuilder" l="176" ];
+  2 [ t="Namespace.EFFECTIVE_RESOLVE" v="null" n="Namespace.EFFECTIVE_RESOLVE" ];
+  3 [ t="CapReqBuilder" n="reqb" ];
+  4 [ label="I" t="CapReqBuilder" l="176" ];
+  5 [ t="ExecutionEnvironmentNamespace.EXECUTION_ENVIRONMENT_NAMESPACE" v="null" n="ExecutionEnvironmentNamespace.EXECUTION_ENVIRONMENT_NAMESPACE" ];
+  6 [ t="IdentityNamespace.CAPABILITY_SINGLETON_DIRECTIVE" v="null" n="IdentityNamespace.CAPABILITY_SINGLETON_DIRECTIVE" ];
+  6 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

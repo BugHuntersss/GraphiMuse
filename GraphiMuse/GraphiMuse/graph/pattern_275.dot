@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="read()" t="Decoder" l="409" ];
+  2 [ t="Decoder" n="r" ];
+  2 -> 1 [ label="R" ];
+}

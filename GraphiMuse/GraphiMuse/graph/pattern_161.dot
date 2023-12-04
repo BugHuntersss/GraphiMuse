@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toHexString()" t="Integer" l="166" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ label="MC" s="identityHashCode()" t="System" l="166" ];
+  4 [ t="Integer" n="val" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

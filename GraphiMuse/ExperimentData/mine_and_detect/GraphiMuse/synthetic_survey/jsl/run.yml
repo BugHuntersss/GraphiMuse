@@ -1,0 +1,44 @@
+detectionLoadTime: 4083
+detectionTime: 579
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 16
+numberOfTrainingExamples: 16
+numberOfUsagesInTrainingExamples:
+  AutoCloseable: 2
+  ByteBuffer: 3
+  Collection: 2
+  Component: 2
+  EnumSet: 1
+  File: 4
+  FileChannel: 2
+  FileInputStream: 1
+  FileOutputStream: 2
+  FileSystem: 1
+  FileSystems: 1
+  Files: 1
+  HashMap: 1
+  Iterable: 3
+  Iterator: 3
+  JFrame: 2
+  List: 1
+  Map: 2
+  Object: 6
+  Path: 3
+  PrintWriter: 2
+  ReadableByteChannel: 1
+  Set: 1
+  StandardOpenOption: 2
+  String: 6
+  Window: 1
+  WritableByteChannel: 2
+  Writer: 2
+numberOfViolations: 0
+result: success
+runtime: 15.891210317611694
+timestamp: 1700809989
+trainingLoadTime: 9456
+trainingTime: 211

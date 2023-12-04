@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toByteArray()" t="ByteArrayOutputStream" l="224" ];
+  2 [ t="ByteArrayOutputStream" n="baos" ];
+  3 [ label="I" t="ByteArrayOutputStream" l="218" ];
+  4 [ label="I" t="ObjectOutputStream" l="219" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  3 -> 4 [ label="O" ];
+  2 -> 4 [ label="P" ];
+}

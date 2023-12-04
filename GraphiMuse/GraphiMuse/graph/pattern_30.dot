@@ -1,0 +1,22 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="add()" t="ArrayUtils" l="418" ];
+  2 [ t="double[]" n="dummy_" ];
+  3 [ t="long[]" n="dummy_" ];
+  4 [ t="char" v="'c'" ];
+  5 [ t="IndexOutOfBoundsException" n="e" ];
+  6 [ label="MC" s="equals()" t="Arrays" l="559" ];
+  7 [ label="Ca" t="IndexOutOfBoundsException" ];
+  8 [ t="long[]" n="dummy_" ];
+  9 [ t="long[]" n="dummy_" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  1 -> 5 [ label="TE" ];
+  1 -> 6 [ label="O" ];
+  7 -> 6 [ label="O" ];
+  9 -> 6 [ label="P" ];
+  8 -> 6 [ label="P" ];
+  5 -> 7 [ label="P" ];
+  1 -> 7 [ label="O" ];
+}

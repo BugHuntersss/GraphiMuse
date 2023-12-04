@@ -1,0 +1,181 @@
+file: /mubench/checkouts/technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java
+method: getImage(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ImageIO.read() L419" shape="box" ];
+    2 [ label="IOException" shape="ellipse" ];
+    3 [ label="InputStream" shape="ellipse" ];
+    4 [ label="ResourceUtils.getResourceAsStream() L419" shape="box" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="File.exists()" shape="box" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 2 [ label="throw" style="solid" ];
+    4 -> 3 [ label="def" style="solid" ];
+    5 -> 4 [ label="para" style="solid" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getImage(String)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="ResourceUtils.getResourceAsStream() L419" shape="box" ];
+    3 [ label="ImageIO.read() L419" shape="box" ];
+    4 [ label="InputStream" shape="ellipse" ];
+    5 [ label="BufferedImage" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="IOException" shape="ellipse" ];
+    7 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    8 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Throwable.printStackTrace() L421" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    7 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="def" style="solid" ];
+    2 -> 3 [ label="order" style="bold" ];
+    4 -> 3 [ label="para" style="solid" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="throw" style="solid" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 10
+probability: 0.9999
+pattern_examples:
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getShadow(JPanel, List, int, int, BufferedImage)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getIcon(String, int, int)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/technic/PackInfo.java#loadBackup(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getImage(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getSkinImage(String)
+startline: 419
+violation_from_doc: []
+---
+file: /mubench/checkouts/technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java
+method: getSkinImage(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ImageIO.read() L161" shape="box" ];
+    2 [ label="IOException" shape="ellipse" ];
+    3 [ label="InputStream" shape="ellipse" ];
+    4 [ label="ResourceUtils.getResourceAsStream() L161" shape="box" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="File.exists()" shape="box" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 2 [ label="throw" style="solid" ];
+    4 -> 3 [ label="def" style="solid" ];
+    5 -> 4 [ label="para" style="solid" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getSkinImage(String)" {
+  nslimit=10000;
+
+    1 [ label="ImageIO.read() L161" shape="box" ];
+    2 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="InputStream" shape="ellipse" ];
+    4 [ label="BufferedImage" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="IOException" shape="ellipse" ];
+    6 [ label="ResourceUtils.getResourceAsStream() L161" shape="box" ];
+    7 [ label="String" shape="ellipse" ];
+    8 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="RuntimeException.<init> L163" shape="box" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" ];
+    2 -> 1 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="throw" style="solid" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="def" style="solid" ];
+    5 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="para" style="solid" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 10
+probability: 0.9999
+pattern_examples:
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getShadow(JPanel, List, int, int, BufferedImage)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getIcon(String, int, int)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/technic/PackInfo.java#loadBackup(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getImage(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getSkinImage(String)
+startline: 161
+violation_from_doc: []
+---
+file: /mubench/checkouts/technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/technic/PackInfo.java
+method: loadBackup(String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ImageIO.read() L258" shape="box" ];
+    2 [ label="IOException" shape="ellipse" ];
+    3 [ label="InputStream" shape="ellipse" ];
+    4 [ label="ResourceUtils.getResourceAsStream() L258" shape="box" ];
+    5 [ label="String" shape="ellipse" ];
+    6 [ label="File.exists()" shape="box" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 2 [ label="throw" style="solid" ];
+    4 -> 3 [ label="def" style="solid" ];
+    5 -> 4 [ label="para" style="solid" ];
+    6 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "loadBackup(String)" {
+  nslimit=10000;
+
+    1 [ label="InputStream" shape="ellipse" ];
+    2 [ label="ResourceUtils.getResourceAsStream() L258" shape="box" ];
+    3 [ label="ImageIO.read() L258" shape="box" ];
+    4 [ label="BufferedImage" shape="ellipse" color="gray" fontcolor="gray" ];
+    5 [ label="IOException" shape="ellipse" ];
+    6 [ label="String" shape="ellipse" ];
+    7 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Throwable.printStackTrace() L260" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="para" style="solid" ];
+    6 -> 2 [ label="para" style="solid" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" ];
+    3 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="throw" style="solid" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 10
+probability: 0.9999
+pattern_examples:
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getShadow(JPanel, List, int, int, BufferedImage)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getIcon(String, int, int)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/technic/PackInfo.java#loadBackup(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/skin/TechnicLoginFrame.java#getImage(String)
+- technic-launcher-sp/7809682/build/src/main/java/org/spoutcraft/launcher/util/ImageUtils.java#getSkinImage(String)
+startline: 258
+violation_from_doc: []

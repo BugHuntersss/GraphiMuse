@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="versions()" t="RepositoryPlugin" l="3711" ];
+  2 [ t="String" n="bsn" ];
+  3 [ label="MC" s="next()" t="Iterator" ];
+  4 [ t="InfoRepository" n="repo" ];
+  5 [ t="Iterator" n="dummy_" ];
+  6 [ label="MC" s="hasNext()" t="Iterator" ];
+  7 [ label="MC" s="iterator()" t="Iterable" ];
+  8 [ t="List" n="bsns" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  7 -> 1 [ label="O" ];
+  6 -> 1 [ label="Re" ];
+  6 -> 1 [ label="O" ];
+  4 -> 1 [ label="R" ];
+  7 -> 1 [ label="Re" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="O" ];
+  7 -> 3 [ label="O" ];
+  6 -> 3 [ label="Re" ];
+  7 -> 3 [ label="Re" ];
+  5 -> 3 [ label="R" ];
+  7 -> 5 [ label="D" ];
+  5 -> 6 [ label="R" ];
+  7 -> 6 [ label="O" ];
+  8 -> 7 [ label="R" ];
+}

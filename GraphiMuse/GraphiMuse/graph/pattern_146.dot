@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="add()" t="Fraction" l="889" ];
+  2 [ t="Fraction" n="f1" ];
+  3 [ label="MC" s="getFraction()" t="Fraction" l="887" ];
+  4 [ t="int" v="32768" ];
+  5 [ t="Fraction" n="f2" ];
+  6 [ label="MC" s="getFraction()" t="Fraction" l="888" ];
+  7 [ t="int" v="1" ];
+  3 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="P" ];
+  3 -> 6 [ label="O" ];
+}

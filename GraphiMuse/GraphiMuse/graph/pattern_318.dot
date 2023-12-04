@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="debug()" t="Logger" l="172" ];
+  2 [ t="Requirement" n="r" ];
+  3 [ label="MC" s="debug()" t="Logger" l="186" ];
+  4 [ t="String" v="No username/password found for URL '{}'." ];
+  5 [ t="Logger" n="HttpBasicAuthURLConnector.logger" ];
+  6 [ t="String" v="No username/password found for URL '{}'." ];
+  6 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  5 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  2 -> 3 [ label="P" ];
+  5 -> 3 [ label="R" ];
+}

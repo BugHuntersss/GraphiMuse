@@ -1,0 +1,30 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setImportPackage()" t="Domain" l="153" ];
+  2 [ t="Builder" n="a" ];
+  3 [ label="MC" s="addClasspath()" t="Analyzer" l="151" ];
+  4 [ label="MC" s="check()" t="Processor" l="156" ];
+  5 [ label="MC" s="build()" t="Builder" l="155" ];
+  6 [ label="MC" s="setProperty()" t="Processor" l="154" ];
+  7 [ t="Jar" n="bjarb" ];
+  8 [ t="String" v="test.packageinfo,*" ];
+  9 [ t="String" v="dummy" ];
+  2 -> 1 [ label="R" ];
+  8 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  7 -> 3 [ label="P" ];
+  2 -> 3 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  2 -> 4 [ label="R" ];
+  6 -> 4 [ label="O" ];
+  3 -> 4 [ label="O" ];
+  1 -> 5 [ label="O" ];
+  2 -> 5 [ label="R" ];
+  3 -> 5 [ label="O" ];
+  6 -> 5 [ label="O" ];
+  1 -> 6 [ label="O" ];
+  2 -> 6 [ label="R" ];
+  9 -> 6 [ label="P" ];
+  3 -> 6 [ label="O" ];
+}

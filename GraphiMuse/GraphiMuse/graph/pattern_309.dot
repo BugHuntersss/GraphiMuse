@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="cnv()" t="Converter" l="436" ];
+  2 [ t="XMLArtifact" n="xmlArtifact" ];
+  3 [ t="long[]" n="dummy_" ];
+  4 [ label="I" t="TypeReference" l="436" ];
+  5 [ t="TypeReference" v="null" n="TypeReference" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  4 -> 2 [ label="D" ];
+  5 -> 4 [ label="R" ];
+}

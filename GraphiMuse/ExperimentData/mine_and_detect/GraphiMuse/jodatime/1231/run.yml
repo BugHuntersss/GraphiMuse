@@ -1,0 +1,45 @@
+detectionLoadTime: 6117
+detectionTime: 1276
+maxPatternSupport: 10
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 40
+numberOfPatterns: 2
+numberOfTargets: 164
+numberOfTrainingExamples: 164
+numberOfUsagesInTrainingExamples:
+  AbstractInstant: 5
+  Class: 12
+  Date: 5
+  DateMidnight: 2
+  DateTime: 14
+  DateTimeZone: 3
+  Duration: 1
+  Integer: 1
+  Interval: 3
+  LocalDate: 5
+  LocalTime: 15
+  NullableType: 19
+  Number: 1
+  Object: 95
+  Period: 2
+  PersistentDateTime: 1
+  PreparedStatement: 11
+  ReadableInstant: 4
+  ReadableInterval: 2
+  ReadablePartial: 2
+  ResultSet: 11
+  Serializable: 22
+  String: 35
+  Time: 2
+  TimeOfDay: 10
+  Timestamp: 2
+  UnsupportedOperationException: 9
+  YearMonthDay: 5
+  int: 1
+numberOfViolations: 9
+result: success
+runtime: 23.176008939743042
+timestamp: 1700988872
+trainingLoadTime: 9644
+trainingTime: 394

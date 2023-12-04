@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="booleanValue()" t="Boolean" l="543" ];
+  2 [ t="Boolean" n="dummy_" ];
+  3 [ label="MC" s="xor()" t="BooleanUtils" l="543" ];
+  4 [ t="Boolean[]" n="dummy_" ];
+  5 [ label="AC" t="Boolean" l="545" ];
+  6 [ t="Boolean" v="null" n="Boolean.TRUE" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  5 -> 4 [ label="D" ];
+  6 -> 5 [ label="P" ];
+}

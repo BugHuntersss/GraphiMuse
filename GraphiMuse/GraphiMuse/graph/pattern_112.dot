@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="iterator()" t="Iterable" l="243" ];
+  2 [ t="List" n="classNames" ];
+  3 [ label="MC" s="size()" t="Collection" l="241" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  2 -> 3 [ label="R" ];
+}

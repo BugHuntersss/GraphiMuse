@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="add()" t="Set" l="220" ];
+  2 [ t="Requirement" n="req" ];
+  3 [ t="Set" n="done" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+}

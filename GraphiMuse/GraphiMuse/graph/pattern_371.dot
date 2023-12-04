@@ -1,0 +1,48 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="check()" t="Processor" l="105" ];
+  2 [ t="Builder" n="a" ];
+  3 [ label="MC" s="build()" t="Builder" l="100" ];
+  4 [ label="MC" s="close()" t="AutoCloseable" l="111" ];
+  5 [ label="MC" s="addClasspath()" t="Analyzer" l="94" ];
+  6 [ label="MC" s="setProperty()" t="Processor" l="99" ];
+  7 [ label="I" t="Builder" l="90" ];
+  8 [ t="String" v="test.annotationheaders.attrs" ];
+  9 [ t="File" n="dummy_" ];
+  10 [ label="I" t="File" l="94" ];
+  11 [ t="String" v="jar/osgi-3.0.0.jar" ];
+  3 -> 1 [ label="O" ];
+  7 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  10 -> 1 [ label="O" ];
+  7 -> 2 [ label="D" ];
+  6 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+  5 -> 3 [ label="O" ];
+  10 -> 3 [ label="O" ];
+  7 -> 3 [ label="O" ];
+  7 -> 4 [ label="O" ];
+  1 -> 4 [ label="O" ];
+  5 -> 4 [ label="F" ];
+  3 -> 4 [ label="F" ];
+  6 -> 4 [ label="O" ];
+  1 -> 4 [ label="F" ];
+  2 -> 4 [ label="R" ];
+  10 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  3 -> 4 [ label="O" ];
+  2 -> 5 [ label="R" ];
+  9 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  10 -> 5 [ label="O" ];
+  7 -> 6 [ label="O" ];
+  2 -> 6 [ label="R" ];
+  5 -> 6 [ label="O" ];
+  10 -> 6 [ label="O" ];
+  8 -> 6 [ label="P" ];
+  10 -> 9 [ label="D" ];
+  7 -> 10 [ label="O" ];
+  11 -> 10 [ label="P" ];
+}

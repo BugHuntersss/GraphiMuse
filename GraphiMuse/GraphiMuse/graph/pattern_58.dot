@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="checkStream()" t="IRepositoryContentProvider" l="45" ];
+  2 [ t="ByteArrayInputStream" n="stream" ];
+  3 [ t="ObrContentProvider" n="dummy_" ];
+  4 [ t="ByteArrayInputStream" n="stream" ];
+  5 [ label="I" t="ByteArrayInputStream" l="44" ];
+  6 [ t="byte[]" n="dummy_" ];
+  7 [ label="MC" s="getBytes()" t="String" l="44" ];
+  8 [ t="String" n="testdata" ];
+  9 [ label="I" t="ObrContentProvider" l="45" ];
+  10 [ t="BundleIndexer" v="null" n="indexer" ];
+  3 -> 1 [ label="R" ];
+  9 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  7 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  5 -> 2 [ label="D" ];
+  9 -> 3 [ label="D" ];
+  6 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  7 -> 6 [ label="D" ];
+  8 -> 7 [ label="R" ];
+  5 -> 9 [ label="O" ];
+  10 -> 9 [ label="P" ];
+  7 -> 9 [ label="O" ];
+}

@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="loadClass()" t="ClassLoader" l="114" ];
+  2 [ t="URLClassLoader" n="urlCL1" ];
+  3 [ t="String" v="org.apache.commons.lang.enums.ColorEnum" ];
+  4 [ label="I" t="URLClassLoader" l="112" ];
+  5 [ t="URL[]" n="dummy_" ];
+  6 [ label="MC" s="getURLs()" t="URLClassLoader" l="112" ];
+  7 [ t="URLClassLoader" n="urlCL" ];
+  8 [ t="null" v="null" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  4 -> 2 [ label="D" ];
+  5 -> 4 [ label="P" ];
+  8 -> 4 [ label="P" ];
+  6 -> 4 [ label="O" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="R" ];
+}

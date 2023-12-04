@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setAccessible()" t="AccessibleObject" l="981" ];
+  2 [ t="boolean" v="true" ];
+  3 [ t="Method" n="m" ];
+  4 [ t="Throwable" n="t" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  1 -> 4 [ label="TE" ];
+}

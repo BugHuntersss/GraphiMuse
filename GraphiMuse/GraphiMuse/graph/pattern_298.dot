@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isSnapshot()" t="Version" l="30" ];
+  2 [ t="Version" n="dummy_" ];
+  3 [ label="I" t="Version" l="30" ];
+  4 [ t="int" v="3" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

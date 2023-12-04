@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="registerService()" t="BundleContext" l="33" ];
+  2 [ t="Diagnostics" v="null" n="d" ];
+  3 [ t="String[]" n="dummy_" ];
+  4 [ t="BundleContext" n="context" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+}

@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="ToStringBuilder" l="126" ];
+  2 [ t="ToStringBuilder" n="dummy_" ];
+  3 [ label="I" t="ToStringBuilder" l="126" ];
+  4 [ t="Integer" v="null" n="base" ];
+  5 [ t="long[]" n="array" ];
+  3 -> 1 [ label="O" ];
+  5 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

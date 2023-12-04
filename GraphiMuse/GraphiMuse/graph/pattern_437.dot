@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isSymbolicLink()" t="IO" l="222" ];
+  2 [ t="File" n="f" ];
+  2 -> 1 [ label="P" ];
+}

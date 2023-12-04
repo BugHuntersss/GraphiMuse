@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="ArrayUtils.toPrimitive()" shape="box" ];
+  2 [ label="Character.MAX_VALUE" shape="ellipse" ];
+  3 [ label="{}" shape="ellipse" ];
+  4 [ label="{}" shape="box" ];
+  5 [ label="Boolean.TRUE" shape="ellipse" ];
+  6 [ label="Boolean.TRUE" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="para" style="solid" ];
+  4 -> 3 [ label="def" style="solid" ];
+  6 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="para" style="solid" ];
+}

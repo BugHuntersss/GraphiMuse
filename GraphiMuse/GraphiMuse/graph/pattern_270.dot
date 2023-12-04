@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseInt()" t="Integer" l="143" ];
+  2 [ t="String" n="hex" ];
+  2 -> 1 [ label="P" ];
+}

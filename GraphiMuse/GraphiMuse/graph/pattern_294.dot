@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="cnv()" t="Converter" l="164" ];
+  2 [ t="Class" v="null" n="long[].class" ];
+  2 -> 1 [ label="P" ];
+}

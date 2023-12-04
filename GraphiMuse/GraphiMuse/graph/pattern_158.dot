@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="ToStringBuilder" l="91" ];
+  2 [ t="String" v="a" ];
+  3 [ t="ToStringBuilder" n="dummy_" ];
+  4 [ label="MC" s="appendSuper()" t="ToStringBuilder" l="91" ];
+  5 [ t="ToStringBuilder" n="dummy_" ];
+  6 [ label="I" t="ToStringBuilder" l="91" ];
+  7 [ t="Integer" v="null" n="base" ];
+  8 [ t="String" v="null" n="SystemUtils.LINE_SEPARATOR" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+  6 -> 4 [ label="O" ];
+  8 -> 4 [ label="P" ];
+  5 -> 4 [ label="R" ];
+  6 -> 5 [ label="D" ];
+  7 -> 6 [ label="P" ];
+}

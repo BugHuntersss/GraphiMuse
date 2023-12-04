@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="analyzeResource()" t="ResourceAnalyzer" l="23" ];
+  2 [ t="BundleAnalyzer" n="a" ];
+  3 [ t="JarResource" n="dummy_" ];
+  4 [ t="LinkedList" n="reqs" ];
+  5 [ t="JarResource" n="dummy_" ];
+  6 [ label="I" t="LinkedList" l="19" ];
+  7 [ label="I" t="JarResource" l="21" ];
+  8 [ t="File" n="dummy_" ];
+  9 [ label="I" t="File" l="21" ];
+  10 [ t="String" v="testdata/org.apache.felix.framework-3.2.2.jar" ];
+  3 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  9 -> 1 [ label="O" ];
+  5 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="P" ];
+  7 -> 1 [ label="O" ];
+  6 -> 3 [ label="D" ];
+  7 -> 5 [ label="D" ];
+  6 -> 7 [ label="O" ];
+  9 -> 7 [ label="O" ];
+  8 -> 7 [ label="P" ];
+  9 -> 8 [ label="D" ];
+  10 -> 9 [ label="P" ];
+  6 -> 9 [ label="O" ];
+}

@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addDirective()" t="CapReqBuilder" l="437" ];
+  2 [ t="String" v="(osgi.identity=org.apache.felix.gogo.shell)" ];
+  3 [ t="CapReqBuilder" n="reqb" ];
+  4 [ label="I" t="CapReqBuilder" l="437" ];
+  5 [ t="String" v="osgi.extender" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="UNKNOWN.append()" shape="box" ];
+  2 [ label="UNKNOWN" shape="ellipse" ];
+  3 [ label="UNKNOWN.appendSuper()" shape="box" ];
+  4 [ label="TestObject" shape="ellipse" ];
+  5 [ label="UNKNOWN" shape="ellipse" ];
+  6 [ label="boolean" shape="ellipse" ];
+  4 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+  5 -> 3 [ label="recv" style="solid" ];
+}

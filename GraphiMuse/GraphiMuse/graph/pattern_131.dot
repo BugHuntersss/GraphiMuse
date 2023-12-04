@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="size()" t="List" l="415" ];
+  2 [ t="List" n="list" ];
+  3 [ label="MC" s="iterator()" t="List" l="416" ];
+  4 [ label="I" t="ArrayList" l="414" ];
+  5 [ t="UNKNOWN" n="dummy_" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  4 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+  1 -> 3 [ label="O" ];
+  5 -> 4 [ label="P" ];
+}

@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="details()" t="SetLocation" l="390" ];
+  2 [ t="SetLocation" n="dummy_" ];
+  3 [ t="DeclarativeServicesAnnotationError" n="details" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+}

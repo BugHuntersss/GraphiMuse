@@ -1,0 +1,24 @@
+digraph "AUG" {
+
+  1 [ label="MavenVersionRange.includes()" shape="box" ];
+  2 [ label="MavenVersionRange" shape="ellipse" ];
+  3 [ label="Object.toString()" shape="box" ];
+  4 [ label="MavenVersionRange.<init>" shape="box" ];
+  5 [ label="String" shape="ellipse" ];
+  6 [ label="MavenVersion" shape="ellipse" ];
+  7 [ label="MavenVersion.parseMavenString()" shape="box" ];
+  8 [ label="String" shape="ellipse" ];
+  4 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="order" style="bold" ];
+  7 -> 1 [ label="order" style="bold" ];
+  6 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  4 -> 2 [ label="def" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  4 -> 3 [ label="order" style="bold" ];
+  5 -> 4 [ label="para" style="solid" ];
+  7 -> 6 [ label="def" style="solid" ];
+  3 -> 7 [ label="order" style="bold" ];
+  4 -> 7 [ label="order" style="bold" ];
+  8 -> 7 [ label="para" style="solid" ];
+}

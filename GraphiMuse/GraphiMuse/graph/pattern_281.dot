@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="resolve()" t="URI" l="43" ];
+  2 [ t="URI" n="baseUri" ];
+  3 [ t="String" v="compositeContent.xml" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

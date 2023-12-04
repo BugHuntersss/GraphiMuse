@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="to()" t="Encoder" l="487" ];
+  2 [ t="Encoder" n="dummy_" ];
+  3 [ t="PrintWriter" n="pw" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+}

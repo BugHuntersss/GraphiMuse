@@ -1,0 +1,16 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setTrace()" t="Processor" l="45" ];
+  2 [ t="boolean" v="true" ];
+  3 [ t="Run" n="run" ];
+  4 [ label="MC" s="check()" t="Processor" l="54" ];
+  5 [ label="MC" s="close()" t="AutoCloseable" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  3 -> 4 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  1 -> 5 [ label="O" ];
+  4 -> 5 [ label="F" ];
+  4 -> 5 [ label="O" ];
+  3 -> 5 [ label="R" ];
+}

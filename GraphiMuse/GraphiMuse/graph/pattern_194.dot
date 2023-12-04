@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="put()" t="Map" l="127" ];
+  2 [ t="String" n="id" ];
+  3 [ label="MC" s="get()" t="Map" l="124" ];
+  4 [ t="Territory" n="t" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="S" ];
+  3 -> 1 [ label="O" ];
+  2 -> 3 [ label="P" ];
+}

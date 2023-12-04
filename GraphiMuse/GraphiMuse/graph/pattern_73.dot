@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addAttribute()" t="CapReqBuilder" l="119" ];
+  2 [ t="Version" n="version" ];
+  3 [ t="CapReqBuilder" n="host" ];
+  4 [ label="MC" s="addCapability()" t="ResourceBuilder" l="124" ];
+  5 [ t="ResourceBuilder" n="resourceBuilder" ];
+  6 [ t="Version" n="version" ];
+  6 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  5 -> 4 [ label="R" ];
+  3 -> 4 [ label="P" ];
+}

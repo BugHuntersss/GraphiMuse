@@ -1,0 +1,16 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="load()" t="UTF8Properties" l="166" ];
+  2 [ t="UTF8Properties" n="properties" ];
+  3 [ label="I" t="UTF8Properties" l="164" ];
+  4 [ t="String" v="version 1.0.1
+" ];
+  5 [ t="String" v="version 1.0.1" ];
+  6 [ t="null" v="null" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="P" ];
+  6 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+}

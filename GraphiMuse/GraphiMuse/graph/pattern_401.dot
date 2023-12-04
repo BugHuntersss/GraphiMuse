@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="split()" t="Processor" l="401" ];
+  2 [ t="String" n="dummy_" ];
+  3 [ label="A" t="String[]" l="401" ];
+  4 [ t="String[]" n="args" ];
+  5 [ t="int" v="1" ];
+  6 [ t="Set" n="set" ];
+  6 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="P" ];
+  4 -> 3 [ label="R" ];
+}

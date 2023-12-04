@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="delete()" t="File" l="663" ];
+  2 [ t="File" n="cached" ];
+  3 [ label="MC" s="getFile()" t="IO" l="663" ];
+  4 [ t="String" v="tmp/" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

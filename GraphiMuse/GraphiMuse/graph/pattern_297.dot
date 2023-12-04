@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="pattern()" t="Pattern" l="2079" ];
+  2 [ t="Pattern" n="p" ];
+  2 -> 1 [ label="R" ];
+}

@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="verifyCommand()" t="Macro" l="1015" ];
+  2 [ t="String" n="args" ];
+  3 [ label="A" t="String[]" l="1018" ];
+  4 [ label="Rt" l="1047" ];
+  5 [ t="int" v="3" ];
+  6 [ t="int" v="3" ];
+  7 [ t="int" v="3" ];
+  8 [ t="int" v="1" ];
+  9 [ t="int" v="0" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="P" ];
+  5 -> 1 [ label="P" ];
+  7 -> 1 [ label="P" ];
+  8 -> 3 [ label="P" ];
+  2 -> 3 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  9 -> 4 [ label="P" ];
+  3 -> 4 [ label="S" ];
+}

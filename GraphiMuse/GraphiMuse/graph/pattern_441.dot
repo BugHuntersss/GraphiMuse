@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="removeAll()" t="Collection" l="174" ];
+  2 [ t="Set" n="dummy_" ];
+  3 [ t="Set" n="dummy_" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

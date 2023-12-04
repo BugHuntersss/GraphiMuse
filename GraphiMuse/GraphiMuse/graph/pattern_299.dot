@@ -1,0 +1,32 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="process()" t="Macro" l="43" ];
+  2 [ t="String" v="${if;(a!=A);YES;NO}" ];
+  3 [ t="Macro" n="dummy_" ];
+  4 [ label="MC" s="getReplacer()" t="Processor" l="43" ];
+  5 [ label="MC" s="process()" t="Macro" l="42" ];
+  6 [ t="Workspace" n="w" ];
+  7 [ label="MC" s="getReplacer()" t="Processor" l="31" ];
+  8 [ label="MC" s="getReplacer()" t="Processor" l="42" ];
+  9 [ t="String" v="${repo;org.apache.felix.configadmin;1.0.0;highest}" ];
+  10 [ t="Macro" n="dummy_" ];
+  5 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  7 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  8 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  7 -> 4 [ label="O" ];
+  6 -> 4 [ label="R" ];
+  10 -> 5 [ label="R" ];
+  8 -> 5 [ label="O" ];
+  9 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  6 -> 7 [ label="R" ];
+  7 -> 8 [ label="O" ];
+  6 -> 8 [ label="R" ];
+  8 -> 10 [ label="D" ];
+}

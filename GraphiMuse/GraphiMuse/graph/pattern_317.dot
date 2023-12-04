@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="add()" t="MultiMap" l="80" ];
+  2 [ t="String" n="packageName" ];
+  3 [ t="MultiMap" n="exports" ];
+  4 [ t="char" n="c" ];
+  5 [ label="I" t="MultiMap" l="69" ];
+  2 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  5 -> 3 [ label="D" ];
+}

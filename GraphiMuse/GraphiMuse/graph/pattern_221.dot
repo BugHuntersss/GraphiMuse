@@ -1,0 +1,40 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="size()" t="Collection" l="478" ];
+  2 [ t="List" n="types" ];
+  3 [ label="MC" s="forFields()" t="ISODateTimeFormat" l="476" ];
+  4 [ t="boolean" v="true" ];
+  5 [ label="I" t="ArrayList" l="475" ];
+  6 [ t="List" n="dummy_" ];
+  7 [ label="MC" s="asList()" t="Arrays" l="475" ];
+  8 [ t="DateTimeFieldType[]" n="fields" ];
+  9 [ label="I" t="Partial" l="477" ];
+  10 [ t="int[]" n="values" ];
+  11 [ label="AC" t="int" l="459" ];
+  12 [ t="int" v="177" ];
+  13 [ label="AC" t="DateTimeFieldType" l="455" ];
+  14 [ t="DateTimeFieldType" n="dummy_" ];
+  3 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  7 -> 1 [ label="O" ];
+  9 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  5 -> 2 [ label="D" ];
+  2 -> 3 [ label="P" ];
+  4 -> 3 [ label="P" ];
+  7 -> 3 [ label="O" ];
+  5 -> 3 [ label="O" ];
+  7 -> 5 [ label="O" ];
+  6 -> 5 [ label="P" ];
+  7 -> 6 [ label="D" ];
+  8 -> 7 [ label="P" ];
+  13 -> 8 [ label="D" ];
+  8 -> 9 [ label="P" ];
+  5 -> 9 [ label="O" ];
+  3 -> 9 [ label="O" ];
+  10 -> 9 [ label="P" ];
+  7 -> 9 [ label="O" ];
+  11 -> 10 [ label="D" ];
+  12 -> 11 [ label="P" ];
+  14 -> 13 [ label="P" ];
+}

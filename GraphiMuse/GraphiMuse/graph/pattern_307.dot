@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toHexString()" t="Hex" l="3281" ];
+  2 [ t="byte[]" n="rd" ];
+  2 -> 1 [ label="P" ];
+}

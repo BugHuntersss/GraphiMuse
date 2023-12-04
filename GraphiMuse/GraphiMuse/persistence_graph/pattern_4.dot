@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="StrTokenizer.setIgnoredMatcher()" shape="box" ];
+  2 [ label="StrMatcher" shape="ellipse" ];
+  3 [ label="StrTokenizer" shape="ellipse" ];
+  4 [ label="StrTokenizer.setIgnoreEmptyTokens()" shape="box" ];
+  5 [ label="StrTokenizer.<init>" shape="box" ];
+  6 [ label="boolean" shape="ellipse" ];
+  7 [ label="String" shape="ellipse" ];
+  8 [ label="String" shape="ellipse" ];
+  5 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  5 -> 3 [ label="def" style="solid" ];
+  3 -> 4 [ label="recv" style="solid" ];
+  6 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="order" style="bold" ];
+  1 -> 4 [ label="order" style="bold" ];
+  7 -> 5 [ label="para" style="solid" ];
+  8 -> 7 [ label="def" style="solid" ];
+}

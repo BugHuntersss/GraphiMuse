@@ -1,0 +1,91 @@
+detectionLoadTime: 7325
+detectionTime: 679
+maxPatternSupport: 31
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 8
+numberOfTargets: 210
+numberOfTrainingExamples: 210
+numberOfUsagesInTrainingExamples:
+  A: 1
+  Acceptor: 1
+  AmbiguousService: 1
+  ArrayList: 1
+  Arrays: 5
+  AtomicBoolean: 1
+  AtomicInteger: 1
+  Attachment: 4
+  BetterUser: 1
+  Block: 1
+  Calendar: 1
+  Car: 1
+  CharSequence: 1
+  Character: 1
+  ChronoUnit: 1
+  Circle: 1
+  Class: 3
+  ClearService: 1
+  Collection: 32
+  Collections: 5
+  Collector: 17
+  Collectors: 17
+  Comparator: 4
+  Container: 1
+  Date: 1
+  Double: 1
+  DoubleStream: 2
+  Email: 3
+  Function: 6
+  HashMap: 4
+  HashSet: 1
+  HtmlElement: 2
+  IllegalStateException: 2
+  Insurance: 1
+  IntStream: 14
+  IntSummaryStatistics: 1
+  Integer: 3
+  Iterable: 8
+  Iterator: 4
+  K: 1
+  LambdaChainSample: 1
+  LambdaVisitor: 2
+  List: 35
+  LocalDate: 2
+  Log: 2
+  Long: 3
+  Map: 14
+  NaiveDigitCounter: 1
+  Number: 1
+  Object: 5
+  Optional: 33
+  OptionalDouble: 1
+  OptionalInt: 2
+  Order: 1
+  Permission: 2
+  Person: 6
+  Predicate: 2
+  PrintStream: 4
+  Printer: 2
+  Rectangle: 1
+  Role: 4
+  Set: 20
+  SimpleEntry: 1
+  Square: 1
+  Status: 1
+  Stream: 53
+  String: 50
+  StringBuilder: 1
+  Supplier: 1
+  Temporal: 1
+  User: 20
+  UserDto: 1
+  V: 1
+  char: 1
+  int: 3
+numberOfViolations: 0
+result: success
+runtime: 28.18496537208557
+timestamp: 1700809989
+trainingLoadTime: 13307
+trainingTime: 337

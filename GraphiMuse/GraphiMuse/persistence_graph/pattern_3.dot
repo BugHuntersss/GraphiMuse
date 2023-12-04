@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="CalendarUtilsTest.assertEquals()" shape="box" ];
+  2 [ label="Calendar" shape="ellipse" ];
+  3 [ label="CalendarUtils.trunc()" shape="box" ];
+  4 [ label="String" shape="ellipse" ];
+  5 [ label="String" shape="ellipse" ];
+  6 [ label="int" shape="ellipse" ];
+  5 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+}

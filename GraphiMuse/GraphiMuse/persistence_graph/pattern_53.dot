@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="Stream.collect()" shape="box" ];
+  2 [ label="Collector" shape="ellipse" ];
+  3 [ label="Stream" shape="ellipse" ];
+  4 [ label="Stream.map()" shape="box" ];
+  5 [ label="Stream" shape="ellipse" ];
+  6 [ label="null" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  4 -> 3 [ label="def" style="solid" ];
+  5 -> 4 [ label="recv" style="solid" ];
+  6 -> 4 [ label="para" style="solid" ];
+}

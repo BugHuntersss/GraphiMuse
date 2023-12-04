@@ -1,0 +1,48 @@
+detectionLoadTime: 5408
+detectionTime: 474
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 14
+numberOfTrainingExamples: 14
+numberOfUsagesInTrainingExamples:
+  Application: 1
+  Base64: 1
+  Cipher: 1
+  Class: 1
+  Collection: 1
+  ConnectionSettings: 1
+  Exception: 1
+  HttpFile: 2
+  LinkedList: 1
+  List: 1
+  Logger: 1
+  MaintainQueueSupport: 1
+  Map: 1
+  MatchResult: 1
+  Matcher: 1
+  MethodBuilder: 3
+  Pattern: 1
+  PlugUtils: 3
+  PluginContext: 1
+  PluginImplementationException: 1
+  RtmpSession: 1
+  SaavnFileRunner: 1
+  SaavnServiceImpl: 1
+  SecretKeySpec: 1
+  ServiceConnectionProblemException: 2
+  ShareDownloadService: 1
+  String: 10
+  System: 1
+  Throwable: 1
+  URI: 1
+  URL: 1
+  URLNotAvailableAnymoreException: 1
+numberOfViolations: 0
+result: success
+runtime: 17.922788619995117
+timestamp: 1700809989
+trainingLoadTime: 10335
+trainingTime: 233

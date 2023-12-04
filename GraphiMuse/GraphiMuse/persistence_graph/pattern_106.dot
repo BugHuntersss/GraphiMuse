@@ -1,0 +1,32 @@
+digraph "AUG" {
+
+  1 [ label="Macro.process()" shape="box" ];
+  2 [ label="String" shape="ellipse" ];
+  3 [ label="Macro" shape="ellipse" ];
+  4 [ label="Processor.getReplacer()" shape="box" ];
+  5 [ label="Macro.process()" shape="box" ];
+  6 [ label="Project" shape="ellipse" ];
+  7 [ label="Processor.getReplacer()" shape="box" ];
+  8 [ label="Processor.getReplacer()" shape="box" ];
+  9 [ label="Macro" shape="ellipse" ];
+  10 [ label="String" shape="ellipse" ];
+  8 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  7 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  5 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="order" style="bold" ];
+  4 -> 3 [ label="def" style="solid" ];
+  6 -> 4 [ label="recv" style="solid" ];
+  7 -> 4 [ label="order" style="bold" ];
+  5 -> 4 [ label="order" style="bold" ];
+  8 -> 4 [ label="order" style="bold" ];
+  10 -> 5 [ label="para" style="solid" ];
+  7 -> 5 [ label="order" style="bold" ];
+  9 -> 5 [ label="recv" style="solid" ];
+  6 -> 7 [ label="recv" style="solid" ];
+  5 -> 8 [ label="order" style="bold" ];
+  6 -> 8 [ label="recv" style="solid" ];
+  7 -> 8 [ label="order" style="bold" ];
+  7 -> 9 [ label="def" style="solid" ];
+}

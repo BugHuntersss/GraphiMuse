@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="year()" t="Chronology" l="312" ];
+  2 [ t="Chronology" n="TestLocalDateTime_Basics.COPTIC_UTC" ];
+  3 [ label="MC" s="monthOfYear()" t="Chronology" l="313" ];
+  4 [ label="MC" s="dayOfMonth()" t="Chronology" l="314" ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+  2 -> 4 [ label="R" ];
+}

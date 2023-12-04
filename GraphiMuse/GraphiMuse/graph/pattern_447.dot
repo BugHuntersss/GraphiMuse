@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isEmpty()" t="Collection" l="170" ];
+  2 [ t="Collection" n="list" ];
+  2 -> 1 [ label="R" ];
+}

@@ -1,0 +1,38 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="indexFragment()" t="ResourceIndexer" l="364" ];
+  2 [ t="ResourceIndexer" n="indexer" ];
+  3 [ t="Set" n="dummy_" ];
+  4 [ label="MC" s="singleton()" t="Collections" l="364" ];
+  5 [ t="Map" n="config" ];
+  6 [ label="MC" s="put()" t="Map" l="361" ];
+  7 [ label="I" t="HashMap" l="360" ];
+  8 [ t="String" n="dummy_" ];
+  9 [ label="MC" s="toString()" t="Object" l="361" ];
+  10 [ t="String" v="root.url" n="ResourceIndexer.ROOT_URL" ];
+  11 [ t="StringWriter" n="writer" ];
+  12 [ t="File" n="dummy_" ];
+  13 [ t="URI" n="dummy_" ];
+  11 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  5 -> 1 [ label="P" ];
+  7 -> 1 [ label="O" ];
+  9 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  7 -> 4 [ label="O" ];
+  9 -> 4 [ label="O" ];
+  12 -> 4 [ label="P" ];
+  6 -> 4 [ label="O" ];
+  7 -> 5 [ label="D" ];
+  5 -> 6 [ label="R" ];
+  9 -> 6 [ label="O" ];
+  7 -> 6 [ label="O" ];
+  8 -> 6 [ label="P" ];
+  10 -> 6 [ label="P" ];
+  9 -> 8 [ label="D" ];
+  13 -> 9 [ label="R" ];
+  7 -> 9 [ label="O" ];
+}

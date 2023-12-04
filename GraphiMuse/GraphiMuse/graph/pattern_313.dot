@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isUpperCase()" t="Character" l="2075" ];
+  2 [ t="char" n="c" ];
+  3 [ label="MC" s="charAt()" t="CharSequence" l="2075" ];
+  4 [ t="String" n="id" ];
+  5 [ t="int" v="0" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="P" ];
+  4 -> 3 [ label="R" ];
+}

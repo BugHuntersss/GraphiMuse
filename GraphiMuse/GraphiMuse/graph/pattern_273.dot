@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="checkUses()" t="UsesTest" l="73" ];
+  2 [ t="String" v="test.uses.constructor" ];
+  2 -> 1 [ label="P" ];
+}

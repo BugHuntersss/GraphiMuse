@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="StrBuilder.appendFixedWidthPadLeft()" shape="box" ];
+  2 [ label="null" shape="ellipse" ];
+  3 [ label="char" shape="ellipse" ];
+  4 [ label="StrBuilder" shape="ellipse" ];
+  5 [ label="StrBuilder.clear()" shape="box" ];
+  3 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="recv" style="solid" ];
+  2 -> 1 [ label="para" style="solid" ];
+  5 -> 1 [ label="order" style="bold" ];
+  4 -> 5 [ label="recv" style="solid" ];
+}

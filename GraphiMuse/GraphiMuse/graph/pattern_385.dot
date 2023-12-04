@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="printf()" t="PrintStream" l="202" ];
+  2 [ t="PrintStream" n="out" ];
+  3 [ t="String" v="null" n="info.packageName" ];
+  4 [ t="String" v="null" n="info.packageName" ];
+  5 [ t="String" n="value" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+}

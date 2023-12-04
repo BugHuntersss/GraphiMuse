@@ -1,0 +1,47 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="size()" t="Map" l="2803" ];
+  2 [ t="Map" n="dummy_" ];
+  3 [ label="MC" s="getResources()" t="Jar" l="2803" ];
+  4 [ label="MC" s="setProperties()" t="Processor" l="2795" ];
+  5 [ t="Jar" n="jar" ];
+  6 [ label="MC" s="build()" t="Builder" l="2796" ];
+  7 [ t="Builder" n="bmaker" ];
+  8 [ label="I" t="Builder" l="2788" ];
+  9 [ t="Properties" n="p" ];
+  10 [ label="MC" s="put()" t="Dictionary" l="2793" ];
+  11 [ label="I" t="Properties" l="2790" ];
+  12 [ t="String" v="Import-Package" ];
+  6 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  10 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  11 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  8 -> 3 [ label="O" ];
+  11 -> 3 [ label="O" ];
+  4 -> 3 [ label="O" ];
+  10 -> 3 [ label="O" ];
+  11 -> 4 [ label="O" ];
+  9 -> 4 [ label="P" ];
+  8 -> 4 [ label="O" ];
+  10 -> 4 [ label="O" ];
+  7 -> 4 [ label="R" ];
+  6 -> 5 [ label="D" ];
+  8 -> 6 [ label="O" ];
+  4 -> 6 [ label="O" ];
+  11 -> 6 [ label="O" ];
+  10 -> 6 [ label="O" ];
+  7 -> 6 [ label="R" ];
+  8 -> 7 [ label="D" ];
+  11 -> 9 [ label="D" ];
+  9 -> 10 [ label="R" ];
+  12 -> 10 [ label="P" ];
+  11 -> 10 [ label="O" ];
+  8 -> 10 [ label="O" ];
+  8 -> 11 [ label="O" ];
+}

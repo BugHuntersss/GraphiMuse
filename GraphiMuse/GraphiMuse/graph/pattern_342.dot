@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseProperties()" t="OSGiHeader" l="111" ];
+  2 [ t="null" v="null" ];
+  2 -> 1 [ label="P" ];
+}

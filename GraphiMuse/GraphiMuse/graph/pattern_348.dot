@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="iterator()" t="Iterable" ];
+  2 [ t="Set" n="dummy_" ];
+  3 [ label="MC" s="entrySet()" t="Map" l="871" ];
+  4 [ t="Parameters" n="diffs" ];
+  5 [ label="MC" s="isEmpty()" t="Map" l="868" ];
+  5 -> 1 [ label="S" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="O" ];
+  4 -> 3 [ label="R" ];
+  5 -> 3 [ label="S" ];
+  4 -> 5 [ label="R" ];
+}

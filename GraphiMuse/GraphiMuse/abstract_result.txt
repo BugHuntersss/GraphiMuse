@@ -1,0 +1,8 @@
+MethodCall:StrTokenizer.setIgnoreEmptyTokens() can be replaced by[MethodCall:StrTokenizer.setEmptyTokenAsNull()]
+MethodCall:StrTokenizer.setEmptyTokenAsNull() can be replaced by[MethodCall:StrTokenizer.setIgnoreEmptyTokens()]
+MethodCall:CharSequence.length() can be replaced by[MethodCall:String.indexOf()]
+MethodCall:AutoCloseable.close() can be replaced by[MethodCall:ObjectOutput.writeObject()]
+MethodCall:CalendarUtils.trunc() can be replaced by[MethodCall:CalendarUtils.round()]
+MethodCall:CalendarUtils.round() can be replaced by[MethodCall:CalendarUtils.trunc()]
+MethodCall:ObjectOutput.writeObject() can be replaced by[MethodCall:AutoCloseable.close()]
+MethodCall:String.indexOf() can be replaced by[MethodCall:CharSequence.length()]

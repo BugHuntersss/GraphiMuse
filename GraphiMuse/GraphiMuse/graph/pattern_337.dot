@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="duck()" t="Exceptions" l="73" ];
+  2 [ t="Exception" n="e" ];
+  3 [ label="Ca" t="Exception" ];
+  3 -> 1 [ label="H" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  2 -> 3 [ label="P" ];
+}

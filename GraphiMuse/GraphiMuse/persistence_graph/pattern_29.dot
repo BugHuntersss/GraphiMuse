@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="Calendar.set()" shape="box" ];
+  2 [ label="int" shape="ellipse" ];
+  3 [ label="Calendar" shape="ellipse" ];
+  4 [ label="FastDateFormat.format()" shape="box" ];
+  5 [ label="FastDateFormat" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  1 -> 4 [ label="order" style="bold" ];
+  3 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="recv" style="solid" ];
+}

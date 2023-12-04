@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="parseInt()" t="Integer" l="246" ];
+  2 [ t="String" n="dummy_" ];
+  3 [ label="A" t="String[]" l="246" ];
+  4 [ t="int" v="3" ];
+  5 [ t="String[]" n="pp" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  5 -> 3 [ label="R" ];
+}

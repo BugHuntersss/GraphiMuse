@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="join()" t="StringUtils" l="277" ];
+  2 [ t="Iterator" n="dummy_" ];
+  3 [ label="MC" s="iterator()" t="Iterable" l="277" ];
+  4 [ t="List" n="dummy_" ];
+  5 [ label="MC" s="asList()" t="Arrays" l="277" ];
+  6 [ t="String[]" n="StringUtilsTest.EMPTY_ARRAY_LIST" ];
+  7 [ t="String" v="" ];
+  7 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="O" ];
+  4 -> 3 [ label="R" ];
+  5 -> 4 [ label="D" ];
+  6 -> 5 [ label="P" ];
+}

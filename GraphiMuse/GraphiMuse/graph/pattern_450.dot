@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="evaluate()" t="XPath" l="2492" ];
+  2 [ t="String" v="/component/reference[@name='http']/@unbind" ];
+  3 [ t="XPath" n="xpath" ];
+  4 [ t="QName" v="null" n="XPathConstants.NODESET" ];
+  3 -> 1 [ label="R" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+}

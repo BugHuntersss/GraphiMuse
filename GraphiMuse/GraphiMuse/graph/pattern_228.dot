@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="dayOfYear()" t="DateTime" l="761" ];
+  2 [ t="DateTime" n="test" ];
+  3 [ label="I" t="DateTime" l="741" ];
+  4 [ t="int" v="0" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

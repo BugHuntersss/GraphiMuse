@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="compareTo()" t="MavenVersion" l="274" ];
+  2 [ t="MavenVersion" n="expected" ];
+  3 [ t="MavenVersion" n="expected" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+}

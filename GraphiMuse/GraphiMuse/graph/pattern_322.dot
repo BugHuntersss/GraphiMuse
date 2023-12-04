@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="compareTo()" t="Version" l="125" ];
+  2 [ t="Version" v="null" n="info.suggestedVersion" ];
+  3 [ t="Version" n="version" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

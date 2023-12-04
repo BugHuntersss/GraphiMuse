@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="Link.open()" shape="box" ];
+  2 [ label="Link" shape="ellipse" ];
+  3 [ label="Link.isOpen()" shape="box" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  1 -> 3 [ label="order" style="bold" ];
+}

@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="copy()" t="IO" l="130" ];
+  2 [ t="InputStream" n="dummy_" ];
+  3 [ label="MC" s="openInputStream()" t="Resource" l="130" ];
+  4 [ t="PrintStream" n="out" ];
+  5 [ label="MC" s="println()" t="PrintStream" l="127" ];
+  6 [ t="Resource" n="r" ];
+  7 [ t="String" v="[METATYPE]" ];
+  3 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="R" ];
+  5 -> 3 [ label="O" ];
+  4 -> 5 [ label="R" ];
+  7 -> 5 [ label="P" ];
+}

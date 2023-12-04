@@ -1,0 +1,2297 @@
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeDate.java
+method: date_format(double, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NativeDate.append0PaddedUint() L1009" shape="box" ];
+    2 [ label="StringBuffer" shape="ellipse" ];
+    3 [ label="Appendable.append() L1018" shape="box" ];
+    4 [ label="char" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="char" shape="ellipse" ];
+    7 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    8 [ label="<nullcheck>" shape="box" color="red" fontcolor="red" ];
+    5 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 7 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 3 [ label="para" style="solid" ];
+    7 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 8 [ label="para" style="solid" color="red" fontcolor="red" ];
+    8 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "date_format(double, int)" {
+  nslimit=10000;
+
+    1 [ label="int" shape="ellipse" ];
+    2 [ label="NativeDate.DateFromTime() L1009" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="NativeDate.append0PaddedUint() L1009" shape="box" ];
+    4 [ label="char" shape="ellipse" ];
+    5 [ label="Appendable.append() L1018" shape="box" ];
+    6 [ label="StringBuffer" shape="ellipse" ];
+    7 [ label="StringBuffer.<init> L997" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="AbstractStringBuilder.append() L1054" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="NativeDate.append0PaddedUint() L1022" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="NativeDate.appendWeekDayName() L1005" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="Appendable.append() L1025" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Appendable.append() L1055" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="NativeDate.append0PaddedUint() L1024" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="NativeDate.append0PaddedUint() L1026" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="Appendable.append() L1023" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="NativeDate.append0PaddedUint() L1040" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Appendable.append() L1013" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="Object.toString() L1057" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="Appendable.append() L1006" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="Appendable.append() L1008" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="NativeDate.appendMonthName() L1007" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="Appendable.append() L1010" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="AbstractStringBuilder.append() L1037" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="AbstractStringBuilder.append() L1052" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="NativeDate.append0PaddedUint() L1016" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="AbstractStringBuilder.append() L1035" shape="box" color="gray" fontcolor="gray" ];
+    27 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    21 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    19 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    21 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="para" style="solid" ];
+    25 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="recv" style="solid" ];
+    22 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 17 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 22 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 24 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 25 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 26 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.980246913580247
+pattern_support: 10
+probability: 0.980246913580247
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeDate.java#date_format(double, int)
+- rhino/286251/build/src/org/mozilla/javascript/NativeDate.java#js_toUTCString(double)
+startline: 1009
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeJavaObject.java
+method: toDouble(Object)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue() L855" shape="box" ];
+    2 [ label="Number" shape="ellipse" ];
+    3 [ label="Number.<cast> L855" shape="box" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="ScriptRuntime.toNumber()" shape="box" color="red" fontcolor="red" ];
+    6 [ label="Number.<instanceof>" shape="box" color="red" fontcolor="red" ];
+    6 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 6 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "toDouble(Object)" {
+  nslimit=10000;
+
+    1 [ label="Number.<cast> L855" shape="box" ];
+    2 [ label="Number.<instanceof> L827" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Object" shape="ellipse" ];
+    4 [ label="Class.getMethod() L845" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Scriptable.<instanceof> L833" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<nullcheck> L853" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Object.getClass() L845" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="String.<instanceof> L830" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Number" shape="ellipse" ];
+    10 [ label="Number.doubleValue() L855" shape="box" ];
+    11 [ label="Method.invoke() L855" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="double" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="def" style="solid" ];
+    2 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="recv" style="solid" ];
+    11 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9744
+pattern_support: 14
+probability: 0.9744
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaObject.java#toDouble(Object)
+- rhino/286251/build/src/org/mozilla/javascript/Interpreter.java#do_add(Object[], double[], int, Context)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#eqNumber(double, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#cmp_LT(Object, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#doScriptableIncrDecr(Scriptable, String, Scriptable, Object, int)
+startline: 855
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeJavaClass.java
+method: constructSpecific(Context, Scriptable, Object[], MemberBox)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="WrapFactory.wrap()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="WrapFactory" shape="ellipse" ];
+    3 [ label="Context.getWrapFactory() L229" shape="box" ];
+    4 [ label="Context" shape="ellipse" ];
+    5 [ label="null" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="null" shape="ellipse" color="red" fontcolor="red" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="recv" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "constructSpecific(Context, Scriptable, Object[], MemberBox)" {
+  nslimit=10000;
+
+    1 [ label="Context" shape="ellipse" ];
+    2 [ label="Context.getWrapFactory() L229" shape="box" ];
+    3 [ label="WrapFactory.wrapNewObject() L229" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="WrapFactory" shape="ellipse" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="def" style="solid" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 11
+probability: 0.92
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaMethod.java#call(Context, Scriptable, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/Context.java#javaToJS(Object, Scriptable)
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaArray.java#get(int, Scriptable)
+- rhino/286251/build/src/org/mozilla/javascript/FunctionObject.java#call(Context, Scriptable, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/JavaMembers.java#getDefaultValue(Class)
+startline: 229
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/IdScriptableObject.java
+method: initPrototypeConstructor(IdFunctionObject)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="IdFunctionObject.methodId() L638" shape="box" ];
+    2 [ label="IdFunctionObject" shape="ellipse" ];
+    3 [ label="IdFunctionObject.hasTag()" shape="box" color="red" fontcolor="red" ];
+    4 [ label="Object" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 3 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "initPrototypeConstructor(IdFunctionObject)" {
+  nslimit=10000;
+
+    1 [ label="IdFunctionObject.methodId() L638" shape="box" ];
+    2 [ label="IdFunctionObject" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    4 [ label="ScriptableObject.sealObject() L640" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<throw> L639" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    1 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8400000000000001
+pattern_support: 18
+probability: 0.8400000000000001
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeGlobal.java#isEvalFunction(Object)
+- rhino/286251/build/src/org/mozilla/javascript/NativeWith.java#execIdCall(IdFunctionObject, Context, Scriptable, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/continuations/Continuation.java#execIdCall(IdFunctionObject, Context, Scriptable, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/continuations/Continuation.java#isContinuationConstructor(IdFunctionObject)
+- rhino/286251/build/src/org/mozilla/javascript/NativeGlobal.java#execIdCall(IdFunctionObject, Context, Scriptable, Scriptable, Object[])
+startline: 638
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java
+method: generateNativeFunctionOverrides(ClassFileWriter, String)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="ClassFileWriter.startMethod() L687" shape="box" ];
+    2 [ label="short" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="ClassFileWriter" shape="ellipse" ];
+    5 [ label="ClassFileWriter.stopMethod() L821" shape="box" ];
+    6 [ label="ClassFileWriter.add() L658" shape="box" ];
+    7 [ label="int" shape="ellipse" ];
+    8 [ label="int" shape="ellipse" ];
+    9 [ label="short.<cast>" shape="box" color="red" fontcolor="red" ];
+    10 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 5 [ label="recv" style="solid" ];
+    6 -> 5 [ label="order" style="bold" ];
+    1 -> 5 [ label="order" style="bold" ];
+    8 -> 5 [ label="para" style="solid" ];
+    4 -> 6 [ label="recv" style="solid" ];
+    7 -> 6 [ label="para" style="solid" ];
+    1 -> 6 [ label="order" style="bold" color="red" fontcolor="red" ];
+    9 -> 8 [ label="def" style="solid" color="red" fontcolor="red" ];
+    10 -> 9 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "generateNativeFunctionOverrides(ClassFileWriter, String)" {
+  nslimit=10000;
+
+    1 [ label="ClassFileWriter.startMethod() L687" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="ClassFileWriter" shape="ellipse" ];
+    4 [ label="short" shape="ellipse" ];
+    5 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="ClassFileWriter.addPush() L807" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="ClassFileWriter.add() L776" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="ClassFileWriter.add() L799" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="ClassFileWriter.addTableSwitch() L727" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="ClassFileWriter.add() L813" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="ClassFileWriter.markTableSwitchCase() L795" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="ClassFileWriter.addPush() L757" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="ClassFileWriter.markTableSwitchCase() L738" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="ClassFileWriter.add() L752" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="ClassFileWriter.addLoadThis() L722" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="ClassFileWriter.addTableSwitch() L787" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="ClassFileWriter.startMethod() L702" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="ClassFileWriter.stopMethod() L821" shape="box" ];
+    19 [ label="ClassFileWriter.add() L764" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="ClassFileWriter.addPush() L750" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="ClassFileWriter.startMethod() L707" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="ClassFileWriter.markTableSwitchDefault() L734" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="ClassFileWriter.getStackTop() L735" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="ClassFileWriter.startMethod() L692" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="ClassFileWriter.add() L758" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="ClassFileWriter.markTableSwitchDefault() L793" shape="box" color="gray" fontcolor="gray" ];
+    27 [ label="ClassFileWriter.add() L781" shape="box" color="gray" fontcolor="gray" ];
+    28 [ label="ClassFileWriter.getClassName() L723" shape="box" color="gray" fontcolor="gray" ];
+    29 [ label="ClassFileWriter.getStackTop() L790" shape="box" color="gray" fontcolor="gray" ];
+    30 [ label="ClassFileWriter.addPush() L780" shape="box" color="gray" fontcolor="gray" ];
+    31 [ label="ClassFileWriter.addPush() L747" shape="box" color="gray" fontcolor="gray" ];
+    32 [ label="ClassFileWriter.addILoad() L784" shape="box" color="gray" fontcolor="gray" ];
+    33 [ label="ClassFileWriter.add() L723" shape="box" color="gray" fontcolor="gray" ];
+    34 [ label="ClassFileWriter.addPush() L763" shape="box" color="gray" fontcolor="gray" ];
+    35 [ label="ClassFileWriter.startMethod() L654" shape="box" color="gray" fontcolor="gray" ];
+    36 [ label="ClassFileWriter.addPush() L798" shape="box" color="gray" fontcolor="gray" ];
+    37 [ label="ClassFileWriter.add() L658" shape="box" ];
+    38 [ label="ClassFileWriter.addInvoke() L809" shape="box" color="gray" fontcolor="gray" ];
+    39 [ label="ClassFileWriter.addPush() L808" shape="box" color="gray" fontcolor="gray" ];
+    40 [ label="ClassFileWriter.addPush() L657" shape="box" color="gray" fontcolor="gray" ];
+    41 [ label="ClassFileWriter.addPush() L709" shape="box" color="gray" fontcolor="gray" ];
+    42 [ label="ClassFileWriter.startMethod() L697" shape="box" color="gray" fontcolor="gray" ];
+    43 [ label="ClassFileWriter.add() L775" shape="box" color="gray" fontcolor="gray" ];
+    44 [ label="ClassFileWriter.stopMethod() L661" shape="box" color="gray" fontcolor="gray" ];
+    45 [ label="int" shape="ellipse" ];
+    46 [ label="int" shape="ellipse" ];
+    47 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    40 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    44 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" ];
+    37 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    35 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 18 [ label="order" style="bold" ];
+    1 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="recv" style="solid" ];
+    3 -> 19 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 27 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 28 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 29 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 30 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 31 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 32 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 33 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 34 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 35 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 36 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 37 [ label="recv" style="solid" ];
+    3 -> 38 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 39 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 40 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 41 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 42 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 43 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 44 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 21 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 35 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 24 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 42 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    21 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    43 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 18 [ label="order" style="bold" ];
+    42 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    38 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    45 -> 18 [ label="para" style="solid" ];
+    21 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    31 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    27 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    30 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    36 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    43 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    47 -> 18 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    35 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    34 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    46 -> 19 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    44 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 41 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    46 -> 25 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    33 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    30 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 28 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    28 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 29 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    29 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 30 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 31 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 32 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    32 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 33 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    33 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 34 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 41 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 44 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 37 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 42 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    35 -> 40 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 36 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    46 -> 37 [ label="para" style="solid" ];
+    40 -> 37 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 41 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 42 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 44 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    37 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    39 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 38 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 39 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 42 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 41 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 44 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    40 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 41 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    41 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 42 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    42 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    44 -> 43 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.7799999999999999
+pattern_support: 11
+probability: 0.7799999999999999
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java#generateFunctionConstructor(ClassFileWriter)
+- rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java#generateFunctionInit(ClassFileWriter, OptFunctionNode)
+- rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java#generateExecute(ClassFileWriter, ScriptOrFnNode)
+- rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java#generateMain(ClassFileWriter)
+- rhino/286251/build/src/org/mozilla/javascript/JavaAdapter.java#generateSuper(ClassFileWriter, String, String, String, String, Class[], Class)
+startline: 658
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/Interpreter.java
+method: interpretLoop(Context, CallFrame, Object)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue() L2570" shape="box" ];
+    2 [ label="Number" shape="ellipse" ];
+    3 [ label="Number.<cast> L2570" shape="box" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="ScriptRuntime.toNumber()" shape="box" color="red" fontcolor="red" ];
+    6 [ label="Number.<instanceof> L2569" shape="box" ];
+    6 -> 1 [ label="sel" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="sel" style="bold" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 6 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "interpretLoop(Context, CallFrame, Object)" {
+  nslimit=10000;
+
+    1 [ label="Number.<instanceof> L2569" shape="box" ];
+    2 [ label="<r> L2567" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="byte[].arrayget() L2438" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<a> L2438" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Object" shape="ellipse" ];
+    6 [ label="Object[].arrayget() L2561" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<a> L2559" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="int[].arrayget() L2333" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Object[].arrayget() L2560" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<r> L2565" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="<break> L2573" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Number.doubleValue() L2570" shape="box" ];
+    13 [ label="Number.<cast> L2570" shape="box" ];
+    14 [ label="Number" shape="ellipse" ];
+    15 [ label="double" shape="ellipse" color="gray" fontcolor="gray" ];
+    16 [ label="ScriptRuntime.shallowEq() L2586" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="<r> L2575" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="para" style="solid" ];
+    6 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="sel" style="bold" ];
+    1 -> 13 [ label="sel" style="bold" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 17 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 13 [ label="para" style="solid" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="recv" style="solid" ];
+    12 -> 15 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="def" style="solid" ];
+    17 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.6297142857142857
+pattern_support: 14
+probability: 0.6297142857142857
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaObject.java#toDouble(Object)
+- rhino/286251/build/src/org/mozilla/javascript/Interpreter.java#do_add(Object[], double[], int, Context)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#eqNumber(double, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#cmp_LT(Object, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#doScriptableIncrDecr(Scriptable, String, Scriptable, Object, int)
+startline: 2569
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeArray.java
+method: jsConstructor(Context, Scriptable, Object[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue() L367" shape="box" ];
+    2 [ label="Number" shape="ellipse" ];
+    3 [ label="Number.<cast> L367" shape="box" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="ScriptRuntime.toNumber()" shape="box" color="red" fontcolor="red" ];
+    6 [ label="Number.<instanceof> L363" shape="box" ];
+    6 -> 1 [ label="sel" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="sel" style="bold" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 6 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "jsConstructor(Context, Scriptable, Object[])" {
+  nslimit=10000;
+
+    1 [ label="Number" shape="ellipse" ];
+    2 [ label="Number.<cast> L367" shape="box" ];
+    3 [ label="Number.doubleValue() L367" shape="box" ];
+    4 [ label="<r> L353" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Object" shape="ellipse" ];
+    6 [ label="Object[].arrayget() L362" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Number.<instanceof> L363" shape="box" ];
+    8 [ label="<return> L369" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="NativeArray.<init> L369" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<throw> L368" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="double" shape="ellipse" color="gray" fontcolor="gray" ];
+    12 [ label="ScriptRuntime.toUint32() L366" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="NativeArray.<init> L364" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="<r> L367" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="<return> L364" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="para" style="solid" ];
+    6 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" ];
+    2 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 12 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="para" style="solid" ];
+    6 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.6297142857142857
+pattern_support: 14
+probability: 0.6297142857142857
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaObject.java#toDouble(Object)
+- rhino/286251/build/src/org/mozilla/javascript/Interpreter.java#do_add(Object[], double[], int, Context)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#eqNumber(double, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#cmp_LT(Object, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#doScriptableIncrDecr(Scriptable, String, Scriptable, Object, int)
+startline: 363
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java
+method: toBoolean(Object)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Number.doubleValue() L230" shape="box" ];
+    2 [ label="Number" shape="ellipse" ];
+    3 [ label="Number.<cast> L230" shape="box" ];
+    4 [ label="Object" shape="ellipse" ];
+    5 [ label="ScriptRuntime.toNumber()" shape="box" color="red" fontcolor="red" ];
+    6 [ label="Number.<instanceof> L229" shape="box" ];
+    6 -> 1 [ label="sel" style="bold" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 2 [ label="def" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="sel" style="bold" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    6 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    4 -> 6 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "toBoolean(Object)" {
+  nslimit=10000;
+
+    1 [ label="Object" shape="ellipse" ];
+    2 [ label="String.<cast> L228" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Number.<instanceof> L229" shape="box" ];
+    4 [ label="<nullcheck> L225" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Scriptable.<cast> L239" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Number.<cast> L230" shape="box" ];
+    7 [ label="<r> L225" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Boolean.<cast> L224" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Scriptable.<instanceof> L233" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="String.<instanceof> L227" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="ScriptRuntime.warnAboutNonJSObject() L244" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="Boolean.<instanceof> L223" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="Number.doubleValue() L230" shape="box" ];
+    14 [ label="Number" shape="ellipse" ];
+    15 [ label="double" shape="ellipse" color="gray" fontcolor="gray" ];
+    16 [ label="<r> L231" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Scriptable.getDefaultValue() L239" shape="box" color="gray" fontcolor="gray" ];
+    18 [ label="<throw> L241" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="ScriptRuntime.errorWithClassName() L241" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="<return> L231" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="Scriptable.<instanceof> L240" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="<r> L231" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="<return> L245" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="<continue> L242" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="<return> L236" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="para" style="solid" ];
+    1 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    12 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="sel" style="bold" ];
+    3 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" ];
+    3 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 17 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 14 [ label="def" style="solid" ];
+    12 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 17 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="recv" style="solid" ];
+    13 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    22 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.6297142857142857
+pattern_support: 14
+probability: 0.6297142857142857
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeJavaObject.java#toDouble(Object)
+- rhino/286251/build/src/org/mozilla/javascript/Interpreter.java#do_add(Object[], double[], int, Context)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#eqNumber(double, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#cmp_LT(Object, Object)
+- rhino/286251/build/src/org/mozilla/javascript/ScriptRuntime.java#doScriptableIncrDecr(Scriptable, String, Scriptable, Object, int)
+startline: 229
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/Interpreter.java
+method: compile(CompilerEnvirons, ScriptOrFnNode, String, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L439" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="short" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "compile(CompilerEnvirons, ScriptOrFnNode, String, boolean)" {
+  nslimit=10000;
+
+    1 [ label="PrintStream" shape="ellipse" ];
+    2 [ label="PrintStream.println() L439" shape="box" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="Node.toStringTree() L439" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="para" style="solid" ];
+    4 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 439
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/regexp/NativeRegExp.java
+method: compileRE(String, String, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L310" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="short" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "compileRE(String, String, boolean)" {
+  nslimit=10000;
+
+    1 [ label="PrintStream" shape="ellipse" ];
+    2 [ label="PrintStream.println() L333" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="PrintStream.print() L307" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="PrintStream.println() L284" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="PrintStream.println() L310" shape="box" ];
+    6 [ label="PrintStream.print() L308" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PrintStream.println() L305" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 310
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/optimizer/Codegen.java
+method: compileToClassFile(CompilerEnvirons, String, ScriptOrFnNode, String, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L145" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" ];
+    3 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "compileToClassFile(CompilerEnvirons, String, ScriptOrFnNode, String, boolean)" {
+  nslimit=10000;
+
+    1 [ label="PrintStream.println() L145" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="PrintStream" shape="ellipse" ];
+    4 [ label="Node.toStringTree() L145" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    4 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 145
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/Decompiler.java
+method: decompile(String, int, UintMap)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L326" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="short" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "decompile(String, int, UintMap)" {
+  nslimit=10000;
+
+    1 [ label="PrintStream" shape="ellipse" ];
+    2 [ label="PrintStream.println() L326" shape="box" ];
+    3 [ label="PrintStream.println() L319" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="PrintStream.println() L305" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 326
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeJavaMethod.java
+method: printDebug(String, MemberBox, Object[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L469" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="StringBuffer" shape="ellipse" ];
+    3 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "printDebug(String, MemberBox, Object[])" {
+  nslimit=10000;
+
+    1 [ label="StringBuffer" shape="ellipse" ];
+    2 [ label="StringBuffer.<init> L457" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="AbstractStringBuilder.append() L460" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="AbstractStringBuilder.append() L466" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="PrintStream.println() L469" shape="box" ];
+    6 [ label="AbstractStringBuilder.append() L459" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="AbstractStringBuilder.append() L467" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="Appendable.append() L461" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Appendable.append() L468" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="AbstractStringBuilder.append() L463" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="AbstractStringBuilder.append() L465" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="AbstractStringBuilder.append() L458" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="PrintStream" shape="ellipse" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" ];
+    1 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 11 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 12 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="recv" style="solid" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 469
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/optimizer/Block.java
+method: runFlowAnalyzes(OptFunctionNode, Node[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="PrintStream.println() L109" shape="box" ];
+    2 [ label="PrintStream" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="ClassFileWriter.bytecodeStr()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="int" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="short" shape="ellipse" color="red" fontcolor="red" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="def" style="solid" color="red" fontcolor="red" ];
+    5 -> 4 [ label="para" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "runFlowAnalyzes(OptFunctionNode, Node[])" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Block.toString() L109" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="PrintStream.println() L109" shape="box" ];
+    4 [ label="PrintStream" shape="ellipse" ];
+    5 [ label="PrintStream.println() L120" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="PrintStream.println() L108" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="PrintStream.println() L117" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="PrintStream.println() L122" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addInvoke(int, String, String, String)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#addTableSwitch(int, int)
+- rhino/286251/build/src/org/mozilla/classfile/ClassFileWriter.java#add(int, int, int)
+startline: 109
+violation_from_doc: []
+---
+file: /mubench/checkouts/rhino/286251/build/src/org/mozilla/javascript/NativeArray.java
+method: toStringHelper(Context, Scriptable, Scriptable, boolean, boolean)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NativeArray.setElem()" shape="box" color="red" fontcolor="red" ];
+    2 [ label="Context" shape="ellipse" ];
+    3 [ label="NativeArray.getElem() L525" shape="box" ];
+    4 [ label="Object" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="long" shape="ellipse" ];
+    2 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    2 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "toStringHelper(Context, Scriptable, Scriptable, boolean, boolean)" {
+  nslimit=10000;
+
+    1 [ label="long" shape="ellipse" ];
+    2 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    3 [ label="NativeArray.getElem() L525" shape="box" ];
+    4 [ label="<r> L569" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="<r> L524" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="<a> L523" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<r> L523" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="NativeArray.getLengthProperty() L491" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Scriptable" shape="ellipse" color="gray" fontcolor="gray" ];
+    10 [ label="Context" shape="ellipse" ];
+    11 [ label="ObjToIntMap.has() L515" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="ScriptRuntime.toString() L557" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="String.<instanceof> L535" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="AbstractStringBuilder.append() L539" shape="box" color="gray" fontcolor="gray" ];
+    15 [ label="ScriptRuntime.uneval() L533" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="Callable.call() L554" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    18 [ label="<r> L526" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="<nullcheck> L547" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="AbstractStringBuilder.append() L557" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="ScriptRuntime.escapeString() L539" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="AbstractStringBuilder.append() L533" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="<continue> L528" shape="box" color="gray" fontcolor="gray" ];
+    24 [ label="<r> L546" shape="box" color="gray" fontcolor="gray" ];
+    25 [ label="ScriptRuntime.lastStoredScriptable() L553" shape="box" color="gray" fontcolor="gray" ];
+    26 [ label="ScriptRuntime.getPropFunctionAndThis() L551" shape="box" color="gray" fontcolor="gray" ];
+    27 [ label="AbstractStringBuilder.append() L542" shape="box" color="gray" fontcolor="gray" ];
+    28 [ label="String.<cast> L536" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="para" style="solid" ];
+    7 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 17 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 27 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 24 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 25 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 18 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 22 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 28 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 15 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 16 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 26 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 25 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    11 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 18 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 27 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 12 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 13 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 14 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 14 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 15 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 22 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 19 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    17 -> 24 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    17 -> 26 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    17 -> 18 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    17 -> 28 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 24 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 28 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 22 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 27 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 19 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 26 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    25 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 20 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 26 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    24 -> 25 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    26 -> 25 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.19999999999999996
+pattern_support: 12
+probability: 0.19999999999999996
+pattern_examples:
+- rhino/286251/build/src/org/mozilla/javascript/NativeArray.java#js_unshift(Context, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/NativeArray.java#js_shift(Context, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/NativeArray.java#js_splice(Context, Scriptable, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/NativeArray.java#js_reverse(Context, Scriptable, Object[])
+- rhino/286251/build/src/org/mozilla/javascript/NativeArray.java#heapify_extended(Context, Scriptable, Object, Scriptable, long, long, Object, Object[])
+startline: 525
+violation_from_doc: []

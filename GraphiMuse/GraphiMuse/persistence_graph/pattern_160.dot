@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="StopWatch.start()" shape="box" ];
+  2 [ label="StopWatch" shape="ellipse" ];
+  3 [ label="StopWatch.stop()" shape="box" ];
+  4 [ label="StopWatch.<init>" shape="box" ];
+  4 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  4 -> 2 [ label="def" style="solid" ];
+  1 -> 3 [ label="order" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  4 -> 3 [ label="order" style="bold" ];
+}

@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="mkdirs()" t="IO" l="44" ];
+  2 [ t="File" v="null" n="dir" ];
+  2 -> 1 [ label="P" ];
+}

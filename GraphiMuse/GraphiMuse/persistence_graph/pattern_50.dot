@@ -1,0 +1,20 @@
+digraph "AUG" {
+
+  1 [ label="Formatter.format()" shape="box" ];
+  2 [ label="Requirement" shape="ellipse" ];
+  3 [ label="Formatter" shape="ellipse" ];
+  4 [ label="AutoCloseable.close()" shape="box" ];
+  5 [ label="Object.toString()" shape="box" ];
+  6 [ label="Formatter.<init>" shape="box" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  2 -> 1 [ label="para" style="solid" ];
+  6 -> 1 [ label="order" style="bold" ];
+  6 -> 3 [ label="def" style="solid" ];
+  5 -> 4 [ label="order" style="bold" ];
+  3 -> 4 [ label="recv" style="solid" ];
+  1 -> 4 [ label="order" style="bold" ];
+  6 -> 4 [ label="order" style="bold" ];
+  6 -> 5 [ label="order" style="bold" ];
+  3 -> 5 [ label="recv" style="solid" ];
+  1 -> 5 [ label="order" style="bold" ];
+}

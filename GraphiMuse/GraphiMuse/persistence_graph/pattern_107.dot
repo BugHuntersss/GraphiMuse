@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="Repository.findProviders()" shape="box" ];
+  2 [ label="Set" shape="ellipse" ];
+  3 [ label="Collections.singleton()" shape="box" ];
+  4 [ label="Requirement" shape="ellipse" ];
+  5 [ label="Repository" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  5 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+}

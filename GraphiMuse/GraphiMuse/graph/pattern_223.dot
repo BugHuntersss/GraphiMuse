@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="equals()" t="MutableDateTime" l="222" ];
+  2 [ t="MutableDateTime" n="test5" ];
+  3 [ label="MC" s="hashCode()" t="MutableDateTime" l="224" ];
+  2 -> 1 [ label="R" ];
+  1 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+}

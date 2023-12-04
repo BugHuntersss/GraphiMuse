@@ -1,0 +1,18 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="checkPermission()" t="SecurityManager" l="406" ];
+  2 [ t="SecurityManager" n="sm" ];
+  3 [ label="N" l="405" ];
+  4 [ t="JodaTimePermission" n="dummy_" ];
+  5 [ label="I" t="JodaTimePermission" l="406" ];
+  6 [ t="String" v="ConverterManager.alterInstantConverters" ];
+  3 -> 1 [ label="S" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  2 -> 3 [ label="P" ];
+  5 -> 4 [ label="D" ];
+  6 -> 5 [ label="P" ];
+  3 -> 5 [ label="O" ];
+}

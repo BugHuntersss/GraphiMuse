@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="findProviders()" t="AbstractResolveContext" l="205" ];
+  2 [ t="BndrunResolveContext" n="context" ];
+  3 [ t="Requirement" n="logservice" ];
+  4 [ label="MC" s="buildSyntheticRequirement()" t="CapReqBuilder" l="203" ];
+  5 [ t="CapReqBuilder" n="dummy_" ];
+  6 [ label="MC" s="addDirective()" t="CapReqBuilder" l="203" ];
+  7 [ t="CapReqBuilder" n="dummy_" ];
+  8 [ t="String" v="filter" ];
+  9 [ label="I" t="CapReqBuilder" l="203" ];
+  10 [ t="String" v="osgi.extender" ];
+  9 -> 1 [ label="O" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  4 -> 3 [ label="D" ];
+  9 -> 4 [ label="O" ];
+  6 -> 4 [ label="O" ];
+  5 -> 4 [ label="R" ];
+  6 -> 5 [ label="D" ];
+  8 -> 6 [ label="P" ];
+  9 -> 6 [ label="O" ];
+  7 -> 6 [ label="R" ];
+  9 -> 7 [ label="D" ];
+  10 -> 9 [ label="P" ];
+}

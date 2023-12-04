@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="wrap()" t="Justif" l="41" ];
+  2 [ t="Justif" n="justif" ];
+  3 [ label="I" t="Justif" l="33" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+}

@@ -1,0 +1,22 @@
+digraph "AUG" {
+
+  1 [ label="ArrayUtils.add()" shape="box" ];
+  2 [ label="boolean" shape="ellipse" ];
+  3 [ label="null" shape="ellipse" ];
+  4 [ label="byte[]" shape="ellipse" ];
+  5 [ label="IndexOutOfBoundsException" shape="ellipse" ];
+  6 [ label="Arrays.equals()" shape="box" ];
+  7 [ label="<catch>" shape="box" ];
+  8 [ label="byte[]" shape="ellipse" ];
+  9 [ label="byte[]" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="para" style="solid" ];
+  1 -> 5 [ label="throw" style="solid" ];
+  1 -> 6 [ label="order" style="bold" ];
+  7 -> 6 [ label="order" style="bold" ];
+  9 -> 6 [ label="para" style="solid" ];
+  8 -> 6 [ label="para" style="solid" ];
+  5 -> 7 [ label="para" style="solid" ];
+  1 -> 7 [ label="order" style="bold" ];
+}

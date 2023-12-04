@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="IRepositoryContentProvider.checkStream()" shape="box" ];
+  2 [ label="ByteArrayInputStream" shape="ellipse" ];
+  3 [ label="ObrContentProvider" shape="ellipse" ];
+  4 [ label="ByteArrayInputStream" shape="ellipse" ];
+  5 [ label="ByteArrayInputStream.<init>" shape="box" ];
+  6 [ label="byte[]" shape="ellipse" ];
+  7 [ label="String.getBytes()" shape="box" ];
+  8 [ label="String" shape="ellipse" ];
+  9 [ label="ObrContentProvider.<init>" shape="box" ];
+  10 [ label="BundleIndexer" shape="ellipse" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  9 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="para" style="solid" ];
+  7 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  5 -> 2 [ label="def" style="solid" ];
+  9 -> 3 [ label="def" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+  7 -> 5 [ label="order" style="bold" ];
+  7 -> 6 [ label="def" style="solid" ];
+  8 -> 7 [ label="recv" style="solid" ];
+  5 -> 9 [ label="order" style="bold" ];
+  10 -> 9 [ label="para" style="solid" ];
+  7 -> 9 [ label="order" style="bold" ];
+}

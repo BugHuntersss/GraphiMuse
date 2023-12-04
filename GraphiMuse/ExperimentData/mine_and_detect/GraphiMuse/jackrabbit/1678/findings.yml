@@ -1,0 +1,115 @@
+file: /mubench/checkouts/jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/XmlHandler.java
+method: exportProperties(ExportContext, boolean, Node)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Node.hasProperty() L173" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Node" shape="ellipse" ];
+    4 [ label="RepositoryException" shape="ellipse" ];
+    5 [ label="Node.getProperty()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    2 -> 1 [ label="para" style="solid" ];
+    5 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="throw" style="solid" ];
+    3 -> 5 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "exportProperties(ExportContext, boolean, Node)" {
+  nslimit=10000;
+
+    1 [ label="Node.hasProperty() L173" shape="box" ];
+    2 [ label="Node" shape="ellipse" ];
+    3 [ label="String" shape="ellipse" ];
+    4 [ label="RepositoryException" shape="ellipse" ];
+    5 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Throwable.getMessage() L178" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="throw" style="solid" ];
+    1 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8608695652173913
+pattern_support: 13
+probability: 0.8608695652173913
+pattern_examples:
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/lock/JcrActiveLock.java#isDeep()
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/DefaultItemCollection.java#initProperties()
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/ZipHandler.java#canExport(ExportContext, boolean)
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/DefaultHandler.java#exportProperties(ExportContext, boolean, Node)
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/VersionControlledItemCollection.java#resolveMergeConflict(List)
+startline: 173
+violation_from_doc: []
+---
+file: /mubench/checkouts/jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/DefaultHandler.java
+method: importProperties(ImportContext, boolean, Node)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Node.hasProperty() L246" shape="box" ];
+    2 [ label="String" shape="ellipse" ];
+    3 [ label="Node" shape="ellipse" ];
+    4 [ label="RepositoryException" shape="ellipse" ];
+    5 [ label="Node.getProperty()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    2 -> 1 [ label="para" style="solid" ];
+    5 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    1 -> 4 [ label="throw" style="solid" ];
+    3 -> 5 [ label="recv" style="solid" color="red" fontcolor="red" ];
+    2 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="sel" style="bold" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "importProperties(ImportContext, boolean, Node)" {
+  nslimit=10000;
+
+    1 [ label="RepositoryException" shape="ellipse" ];
+    2 [ label="Node.hasProperty() L246" shape="box" ];
+    3 [ label="Node.setProperty() L247" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Node" shape="ellipse" ];
+    6 [ label="Node.setProperty() L257" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="Node.hasProperty() L256" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="String" shape="ellipse" ];
+    2 -> 1 [ label="throw" style="solid" ];
+    3 -> 1 [ label="throw" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="recv" style="solid" ];
+    8 -> 2 [ label="para" style="solid" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.8608695652173913
+pattern_support: 13
+probability: 0.8608695652173913
+pattern_examples:
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/lock/JcrActiveLock.java#isDeep()
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/DefaultItemCollection.java#initProperties()
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/ZipHandler.java#canExport(ExportContext, boolean)
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/DefaultHandler.java#exportProperties(ExportContext, boolean, Node)
+- jackrabbit/1678/build/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/webdav/jcr/VersionControlledItemCollection.java#resolveMergeConflict(List)
+startline: 246
+violation_from_doc: []

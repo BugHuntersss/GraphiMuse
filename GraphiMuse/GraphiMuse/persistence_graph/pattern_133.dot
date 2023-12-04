@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="ArrayUtils.isEquals(Object,Object)" shape="box" ];
+  2 [ label="String[]" shape="ellipse" ];
+  3 [ label="String[]" shape="ellipse" ];
+  4 [ label="{String}" shape="box" ];
+  5 [ label="String" shape="ellipse" ];
+  3 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 3 [ label="def" style="solid" ];
+  5 -> 4 [ label="para" style="solid" ];
+}

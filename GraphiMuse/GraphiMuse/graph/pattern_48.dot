@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="next()" t="Iterator" ];
+  2 [ t="Iterator" n="right" ];
+  3 [ label="MC" s="hasNext()" t="Iterator" ];
+  3 -> 1 [ label="O" ];
+  3 -> 1 [ label="Re" ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+}

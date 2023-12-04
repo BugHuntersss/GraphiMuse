@@ -1,0 +1,18 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="println()" t="PrintStream" l="113" ];
+  2 [ t="PrintStream" v="null" n="System.err" ];
+  3 [ label="MC" s="println()" t="PrintStream" l="103" ];
+  4 [ label="MC" s="println()" t="PrintStream" l="108" ];
+  5 [ t="String" v=" " ];
+  6 [ t="String" v=" " ];
+  7 [ t="String" v=" " ];
+  8 [ t="String" v=" " ];
+  2 -> 1 [ label="R" ];
+  2 -> 3 [ label="R" ];
+  6 -> 3 [ label="P" ];
+  7 -> 3 [ label="P" ];
+  8 -> 4 [ label="P" ];
+  5 -> 4 [ label="P" ];
+  2 -> 4 [ label="R" ];
+}

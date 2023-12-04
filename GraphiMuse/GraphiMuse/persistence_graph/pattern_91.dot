@@ -1,0 +1,28 @@
+digraph "AUG" {
+
+  1 [ label="ResourceAnalyzer.analyzeResource()" shape="box" ];
+  2 [ label="BundleAnalyzer" shape="ellipse" ];
+  3 [ label="JarResource" shape="ellipse" ];
+  4 [ label="JarResource" shape="ellipse" ];
+  5 [ label="JarResource" shape="ellipse" ];
+  6 [ label="LinkedList.<init>" shape="box" ];
+  7 [ label="JarResource.<init>" shape="box" ];
+  8 [ label="File" shape="ellipse" ];
+  9 [ label="File.<init>" shape="box" ];
+  10 [ label="String" shape="ellipse" ];
+  3 -> 1 [ label="para" style="solid" ];
+  6 -> 1 [ label="order" style="bold" ];
+  9 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  4 -> 1 [ label="para" style="solid" ];
+  7 -> 1 [ label="order" style="bold" ];
+  6 -> 3 [ label="def" style="solid" ];
+  7 -> 5 [ label="def" style="solid" ];
+  6 -> 7 [ label="order" style="bold" ];
+  9 -> 7 [ label="order" style="bold" ];
+  8 -> 7 [ label="para" style="solid" ];
+  9 -> 8 [ label="def" style="solid" ];
+  10 -> 9 [ label="para" style="solid" ];
+  6 -> 9 [ label="order" style="bold" ];
+}

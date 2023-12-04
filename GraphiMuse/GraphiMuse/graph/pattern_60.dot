@@ -1,0 +1,24 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="includes()" t="MavenVersionRange" l="73" ];
+  2 [ t="MavenVersionRange" n="mvr" ];
+  3 [ label="MC" s="toString()" t="Object" l="69" ];
+  4 [ label="I" t="MavenVersionRange" l="68" ];
+  5 [ t="String" v="[1.0,)" ];
+  6 [ t="MavenVersion" n="dummy_" ];
+  7 [ label="MC" s="parseMavenString()" t="MavenVersion" l="73" ];
+  8 [ t="String" v="3" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  7 -> 1 [ label="O" ];
+  6 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  4 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  4 -> 3 [ label="O" ];
+  5 -> 4 [ label="P" ];
+  7 -> 6 [ label="D" ];
+  3 -> 7 [ label="O" ];
+  4 -> 7 [ label="O" ];
+  8 -> 7 [ label="P" ];
+}

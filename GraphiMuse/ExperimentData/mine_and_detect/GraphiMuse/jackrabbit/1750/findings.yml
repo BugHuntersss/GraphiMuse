@@ -1,0 +1,78 @@
+file: /mubench/checkouts/jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/qom/QueryObjectModelTree.java
+method: QueryObjectModelTree(NamePathResolver, SourceImpl, ConstraintImpl, OrderingImpl[], ColumnImpl[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L79" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "QueryObjectModelTree(NamePathResolver, SourceImpl, ConstraintImpl, OrderingImpl[], ColumnImpl[])" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L79" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterable.iterator() L79" shape="box" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 13
+probability: 0.9999
+pattern_examples:
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/NAryQueryNode.java#needsSystemTree()
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/NAryQueryNode.java#removeOperand(QueryNode)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/namespace/AbstractNamespaceResolver.java#notifyNamespaceAdded(String, String)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/sql/JCRSQLQueryBuilder.java#visit(ASTQuery, Object)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/namespace/AbstractNamespaceResolver.java#notifyNamespaceRemoved(String)
+startline: 79
+violation_from_doc: []
+---
+file: /mubench/checkouts/jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/sql/JCRSQLQueryBuilder.java
+method: doOrMerge(MergingPathQueryNode[])
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L971" shape="box" ];
+    2 [ label="Iterator" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "doOrMerge(MergingPathQueryNode[])" {
+  nslimit=10000;
+
+    1 [ label="Iterator" shape="ellipse" ];
+    2 [ label="Iterable.iterator() L968" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterator.next() L971" shape="box" ];
+    4 [ label="<break> L976" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="Object" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    2 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 13
+probability: 0.9999
+pattern_examples:
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/NAryQueryNode.java#needsSystemTree()
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/NAryQueryNode.java#removeOperand(QueryNode)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/namespace/AbstractNamespaceResolver.java#notifyNamespaceAdded(String, String)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/query/sql/JCRSQLQueryBuilder.java#visit(ASTQuery, Object)
+- jackrabbit/1750/build/jackrabbit-spi-commons/src/main/java/org/apache/jackrabbit/spi/commons/namespace/AbstractNamespaceResolver.java#notifyNamespaceRemoved(String)
+startline: 971
+violation_from_doc: []

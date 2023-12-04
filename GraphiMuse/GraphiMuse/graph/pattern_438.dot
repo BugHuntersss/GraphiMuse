@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="warning()" t="Reporter" l="1961" ];
+  2 [ t="Analyzer" n="analyzer" ];
+  3 [ t="String" v="Duplicate name " ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="version()" t="Program" l="162" ];
+  2 [ t="String" v="1.0" ];
+  3 [ t="Program" n="p" ];
+  4 [ label="MC" s="valueOf()" t="Program" l="161" ];
+  5 [ t="String" v="null" n="a" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+}

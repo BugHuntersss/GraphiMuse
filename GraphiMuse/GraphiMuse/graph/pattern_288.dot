@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="createTempFile()" t="File" l="664" ];
+  2 [ t="String" v="" ];
+  2 -> 1 [ label="P" ];
+}

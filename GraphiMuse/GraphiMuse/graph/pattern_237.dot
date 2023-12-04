@@ -1,0 +1,24 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="year()" t="DateTime" l="377" ];
+  2 [ t="DateTime" n="dt" ];
+  3 [ label="MC" s="dayOfWeek()" t="DateTime" l="407" ];
+  4 [ label="MC" s="monthOfYear()" t="DateTime" l="384" ];
+  5 [ label="MC" s="dayOfYear()" t="DateTime" l="418" ];
+  6 [ label="MC" s="dayOfMonth()" t="DateTime" l="396" ];
+  2 -> 1 [ label="R" ];
+  1 -> 3 [ label="O" ];
+  4 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  2 -> 4 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  3 -> 5 [ label="O" ];
+  1 -> 5 [ label="O" ];
+  4 -> 5 [ label="O" ];
+  2 -> 5 [ label="R" ];
+  6 -> 5 [ label="O" ];
+  4 -> 6 [ label="O" ];
+  2 -> 6 [ label="R" ];
+  1 -> 6 [ label="O" ];
+}

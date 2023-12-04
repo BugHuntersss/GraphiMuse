@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="createStandaloneWorkspace()" t="Workspace" l="336" ];
+  2 [ t="Processor" n="processor" ];
+  3 [ label="I" t="Processor" l="336" ];
+  4 [ t="Processor" n="processor" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+}

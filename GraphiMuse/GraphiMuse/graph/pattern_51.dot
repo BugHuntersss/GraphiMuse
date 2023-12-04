@@ -1,0 +1,30 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="build()" t="ResourceBuilder" l="118" ];
+  2 [ t="ResourceBuilder" n="resourceBuilder" ];
+  3 [ label="MC" s="addManifest()" t="ResourceBuilder" l="117" ];
+  4 [ label="MC" s="addEE()" t="ResourceBuilder" l="116" ];
+  5 [ label="I" t="ResourceBuilder" l="115" ];
+  6 [ t="EE" n="dummy_" ];
+  7 [ t="Domain" n="dummy_" ];
+  8 [ label="MC" s="getManifest()" t="OSGI_CORE" l="117" ];
+  9 [ t="OSGI_CORE" n="dummy_" ];
+  5 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  5 -> 2 [ label="D" ];
+  8 -> 3 [ label="O" ];
+  2 -> 3 [ label="R" ];
+  5 -> 3 [ label="O" ];
+  7 -> 3 [ label="P" ];
+  4 -> 3 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  2 -> 4 [ label="R" ];
+  6 -> 4 [ label="P" ];
+  8 -> 7 [ label="D" ];
+  4 -> 8 [ label="O" ];
+  5 -> 8 [ label="O" ];
+  9 -> 8 [ label="R" ];
+}

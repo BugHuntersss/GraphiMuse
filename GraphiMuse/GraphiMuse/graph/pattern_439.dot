@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="println()" t="PrintStream" l="370" ];
+  2 [ t="PrintStream" n="out" ];
+  2 -> 1 [ label="R" ];
+}

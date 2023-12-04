@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="openConnection()" t="URL" l="490" ];
+  2 [ t="URL" n="u" ];
+  2 -> 1 [ label="R" ];
+}

@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="withFieldAdded()" t="DateTime" l="380" ];
+  2 [ t="int" v="0" ];
+  3 [ t="int" v="0" ];
+  4 [ t="DateTime" n="test" ];
+  5 [ label="I" t="DateTime" l="378" ];
+  6 [ t="int" v="0" ];
+  2 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  4 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  5 -> 4 [ label="D" ];
+  6 -> 5 [ label="P" ];
+}

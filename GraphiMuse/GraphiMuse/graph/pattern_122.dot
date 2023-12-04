@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="clone()" t="ArrayUtils" l="279" ];
+  2 [ t="short[]" n="original" ];
+  3 [ label="MC" s="equals()" t="Arrays" l="280" ];
+  4 [ t="boolean[]" n="cloned" ];
+  2 -> 1 [ label="P" ];
+  4 -> 3 [ label="P" ];
+  2 -> 3 [ label="P" ];
+  1 -> 3 [ label="O" ];
+  1 -> 4 [ label="D" ];
+}

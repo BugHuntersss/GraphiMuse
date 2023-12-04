@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="doWhen()" t="Forker" l="45" ];
+  2 [ t="Forker" n="forker" ];
+  3 [ t="Runnable" n="dummy_" ];
+  4 [ t="Runnable" n="dummy_" ];
+  5 [ t="int" v="3" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  5 -> 1 [ label="P" ];
+}

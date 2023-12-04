@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="ReporterAdapter.check()" shape="box" ];
+  2 [ label="Processor" shape="ellipse" ];
+  3 [ label="Processor.process()" shape="box" ];
+  4 [ label="Processor.<init>" shape="box" ];
+  5 [ label="String" shape="ellipse" ];
+  4 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  4 -> 2 [ label="def" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  4 -> 3 [ label="order" style="bold" ];
+  5 -> 3 [ label="para" style="solid" ];
+}

@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="buildSyntheticRequirement()" t="CapReqBuilder" l="27" ];
+  2 [ t="RequirementBuilder" n="rqb" ];
+  2 -> 1 [ label="R" ];
+}

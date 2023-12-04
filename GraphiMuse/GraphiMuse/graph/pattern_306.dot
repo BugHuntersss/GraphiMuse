@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="wrap()" t="ByteBuffer" l="20" ];
+  2 [ t="byte[]" n="b" ];
+  2 -> 1 [ label="P" ];
+}

@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="Processor.split()" shape="box" ];
+  2 [ label="String" shape="ellipse" ];
+  3 [ label="String[].arrayget()" shape="box" ];
+  4 [ label="String[]" shape="ellipse" ];
+  5 [ label="int" shape="ellipse" ];
+  6 [ label="Set" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  6 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+}

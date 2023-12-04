@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="compareTo()" t="AbstractReadableInstantFieldProperty" l="677" ];
+  2 [ t="Property" n="dummy_" ];
+  3 [ t="DateTime" n="dt1" ];
+  4 [ label="I" t="DateTime" l="673" ];
+  5 [ t="long" v="null" n="TEST_TIME2" ];
+  6 [ label="I" t="LocalDateTime" l="663" ];
+  4 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  6 -> 4 [ label="O" ];
+  5 -> 4 [ label="P" ];
+  5 -> 6 [ label="P" ];
+}

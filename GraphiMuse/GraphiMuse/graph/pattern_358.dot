@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="digest()" t="Digest" l="2930" ];
+  2 [ t="SHA1" n="sha1" ];
+  2 -> 1 [ label="R" ];
+}

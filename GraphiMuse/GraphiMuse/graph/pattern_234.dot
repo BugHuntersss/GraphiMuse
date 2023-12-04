@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addIndexedField()" t="UNKNOWN" l="1152" ];
+  2 [ t="Period" ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="get()" t="ReadablePeriod" l="1152" ];
+  5 [ t="DurationFieldType.SECONDS_TYPE" v="null" n="DurationFieldType.SECONDS_TYPE" ];
+  6 [ t="PeriodType.YEAR_INDEX" v="null" n="PeriodType.YEAR_INDEX" ];
+  7 [ t="ReadablePeriod" n="period" ];
+  8 [ t="UNKNOWN" n="dummy_" ];
+  9 [ t="PeriodType.YEAR_INDEX" v="null" n="PeriodType.YEAR_INDEX" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  8 -> 1 [ label="R" ];
+  9 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+  7 -> 4 [ label="R" ];
+}

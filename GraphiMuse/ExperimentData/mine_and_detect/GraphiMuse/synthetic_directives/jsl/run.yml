@@ -1,0 +1,33 @@
+detectionLoadTime: 4531
+detectionTime: 569
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 12
+numberOfTrainingExamples: 12
+numberOfUsagesInTrainingExamples:
+  AbstractButton: 1
+  ActionListener: 1
+  Collection: 2
+  Component: 1
+  Iterable: 1
+  Iterator: 1
+  JButton: 1
+  JFrame: 1
+  List: 1
+  Object: 5
+  Runnable: 1
+  String: 3
+  SwingUtilities: 1
+  Target: 2
+  Throwable: 1
+  Window: 1
+  byte: 1
+numberOfViolations: 0
+result: success
+runtime: 15.849996328353882
+timestamp: 1700809989
+trainingLoadTime: 9230
+trainingTime: 104

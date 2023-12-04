@@ -1,0 +1,37 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="assertOk()" t="BndTestCase" l="3697" ];
+  2 [ t="Builder" n="b" ];
+  3 [ label="MC" s="setProperty()" t="Processor" l="3691" ];
+  4 [ label="MC" s="build()" t="Builder" l="3696" ];
+  5 [ label="MC" s="addClasspath()" t="Analyzer" l="3694" ];
+  6 [ label="I" t="Builder" l="3690" ];
+  7 [ t="File" n="dummy_" ];
+  8 [ label="I" t="File" l="3694" ];
+  9 [ t="String" v="bin" ];
+  10 [ t="String" v="-dsannotations" ];
+  3 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  6 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  10 -> 3 [ label="P" ];
+  6 -> 3 [ label="O" ];
+  6 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  2 -> 4 [ label="R" ];
+  8 -> 4 [ label="O" ];
+  3 -> 4 [ label="O" ];
+  7 -> 5 [ label="P" ];
+  8 -> 5 [ label="O" ];
+  6 -> 5 [ label="O" ];
+  3 -> 5 [ label="O" ];
+  2 -> 5 [ label="R" ];
+  8 -> 7 [ label="D" ];
+  9 -> 8 [ label="P" ];
+  6 -> 8 [ label="O" ];
+  3 -> 8 [ label="O" ];
+}

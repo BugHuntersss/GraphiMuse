@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="print()" t="PrintWriter" l="764" ];
+  2 [ t="String" n="mime" ];
+  3 [ t="PrintWriter" n="pw" ];
+  4 [ t="String" n="value" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+}

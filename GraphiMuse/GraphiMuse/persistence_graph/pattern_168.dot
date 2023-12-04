@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="EqualsBuilder.isEquals()" shape="box" ];
+  2 [ label="EqualsBuilder" shape="ellipse" ];
+  3 [ label="EqualsBuilder.append(Object,Object)" shape="box" ];
+  4 [ label="long[]" shape="ellipse" ];
+  5 [ label="EqualsBuilder" shape="ellipse" ];
+  6 [ label="EqualsBuilder.<init>" shape="box" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  6 -> 1 [ label="order" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  5 -> 3 [ label="recv" style="solid" ];
+  6 -> 3 [ label="order" style="bold" ];
+  4 -> 3 [ label="para" style="solid" ];
+  6 -> 5 [ label="def" style="solid" ];
+}

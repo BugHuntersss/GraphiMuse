@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="start()" t="Thread" l="368" ];
+  2 [ t="Thread" n="tin" ];
+  3 [ label="I" t="Thread" l="356" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+}

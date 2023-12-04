@@ -1,0 +1,24 @@
+digraph "AUG" {
+
+  1 [ label="OutputStream.write()" shape="box" ];
+  2 [ label="int" shape="ellipse" ];
+  3 [ label="InputStream.read()" shape="box" ];
+  4 [ label="<r>" shape="box" ];
+  5 [ label="int" shape="ellipse" ];
+  6 [ label="byte[]" shape="ellipse" ];
+  7 [ label="OutputStream" shape="ellipse" ];
+  8 [ label="int" shape="ellipse" ];
+  9 [ label="JarInputStream" shape="ellipse" ];
+  6 -> 1 [ label="para" style="solid" ];
+  7 -> 1 [ label="recv" style="solid" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="sel" style="bold" ];
+  8 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="sel" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  9 -> 3 [ label="recv" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+  2 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="para" style="solid" ];
+}

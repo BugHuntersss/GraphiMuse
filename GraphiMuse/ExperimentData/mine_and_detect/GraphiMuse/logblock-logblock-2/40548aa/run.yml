@@ -1,0 +1,26 @@
+detectionLoadTime: 5251
+detectionTime: 647
+maxPatternSupport: 0
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 0
+numberOfTargets: 1
+numberOfTrainingExamples: 1
+numberOfUsagesInTrainingExamples:
+  Assert: 1
+  BlobEntry: 1
+  ByteArrayInputStream: 1
+  ByteArrayOutputStream: 1
+  Class: 1
+  DataInputStream: 1
+  DataOutputStream: 1
+  PaintingBlob: 1
+  String: 1
+  byte: 1
+numberOfViolations: 0
+result: success
+runtime: 14.3731107711792
+timestamp: 1700809989
+trainingLoadTime: 7328
+trainingTime: 148

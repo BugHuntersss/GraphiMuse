@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="from()" t="ExtList" l="440" ];
+  2 [ t="String" n="dummy_" ];
+  3 [ label="A" t="String[]" l="440" ];
+  4 [ t="int" n="i" ];
+  5 [ t="String[]" n="args" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+  5 -> 3 [ label="R" ];
+}

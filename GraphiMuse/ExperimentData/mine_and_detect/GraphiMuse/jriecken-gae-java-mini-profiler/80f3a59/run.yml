@@ -1,0 +1,85 @@
+detectionLoadTime: 4381
+detectionTime: 621
+maxPatternSupport: 28
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 2
+numberOfTargets: 43
+numberOfTrainingExamples: 43
+numberOfUsagesInTrainingExamples:
+  AggregateRpcStatsProto: 1
+  AggregateRpcStatsProtoOrBuilder: 1
+  ArrayList: 2
+  AtomicLong: 1
+  AutoCloseable: 1
+  Boolean: 1
+  Calendar: 1
+  CharSequence: 3
+  Class: 1
+  Collection: 2
+  Date: 1
+  DateFormat: 1
+  Entry: 1
+  Exception: 1
+  Expiration: 1
+  FilterChain: 1
+  FilterConfig: 1
+  HashMap: 3
+  HttpServletRequest: 5
+  HttpServletResponse: 4
+  HttpServletResponseWrapper: 1
+  IndividualRpcStatsProto: 1
+  IndividualRpcStatsProtoOrBuilder: 1
+  InputStream: 1
+  Integer: 4
+  Iterable: 2
+  Iterator: 4
+  LinkedHashMap: 1
+  List: 3
+  Long: 1
+  Map: 4
+  Map.Entry: 1
+  Matcher: 1
+  MemcacheService: 1
+  MemcacheServiceFactory: 3
+  MemcacheWriter: 1
+  MiniProfiler: 1
+  MiniProfilerAppstats: 2
+  MiniProfilerFilter: 5
+  MiniProfilerResourceLoader: 2
+  MiniProfilerServlet: 3
+  Object: 6
+  ObjectMapper: 1
+  Pattern: 2
+  PrintWriter: 1
+  Profile: 6
+  RecordWriter: 1
+  RequestStatProtoOrBuilder: 1
+  ResponseWrapper: 1
+  Root: 5
+  RuntimeException: 1
+  Scanner: 1
+  ServletConfig: 1
+  ServletOutputStream: 1
+  ServletRequest: 4
+  ServletResponse: 3
+  Set: 1
+  SimpleDateFormat: 1
+  StackFrameProto: 1
+  StackFrameProtoOrBuilder: 1
+  StatsProtos.RequestStatProto: 1
+  Step: 1
+  String: 19
+  System: 4
+  ThreadLocal: 3
+  URLEncoder: 1
+  UnsupportedEncodingException: 1
+  User: 1
+  UserServiceFactory: 1
+numberOfViolations: 0
+result: success
+runtime: 20.391031742095947
+timestamp: 1700809989
+trainingLoadTime: 10773
+trainingTime: 500

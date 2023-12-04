@@ -1,0 +1,65 @@
+detectionLoadTime: 5452
+detectionTime: 308
+maxPatternSupport: 10
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 1
+numberOfTargets: 122
+numberOfTrainingExamples: 122
+numberOfUsagesInTrainingExamples:
+  AbstractConfiguration: 4
+  ArrayList: 12
+  Arrays: 1
+  Boolean: 3
+  Byte: 3
+  ByteArrayInputStream: 1
+  CharSequence: 5
+  Charset: 1
+  Collection: 13
+  Collections: 3
+  Configuration: 1
+  ConfigurationDataProvider: 3
+  ConfigurationException: 4
+  Double: 3
+  Entry: 2
+  File: 1
+  FileConfigurationDataProvider: 2
+  FileInputStream: 1
+  Files: 1
+  Float: 3
+  HashMap: 3
+  IOException: 1
+  InputStream: 6
+  InputStreamReader: 1
+  Integer: 3
+  Iterable: 7
+  Iterator: 7
+  List: 21
+  Logger: 4
+  Long: 3
+  Map: 11
+  Object: 4
+  Parser: 1
+  Path: 1
+  Properties: 9
+  Reader: 1
+  RuntimeException: 4
+  Set: 6
+  Short: 3
+  StreamConfigurationDataProvider: 1
+  String: 51
+  StringWriter: 1
+  System: 16
+  T: 1
+  Throwable: 2
+  Utils: 7
+  Writer: 1
+  byte: 3
+  char: 4
+numberOfViolations: 0
+result: success
+runtime: 23.39971613883972
+timestamp: 1700809989
+trainingLoadTime: 11668
+trainingTime: 374

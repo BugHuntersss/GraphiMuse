@@ -1,0 +1,9 @@
+digraph "AUG" {
+
+  1 [ label="Iterable.iterator()" shape="box" ];
+  2 [ label="List" shape="ellipse" ];
+  3 [ label="Collection.size()" shape="box" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+}

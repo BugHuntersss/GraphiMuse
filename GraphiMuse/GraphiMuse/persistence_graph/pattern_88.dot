@@ -1,0 +1,23 @@
+digraph "AUG" {
+
+  1 [ label="XmlTester.assertCount()" shape="box" ];
+  2 [ label="XmlTester" shape="ellipse" ];
+  3 [ label="String" shape="ellipse" ];
+  4 [ label="String" shape="ellipse" ];
+  5 [ label="XmlTester.<init>" shape="box" ];
+  6 [ label="InputStream" shape="ellipse" ];
+  7 [ label="Resource.openInputStream()" shape="box" ];
+  8 [ label="Resource" shape="ellipse" ];
+  9 [ label="String" shape="ellipse" ];
+  7 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="para" style="solid" ];
+  5 -> 1 [ label="order" style="bold" ];
+  5 -> 2 [ label="def" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+  9 -> 5 [ label="para" style="solid" ];
+  7 -> 5 [ label="order" style="bold" ];
+  7 -> 6 [ label="def" style="solid" ];
+  8 -> 7 [ label="recv" style="solid" ];
+}

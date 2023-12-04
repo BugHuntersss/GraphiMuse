@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="UNKNOWN" l="180" ];
+  2 [ t="String" v="] " ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="append()" t="AbstractStringBuilder" l="180" ];
+  5 [ t="HostNamespace.HOST_NAMESPACE" v="null" n="HostNamespace.HOST_NAMESPACE" ];
+  6 [ t="StringBuilder" n="sb" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="P" ];
+  6 -> 4 [ label="R" ];
+}

@@ -1,0 +1,3 @@
+java.applet.AppletContext.setStream(String key, InputStream stream):[setStream(String key, InputStream stream);try-catch;IOException ]
+java.applet.AppletContext.setStream(String key, InputStream stream):[setStream(String key, InputStream stream);try-catch;IOException ]
+java.applet.Applet.setStub(AppletStub stub):[setStub(AppletStub stub);try-catch;SecurityException ]

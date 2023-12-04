@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="format()" t="Formatter" l="79" ];
+  2 [ t="String" v="Registrars in same class space 
+" ];
+  3 [ t="Formatter" n="setup" ];
+  4 [ label="MC" s="close()" t="AutoCloseable" ];
+  5 [ label="MC" s="toString()" t="Object" l="95" ];
+  6 [ label="I" t="Formatter" l="77" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  6 -> 3 [ label="D" ];
+  5 -> 4 [ label="O" ];
+  3 -> 4 [ label="R" ];
+  1 -> 4 [ label="O" ];
+  6 -> 4 [ label="O" ];
+  6 -> 5 [ label="O" ];
+  3 -> 5 [ label="R" ];
+  1 -> 5 [ label="O" ];
+}

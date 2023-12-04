@@ -1,0 +1,37 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="commit()" t="UNKNOWN" l="52" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ label="MC" s="connection()" t="Session" l="52" ];
+  4 [ t="Session" n="session" ];
+  5 [ label="MC" s="save()" t="Session" l="48" ];
+  6 [ label="MC" s="flush()" t="Session" l="51" ];
+  7 [ label="MC" s="close()" t="Session" l="53" ];
+  8 [ label="MC" s="openSession()" t="SessionFactory" l="38" ];
+  9 [ t="SessionFactory" n="dummy_" ];
+  10 [ t="Schedule" n="event" ];
+  3 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  6 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="O" ];
+  8 -> 3 [ label="O" ];
+  4 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  8 -> 4 [ label="D" ];
+  10 -> 5 [ label="P" ];
+  8 -> 5 [ label="O" ];
+  4 -> 5 [ label="R" ];
+  4 -> 6 [ label="R" ];
+  8 -> 6 [ label="O" ];
+  5 -> 6 [ label="O" ];
+  3 -> 7 [ label="O" ];
+  6 -> 7 [ label="O" ];
+  1 -> 7 [ label="O" ];
+  5 -> 7 [ label="O" ];
+  4 -> 7 [ label="R" ];
+  8 -> 7 [ label="O" ];
+  9 -> 8 [ label="R" ];
+}

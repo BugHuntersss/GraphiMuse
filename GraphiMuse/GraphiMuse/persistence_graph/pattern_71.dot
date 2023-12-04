@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="Collections.singleton()" shape="box" ];
+  2 [ label="Requirement" shape="ellipse" ];
+  3 [ label="CapReqBuilder.buildSyntheticRequirement()" shape="box" ];
+  4 [ label="CapReqBuilder" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+}

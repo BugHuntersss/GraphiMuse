@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="format()" t="DateFormatUtils" l="150" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ label="MC" s="getTime()" t="Calendar" l="150" ];
+  4 [ t="Calendar" n="cal" ];
+  5 [ label="MC" s="getTime()" t="Calendar" l="153" ];
+  6 [ label="MC" s="format()" t="DateFormatUtils" l="162" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+  3 -> 5 [ label="O" ];
+  1 -> 5 [ label="O" ];
+  4 -> 5 [ label="R" ];
+  1 -> 6 [ label="O" ];
+  3 -> 6 [ label="O" ];
+  5 -> 6 [ label="O" ];
+}

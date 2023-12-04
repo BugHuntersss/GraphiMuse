@@ -1,0 +1,85 @@
+detectionLoadTime: 6434
+detectionTime: 753
+maxPatternSupport: 15
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 0
+numberOfPatterns: 2
+numberOfTargets: 18
+numberOfTrainingExamples: 18
+numberOfUsagesInTrainingExamples:
+  AbstractButton: 1
+  AbstractStringBuilder: 2
+  ActionListener: 1
+  AutoCloseable: 2
+  BASE64Decoder: 1
+  BASE64Encoder: 1
+  BufferedReader: 2
+  BufferedWriter: 1
+  ByteArrayInputStream: 1
+  ByteArrayOutputStream: 1
+  CharacterDecoder: 1
+  CharacterEncoder: 1
+  ChildServer: 1
+  Cipher: 2
+  Component: 1
+  Container: 1
+  Exception: 5
+  File: 2
+  FileInputStream: 2
+  FileOutputStream: 1
+  Flushable: 1
+  HttpURLConnection: 1
+  IOException: 3
+  IOException|ClassNotFoundException: 1
+  IOException|JSONException: 1
+  InputStream: 2
+  InputStreamReader: 2
+  Integer: 1
+  JButton: 1
+  JFrame: 1
+  JOptionPane: 1
+  JPanel: 1
+  JSONArray: 1
+  JSONObject: 7
+  KeyPair: 1
+  KeyPairGenerator: 1
+  KeyPairGeneratorSpi: 1
+  MD5: 2
+  MessageDigest: 1
+  NoSuchAlgorithmException: 1
+  NullPointerException|IOException|JSONException: 1
+  Object: 11
+  ObjectInput: 3
+  ObjectInputStream: 3
+  ObjectOutput: 2
+  ObjectOutputStream: 2
+  ObjectString: 1
+  OutputStream: 2
+  OutputStreamWriter: 2
+  PrintStream: 7
+  PrivateKey: 7
+  PublicKey: 5
+  RSA: 5
+  RootPaneContainer: 1
+  Runnable: 1
+  Server: 3
+  ServerSocket: 1
+  Socket: 1
+  String: 17
+  StringBuilder: 2
+  System: 2
+  Thread: 1
+  Throwable: 6
+  URL: 1
+  URLConnection: 1
+  Writer: 2
+  byte: 1
+  int: 1
+  long: 2
+numberOfViolations: 0
+result: success
+runtime: 24.596959829330444
+timestamp: 1700809989
+trainingLoadTime: 10011
+trainingTime: 352

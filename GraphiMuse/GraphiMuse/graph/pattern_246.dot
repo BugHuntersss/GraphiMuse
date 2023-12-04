@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="join()" t="Strings" l="225" ];
+  2 [ t="String" v=" " ];
+  3 [ t="String" v=" " ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="P" ];
+}

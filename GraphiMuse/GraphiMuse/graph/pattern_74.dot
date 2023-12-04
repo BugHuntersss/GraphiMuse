@@ -1,0 +1,21 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="find()" t="Matcher" l="264" ];
+  2 [ t="Matcher" n="packedReferenceMatcher" ];
+  3 [ label="MC" s="matcher()" t="Pattern" l="263" ];
+  4 [ label="MC" s="group()" t="MatchResult" l="267" ];
+  5 [ t="String" n="methodDescriptor" ];
+  6 [ t="Pattern" n="AnnotationHeaders.SIMPLE_PARAM_PATTERN" ];
+  7 [ t="int" v="1" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  5 -> 3 [ label="P" ];
+  6 -> 3 [ label="R" ];
+  2 -> 4 [ label="R" ];
+  3 -> 4 [ label="O" ];
+  1 -> 4 [ label="S" ];
+  7 -> 4 [ label="P" ];
+  3 -> 4 [ label="S" ];
+  1 -> 4 [ label="O" ];
+}

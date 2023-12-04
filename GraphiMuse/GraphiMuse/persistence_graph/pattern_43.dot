@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="Map.entrySet()" shape="box" ];
+  2 [ label="Map" shape="ellipse" ];
+  3 [ label="Jar.getResources()" shape="box" ];
+  4 [ label="Jar" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+}

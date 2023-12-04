@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="OSGiHeader.parseHeader()" shape="box" ];
+  2 [ label="String" shape="ellipse" ];
+  3 [ label="Attributes.getValue()" shape="box" ];
+  4 [ label="Constants.EXPORT_SERVICE" shape="ellipse" ];
+  5 [ label="Attributes" shape="ellipse" ];
+  6 [ label="Manifest.getMainAttributes()" shape="box" ];
+  7 [ label="Manifest" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  6 -> 1 [ label="order" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  6 -> 3 [ label="order" style="bold" ];
+  5 -> 3 [ label="recv" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+  6 -> 5 [ label="def" style="solid" ];
+  7 -> 6 [ label="recv" style="solid" ];
+}

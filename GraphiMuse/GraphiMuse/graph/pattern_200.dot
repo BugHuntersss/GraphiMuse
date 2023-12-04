@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="add()" t="DurationField" l="290" ];
+  2 [ t="int" v="1" ];
+  3 [ t="DurationField" n="dummy_" ];
+  4 [ label="MC" s="hours()" t="Chronology" l="290" ];
+  5 [ t="ISOChronology" n="dummy_" ];
+  6 [ t="int" v="1" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="P" ];
+  4 -> 3 [ label="D" ];
+  5 -> 4 [ label="R" ];
+}

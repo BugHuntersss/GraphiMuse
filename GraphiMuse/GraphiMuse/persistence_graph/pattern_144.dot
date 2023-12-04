@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="DateUtils.truncate(Object,int)" shape="box" ];
+  2 [ label="int" shape="ellipse" ];
+  3 [ label="DateUtils.truncate(Date,int)" shape="box" ];
+  4 [ label="Object" shape="ellipse" ];
+  5 [ label="Date" shape="ellipse" ];
+  6 [ label="Object.<cast>" shape="box" ];
+  7 [ label="null" shape="ellipse" ];
+  4 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+  2 -> 3 [ label="para" style="solid" ];
+  6 -> 4 [ label="def" style="solid" ];
+  7 -> 6 [ label="para" style="solid" ];
+}

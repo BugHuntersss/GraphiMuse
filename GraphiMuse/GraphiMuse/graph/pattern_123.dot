@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toStringExclude()" t="ReflectionToStringBuilder" l="92" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ label="I" t="TestFixture" l="92" ];
+  4 [ t="String" v="null" n="SECRET_FIELD" ];
+  3 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+}

@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="create()" t="URI" l="12" ];
+  2 [ t="String" v="http://example.com/foo.xml" ];
+  2 -> 1 [ label="P" ];
+}

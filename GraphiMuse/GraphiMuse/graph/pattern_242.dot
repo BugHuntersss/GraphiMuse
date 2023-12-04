@@ -1,0 +1,8 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="setPackageInfo()" t="Project" l="719" ];
+  2 [ t="Project" n="p" ];
+  3 [ t="String" v="pkg1" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+}

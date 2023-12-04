@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="EqualsBuilder" l="418" ];
+  2 [ t="TestObject[]" n="obj1" ];
+  3 [ t="EqualsBuilder" n="dummy_" ];
+  4 [ label="I" t="EqualsBuilder" l="418" ];
+  3 -> 1 [ label="R" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+}

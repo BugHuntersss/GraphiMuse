@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="year()" t="LocalDateTime" l="157" ];
+  2 [ t="LocalDateTime" n="test" ];
+  3 [ label="I" t="LocalDateTime" l="156" ];
+  4 [ t="int" v="20" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="P" ];
+}

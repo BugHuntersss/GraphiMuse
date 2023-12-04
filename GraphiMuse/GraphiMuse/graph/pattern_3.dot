@@ -1,0 +1,15 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="assertEquals()" t="CalendarUtilsTest" l="152" ];
+  2 [ t="Calendar" n="dummy_" ];
+  3 [ label="MC" s="trunc()" t="CalendarUtils" l="154" ];
+  4 [ t="int" v="0" ];
+  5 [ t="String" v="" ];
+  6 [ t="int" v="1" n="Calendar.YEAR" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="P" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="P" ];
+}

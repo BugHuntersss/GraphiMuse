@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isDirectory()" t="File" l="131" ];
+  2 [ t="File" n="pathname" ];
+  2 -> 1 [ label="R" ];
+}

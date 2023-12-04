@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="CompareToBuilder.append(double,double)" shape="box" ];
+  2 [ label="double" shape="ellipse" ];
+  3 [ label="CompareToBuilder" shape="ellipse" ];
+  4 [ label="CompareToBuilder.<init>" shape="box" ];
+  5 [ label="double" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  4 -> 3 [ label="def" style="solid" ];
+}

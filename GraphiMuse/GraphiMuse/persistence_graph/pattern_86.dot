@@ -1,0 +1,11 @@
+digraph "AUG" {
+
+  1 [ label="Digest.digest()" shape="box" ];
+  2 [ label="SHA1" shape="ellipse" ];
+  3 [ label="SHA1.digest()" shape="box" ];
+  4 [ label="byte[]" shape="ellipse" ];
+  3 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+}

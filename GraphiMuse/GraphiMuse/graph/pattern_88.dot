@@ -1,0 +1,23 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="assertCount()" t="XmlTester" l="60" ];
+  2 [ t="XmlTester" n="xt" ];
+  3 [ t="String" v="metatype:MetaData/OCD/@*" ];
+  4 [ t="String" v="metatype:MetaData/OCD/@*" ];
+  5 [ label="I" t="XmlTester" l="57" ];
+  6 [ t="InputStream" n="dummy_" ];
+  7 [ label="MC" s="openInputStream()" t="Resource" l="57" ];
+  8 [ t="Resource" n="r" ];
+  9 [ t="String" v="org.foo.extensions.v1" ];
+  7 -> 1 [ label="O" ];
+  4 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  5 -> 2 [ label="D" ];
+  6 -> 5 [ label="P" ];
+  9 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  7 -> 6 [ label="D" ];
+  8 -> 7 [ label="R" ];
+}

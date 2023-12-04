@@ -1,0 +1,38 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="join()" t="Processor" l="3279" ];
+  2 [ t="Set" n="dummy_" ];
+  3 [ label="MC" s="keySet()" t="Map" l="3279" ];
+  4 [ t="Map" n="dummy_" ];
+  5 [ label="MC" s="getResources()" t="Jar" l="3279" ];
+  6 [ label="MC" s="setProperty()" t="Processor" l="3269" ];
+  7 [ t="String" v="
+" ];
+  8 [ t="Builder" n="b" ];
+  9 [ t="Jar" n="jar" ];
+  10 [ label="MC" s="getResource()" t="Jar" l="3278" ];
+  11 [ t="String" v="-dsannotations-options" n="Constants.DSANNOTATIONS_OPTIONS" ];
+  12 [ t="String" v="OSGI-INF/test.component.DSAnnotationTest$FinalDynamicCollectionField.xml" ];
+  13 [ t="String" v="test.component.*FinalDynamicCollectionField" ];
+  3 -> 1 [ label="O" ];
+  7 -> 1 [ label="P" ];
+  2 -> 1 [ label="P" ];
+  6 -> 1 [ label="O" ];
+  10 -> 1 [ label="O" ];
+  5 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  10 -> 3 [ label="O" ];
+  5 -> 3 [ label="O" ];
+  5 -> 4 [ label="D" ];
+  10 -> 5 [ label="O" ];
+  9 -> 5 [ label="R" ];
+  6 -> 5 [ label="O" ];
+  11 -> 6 [ label="P" ];
+  8 -> 6 [ label="R" ];
+  13 -> 6 [ label="P" ];
+  12 -> 10 [ label="P" ];
+  6 -> 10 [ label="O" ];
+  9 -> 10 [ label="R" ];
+}

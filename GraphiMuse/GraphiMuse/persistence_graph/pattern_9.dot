@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="ArrayUtils.clone()" shape="box" ];
+  2 [ label="byte[]" shape="ellipse" ];
+  3 [ label="System.arraycopy()" shape="box" ];
+  4 [ label="double[]" shape="ellipse" ];
+  5 [ label="long[]" shape="ellipse" ];
+  6 [ label="byte[]" shape="ellipse" ];
+  2 -> 1 [ label="para" style="solid" ];
+  4 -> 3 [ label="para" style="solid" ];
+  2 -> 3 [ label="para" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+  6 -> 3 [ label="para" style="solid" ];
+}

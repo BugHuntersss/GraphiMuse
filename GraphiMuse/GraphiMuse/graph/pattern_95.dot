@@ -1,0 +1,10 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="collect()" t="IO" l="261" ];
+  2 [ t="File" n="f" ];
+  3 [ label="MC" s="isFile()" t="File" l="258" ];
+  2 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  3 -> 1 [ label="S" ];
+  2 -> 3 [ label="R" ];
+}

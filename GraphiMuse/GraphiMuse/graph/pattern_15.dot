@@ -1,0 +1,33 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="flush()" t="Flushable" l="148" ];
+  2 [ t="ObjectOutputStream" n="oos" ];
+  3 [ label="MC" s="writeObject()" t="ObjectOutput" l="147" ];
+  4 [ label="I" t="ObjectOutputStream" l="146" ];
+  5 [ t="HashMap" v="null" n="iMap" ];
+  6 [ t="ByteArrayOutputStream" n="baos" ];
+  7 [ label="MC" s="toByteArray()" t="ByteArrayOutputStream" l="152" ];
+  8 [ label="I" t="ByteArrayOutputStream" l="145" ];
+  9 [ label="V" t="Object" n="Object" ];
+  10 [ label="N" ];
+  2 -> 1 [ label="R" ];
+  4 -> 1 [ label="O" ];
+  3 -> 1 [ label="O" ];
+  8 -> 1 [ label="O" ];
+  4 -> 2 [ label="D" ];
+  2 -> 3 [ label="R" ];
+  8 -> 3 [ label="O" ];
+  5 -> 3 [ label="P" ];
+  4 -> 3 [ label="O" ];
+  8 -> 4 [ label="O" ];
+  6 -> 4 [ label="P" ];
+  8 -> 6 [ label="D" ];
+  8 -> 7 [ label="O" ];
+  6 -> 7 [ label="R" ];
+  4 -> 7 [ label="O" ];
+  1 -> 7 [ label="O" ];
+  3 -> 7 [ label="O" ];
+  9 -> 10 [ label="P" ];
+  9 -> 3 [ label="P" ];
+  10 -> 3 [ label="O" ];
+}

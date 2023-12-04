@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toFile()" t="Path" l="196" ];
+  2 [ t="Path" n="dummy_" ];
+  2 -> 1 [ label="R" ];
+}

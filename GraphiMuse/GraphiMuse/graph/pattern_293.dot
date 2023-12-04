@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="addAnalyzer()" t="RepoIndex" l="475" ];
+  2 [ t="RepoIndex" n="indexer" ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="createFilter()" t="FrameworkUtil" l="475" ];
+  5 [ label="I" t="RepoIndex" l="474" ];
+  6 [ t="WibbleAnalyzer" n="dummy_" ];
+  7 [ t="String" v="(location=*sion.jar)" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  6 -> 1 [ label="P" ];
+  5 -> 1 [ label="O" ];
+  5 -> 2 [ label="D" ];
+  4 -> 3 [ label="D" ];
+  7 -> 4 [ label="P" ];
+  5 -> 4 [ label="O" ];
+}

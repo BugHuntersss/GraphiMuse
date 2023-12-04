@@ -1,0 +1,557 @@
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/io/avro/ReflectUnmarshaller.java
+method: unmarshal(InputStream)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L51" shape="box" ];
+    2 [ label="DataFileStream" shape="ellipse" ];
+    3 [ label="Iterator.hasNext()" shape="box" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "unmarshal(InputStream)" {
+  nslimit=10000;
+
+    1 [ label="DataFileStream" shape="ellipse" ];
+    2 [ label="DataFileStream.<init> L45" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Iterator.next() L51" shape="box" ];
+    4 [ label="AutoCloseable.close() L54" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="T" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="<throw> L56" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="UnmarshalException.<init> L56" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="<catch>" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="hdl" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.9999
+pattern_support: 27
+probability: 0.9999
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/logging/LogListeners.java#log(String, Object[])
+- corona-old/0d0d18b/build/src/com/corona/instant/MessengerListenerSupport.java#fireChatCreated(Chat)
+- corona-old/0d0d18b/build/src/com/corona/context/AbstractInjectConstructor.java#create(ContextManager)
+- corona-old/0d0d18b/build/src/com/corona/servlet/security/SecurityMatcher.java#match(String, HttpServletRequest)
+- corona-old/0d0d18b/build/src/com/corona/servlet/restricting/allowroles/AllowRolesRestrictor.java#restrict(String, HttpServletRequest, HttpServletResponse)
+startline: 51
+violation_from_doc: []
+---
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/util/Base64.java
+method: decode(String, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="OutputStream.write() L1281" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="IOException" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="<catch>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "decode(String, int)" {
+  nslimit=10000;
+
+    1 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    2 [ label="ByteArrayOutputStream.<init> L1276" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="ByteArrayOutputStream.toByteArray() L1285" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="OutputStream.write() L1281" shape="box" ];
+    5 [ label="AutoCloseable.close() L1293" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="String.getBytes() L1252" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="int" shape="ellipse" ];
+    8 [ label="<r> L1265" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="String.getBytes() L1255" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<r> L1280" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="<r> L1268" shape="box" color="gray" fontcolor="gray" ];
+    12 [ label="ByteArrayInputStream.<init> L1277" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="InputStream.read() L1280" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="byte[]" shape="ellipse" color="gray" fontcolor="gray" ];
+    15 [ label="<r> L1264" shape="box" color="gray" fontcolor="gray" ];
+    16 [ label="GZIPInputStream.<init> L1278" shape="box" color="gray" fontcolor="gray" ];
+    17 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    18 [ label="Base64.decode() L1260" shape="box" color="gray" fontcolor="gray" ];
+    19 [ label="<nullcheck> L1265" shape="box" color="gray" fontcolor="gray" ];
+    20 [ label="byte[].arrayget() L1267" shape="box" color="gray" fontcolor="gray" ];
+    21 [ label="int.<cast> L1267" shape="box" color="gray" fontcolor="gray" ];
+    22 [ label="{byte} L1272" shape="box" color="gray" fontcolor="gray" ];
+    23 [ label="byte[].arrayget() L1267" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="para" style="solid" ];
+    8 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    17 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 4 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 5 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="finally" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    18 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 18 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 12 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    16 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 13 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    15 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 13 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 13 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    22 -> 14 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    15 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    21 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    20 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    23 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 16 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 19 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    18 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 23 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 21 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    19 -> 20 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 15
+probability: 0.92
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientExecuteRequest.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerLoggedInResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerExecutedResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerFailExecuteResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientLogoutRequest.java#write(OutputStream)
+startline: 1281
+violation_from_doc: []
+---
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/remote/AbstractResponse.java
+method: getBytes(InputStream, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="OutputStream.write() L57" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="IOException" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="<catch>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getBytes(InputStream, int)" {
+  nslimit=10000;
+
+    1 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    2 [ label="ByteArrayOutputStream.<init> L47" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="ByteArrayOutputStream.toByteArray() L62" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="OutputStream.write() L57" shape="box" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="InputStream.read() L51" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="<r> L52" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 4 [ label="recv" style="solid" ];
+    2 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="para" style="solid" ];
+    6 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 4 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 15
+probability: 0.92
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientExecuteRequest.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerLoggedInResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerExecutedResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerFailExecuteResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientLogoutRequest.java#write(OutputStream)
+startline: 57
+violation_from_doc: []
+---
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/AbstractServerRequest.java
+method: getBytes(InputStream, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="OutputStream.write() L59" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="IOException" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="<catch>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getBytes(InputStream, int)" {
+  nslimit=10000;
+
+    1 [ label="OutputStream.write() L59" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="<r> L54" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="InputStream.read() L53" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="ByteArrayOutputStream.<init> L49" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="ByteArrayOutputStream.toByteArray() L64" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 15
+probability: 0.92
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientExecuteRequest.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerLoggedInResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerExecutedResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerFailExecuteResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientLogoutRequest.java#write(OutputStream)
+startline: 59
+violation_from_doc: []
+---
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/servlet/multipart/FileParameter.java
+method: getData()
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="OutputStream.write() L164" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="byte[]" shape="ellipse" ];
+    4 [ label="IOException" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="<catch>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getData()" {
+  nslimit=10000;
+
+    1 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    2 [ label="ByteArrayOutputStream.<init> L160" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="OutputStream.write() L164" shape="box" ];
+    4 [ label="Flushable.flush() L166" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="ByteArrayOutputStream.toByteArray() L170" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="byte[]" shape="ellipse" ];
+    7 [ label="{byte} L162" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="InputStream.read() L163" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="InputStream.read() L163" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="<nullcheck> L156" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    12 [ label="<r> L163" shape="box" color="gray" fontcolor="gray" ];
+    13 [ label="<nullcheck> L151" shape="box" color="gray" fontcolor="gray" ];
+    14 [ label="int" shape="ellipse" color="gray" fontcolor="gray" ];
+    15 [ label="FileInputStream.<init> L159" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    1 -> 4 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 5 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    11 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    12 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 3 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 9 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    12 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    15 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 14 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 12 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    14 -> 12 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    13 -> 15 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 15
+probability: 0.92
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientExecuteRequest.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerLoggedInResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerExecutedResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerFailExecuteResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientLogoutRequest.java#write(OutputStream)
+startline: 164
+violation_from_doc: []
+---
+file: /mubench/checkouts/corona-old/0d0d18b/build/src/com/corona/remote/ClientResponseFactory.java
+method: getStreamAsString(InputStream, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="OutputStream.write() L145" shape="box" ];
+    2 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="IOException" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="<catch>" shape="box" color="red" fontcolor="red" ];
+    6 [ label="String" shape="ellipse" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    1 -> 4 [ label="throw" style="solid" color="red" fontcolor="red" ];
+    4 -> 5 [ label="para" style="solid" color="red" fontcolor="red" ];
+    1 -> 5 [ label="order" style="bold" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "getStreamAsString(InputStream, int)" {
+  nslimit=10000;
+
+    1 [ label="OutputStream.write() L145" shape="box" ];
+    2 [ label="int" shape="ellipse" ];
+    3 [ label="ByteArrayOutputStream" shape="ellipse" ];
+    4 [ label="<r> L144" shape="box" color="gray" fontcolor="gray" ];
+    5 [ label="InputStream.read() L144" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="ByteArrayOutputStream.<init> L139" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="OutputStream.write() L141" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="ByteArrayOutputStream.toByteArray() L150" shape="box" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    7 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    2 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 7 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.92
+pattern_support: 15
+probability: 0.92
+pattern_examples:
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientExecuteRequest.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerLoggedInResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerExecutedResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/servlet/producing/remote/ServerFailExecuteResponse.java#write(OutputStream)
+- corona-old/0d0d18b/build/src/com/corona/remote/ClientLogoutRequest.java#write(OutputStream)
+startline: 145
+violation_from_doc: []

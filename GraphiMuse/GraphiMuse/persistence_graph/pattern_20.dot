@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="StringUtils.join()" shape="box" ];
+  2 [ label="Iterator" shape="ellipse" ];
+  3 [ label="Iterable.iterator()" shape="box" ];
+  4 [ label="List" shape="ellipse" ];
+  5 [ label="Arrays.asList()" shape="box" ];
+  6 [ label="String[]" shape="ellipse" ];
+  7 [ label="null" shape="ellipse" ];
+  7 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  5 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 2 [ label="def" style="solid" ];
+  5 -> 3 [ label="order" style="bold" ];
+  4 -> 3 [ label="recv" style="solid" ];
+  5 -> 4 [ label="def" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+}

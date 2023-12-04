@@ -1,0 +1,25 @@
+digraph "AUG" {
+
+  1 [ label="ToStringBuilder.append(Object)" shape="box" ];
+  2 [ label="Object" shape="ellipse" ];
+  3 [ label="ToStringBuilder" shape="ellipse" ];
+  4 [ label="ToStringBuilder.<init>" shape="box" ];
+  5 [ label="Object.<cast>" shape="box" ];
+  6 [ label="short[][]" shape="ellipse" ];
+  7 [ label="ToStringBuilder.append(Object[])" shape="box" ];
+  8 [ label="Integer" shape="ellipse" ];
+  9 [ label="ToStringBuilder" shape="ellipse" ];
+  10 [ label="null" shape="ellipse" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  2 -> 1 [ label="para" style="solid" ];
+  7 -> 1 [ label="order" style="bold" ];
+  5 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="def" style="solid" ];
+  7 -> 4 [ label="order" style="bold" ];
+  8 -> 4 [ label="para" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+  10 -> 6 [ label="def" style="solid" ];
+  9 -> 7 [ label="recv" style="solid" ];
+  6 -> 7 [ label="para" style="solid" ];
+}

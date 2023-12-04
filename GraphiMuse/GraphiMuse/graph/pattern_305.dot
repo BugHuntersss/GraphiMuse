@@ -1,0 +1,6 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="encodeBase64()" t="Base64" l="246" ];
+  2 [ t="byte[]" v="null" n="data" ];
+  2 -> 1 [ label="P" ];
+}

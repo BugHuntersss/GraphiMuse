@@ -1,0 +1,27 @@
+digraph "AUG" {
+
+  1 [ label="Cipher.doFinal()" shape="box" ];
+  2 [ label="byte[]" shape="ellipse" ];
+  3 [ label="Cipher" shape="ellipse" ];
+  4 [ label="Cipher.init()" shape="box" ];
+  5 [ label="SecretKey" shape="ellipse" ];
+  6 [ label="SecretKey" shape="ellipse" ];
+  7 [ label="Cipher.updateAAD()" shape="box" ];
+  8 [ label="AlgorithmParameterSpec" shape="ellipse" ];
+  9 [ label="<nullcheck>" shape="box" ];
+  10 [ label="AlgorithmParameters" shape="ellipse" ];
+  11 [ label="<nullcheck>" shape="box" ];
+  2 -> 1 [ label="para" style="solid" ];
+  3 -> 1 [ label="recv" style="solid" ];
+  4 -> 1 [ label="order" style="bold" ];
+  6 -> 4 [ label="para" style="solid" ];
+  5 -> 4 [ label="para" style="solid" ];
+  3 -> 4 [ label="recv" style="solid" ];
+  7 -> 1 [ label="order" style="bold" ];
+  8 -> 9 [ label="para" style="solid" ];
+  8 -> 4 [ label="para" style="solid" ];
+  9 -> 4 [ label="order" style="bold" ];
+  10 -> 11 [ label="para" style="solid" ];
+  10 -> 4 [ label="para" style="solid" ];
+  11 -> 4 [ label="order" style="bold" ];
+}

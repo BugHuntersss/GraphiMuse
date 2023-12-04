@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="File.mkdirs()" shape="box" ];
+  2 [ label="File" shape="ellipse" ];
+  3 [ label="File.getParentFile()" shape="box" ];
+  4 [ label="File" shape="ellipse" ];
+  5 [ label="IO.getFile()" shape="box" ];
+  6 [ label="Version" shape="ellipse" ];
+  7 [ label="Version" shape="ellipse" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  5 -> 1 [ label="order" style="bold" ];
+  3 -> 1 [ label="order" style="bold" ];
+  3 -> 2 [ label="def" style="solid" ];
+  4 -> 3 [ label="recv" style="solid" ];
+  5 -> 3 [ label="order" style="bold" ];
+  5 -> 4 [ label="def" style="solid" ];
+  7 -> 5 [ label="para" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+}

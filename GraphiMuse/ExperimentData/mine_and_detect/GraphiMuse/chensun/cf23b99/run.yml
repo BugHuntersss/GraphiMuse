@@ -1,0 +1,140 @@
+detectionLoadTime: 9113
+detectionTime: 33089
+maxPatternSupport: 38
+md5: 771e0a046705b266de3aeb1299ade81f
+message: ''
+numberOfExploredAlternatives: 791
+numberOfPatterns: 22
+numberOfTargets: 259
+numberOfTrainingExamples: 259
+numberOfUsagesInTrainingExamples:
+  ArrayList: 15
+  Arrays: 23
+  AutoCloseable: 9
+  BadPaddingException: 2
+  Base64: 2
+  BigInteger: 23
+  Boolean: 23
+  Buffer: 3
+  BufferedInputStream: 1
+  BufferedOutputStream: 1
+  BufferedReader: 7
+  ByteBuffer: 6
+  CharBuffer: 2
+  CharSequence: 7
+  Cipher: 25
+  CipherInputStream: 2
+  CipherOutputStream: 2
+  Class: 1
+  ClientProcessor: 1
+  ClientResponseThread: 1
+  Collection: 33
+  CommManager: 4
+  Connection: 136
+  ConnectionException: 5
+  CryptoUtil: 18
+  DBManager: 97
+  DESKeySpec: 4
+  DatabaseAdmin: 48
+  DatabaseDBA: 2
+  Dictionary: 1
+  DriverManager: 1
+  Entry: 1
+  EraserThread: 4
+  Exception: 13
+  File: 1
+  FileNotFoundException: 2
+  FileReader: 2
+  FilterInputStream: 1
+  FilterOutputStream: 1
+  Flushable: 4
+  Hash: 22
+  HashMap: 1
+  IOException: 16
+  IllegalBlockSizeException: 2
+  InetAddress: 1
+  InputStream: 14
+  InputStreamReader: 4
+  Integer: 14
+  InterruptedException: 2
+  InvalidAlgorithmParameterException: 1
+  InvalidKeyException: 3
+  InvalidKeySpecException: 2
+  Iterable: 29
+  Iterator: 29
+  IvParameterSpec: 6
+  Key: 6
+  KeyFactory: 3
+  KeyGenerator: 2
+  KeyNonceBundle: 4
+  KeySpec: 1
+  List: 41
+  Map: 3
+  Map.Entry: 1
+  MessageDigest: 2
+  NoSuchAlgorithmException: 9
+  NoSuchPaddingException: 2
+  NonClosingCipherOutputStream: 2
+  Number: 2
+  NumberFormatException: 2
+  Object: 79
+  OutputStream: 11
+  PBEKeySpec: 2
+  PBEParameterSpec: 2
+  PasswordBasedEncryption: 1
+  PreparedStatement: 58
+  PrintStream: 45
+  PrintWriter: 1
+  PrivateKey: 6
+  Properties: 1
+  PublicKey: 6
+  PublicKeyCryptoClient: 1
+  PublicKeyCryptoServer: 3
+  RSAPrivateKeySpec: 1
+  RSAPublicKeySpec: 2
+  Random: 5
+  Reader: 1
+  ResultSet: 47
+  SQLException: 77
+  SecretKey: 24
+  SecretKeyFactory: 6
+  SecretKeySpec: 1
+  SecureRandom: 10
+  SendingType: 2
+  ServerInputProcessor: 1
+  ServerSocket: 3
+  Set: 1
+  SharedKeyCrypto: 13
+  SharedKeyCryptoComm: 10
+  SocialNetworkAdmin: 23
+  SocialNetworkBoards: 7
+  SocialNetworkDBAThread: 1
+  SocialNetworkDatabaseBoards: 8
+  SocialNetworkDatabasePosts: 13
+  SocialNetworkDatabaseRegions: 6
+  SocialNetworkNavigation: 6
+  SocialNetworkPosts: 8
+  SocialNetworkProtocol: 1
+  SocialNetworkRegions: 8
+  SocialNetworkServer: 1
+  Socket: 2
+  Statement: 15
+  String: 226
+  System: 13
+  Sytem: 11
+  Thread: 10
+  Throwable: 62
+  Timestamp: 6
+  UnknownHostException: 1
+  UnsupportedEncodingException: 11
+  Utils: 14
+  byte: 23
+  char: 13
+  generateChecksumUser: 1
+  generateEncryptedStuffs: 1
+numberOfViolations: 9
+result: success
+runtime: 104.6702492237091
+timestamp: 1700809989
+trainingLoadTime: 15966
+trainingTime: 43792

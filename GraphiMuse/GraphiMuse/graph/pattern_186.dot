@@ -1,0 +1,16 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="with()" t="UNKNOWN" l="921" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ t="UNKNOWN" n="dummy_" ];
+  4 [ label="MC" s="year()" t="DateTimeFieldType" l="921" ];
+  5 [ label="I" t="Partial" l="921" ];
+  6 [ t="int" v="2004" ];
+  3 -> 1 [ label="P" ];
+  2 -> 1 [ label="R" ];
+  5 -> 1 [ label="O" ];
+  6 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  5 -> 2 [ label="D" ];
+  4 -> 3 [ label="D" ];
+}

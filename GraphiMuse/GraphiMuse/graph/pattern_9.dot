@@ -1,0 +1,14 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="clone()" t="ArrayUtils" l="2967" ];
+  2 [ t="int[]" n="array2" ];
+  3 [ label="MC" s="arraycopy()" t="System" l="2971" ];
+  4 [ t="int" v="0" ];
+  5 [ t="int" v="0" ];
+  6 [ t="int" v="0" ];
+  2 -> 1 [ label="P" ];
+  4 -> 3 [ label="P" ];
+  2 -> 3 [ label="P" ];
+  5 -> 3 [ label="P" ];
+  6 -> 3 [ label="P" ];
+}

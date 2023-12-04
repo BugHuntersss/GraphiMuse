@@ -1,0 +1,23 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="toComparison()" t="UNKNOWN" l="375" ];
+  2 [ t="UNKNOWN" n="dummy_" ];
+  3 [ label="MC" s="append()" t="UNKNOWN" l="375" ];
+  4 [ t="UNKNOWN" n="dummy_" ];
+  5 [ t="char" n="o1" ];
+  6 [ label="I" t="CompareToBuilder" l="375" ];
+  7 [ t="char" n="o2" ];
+  8 [ t="boolean[]" n="array3" ];
+  9 [ t="int[]" n="array2" ];
+  6 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="O" ];
+  4 -> 3 [ label="R" ];
+  7 -> 3 [ label="P" ];
+  5 -> 3 [ label="P" ];
+  6 -> 4 [ label="D" ];
+  9 -> 5 [ label="D" ];
+  8 -> 7 [ label="D" ];
+}

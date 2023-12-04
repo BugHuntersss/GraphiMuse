@@ -1,0 +1,17 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="putValue()" t="Attributes" l="298" ];
+  2 [ t="Attributes" n="dummy_" ];
+  3 [ label="MC" s="getMainAttributes()" t="Manifest" l="298" ];
+  4 [ t="Manifest" n="manifest" ];
+  5 [ t="String" n="value" ];
+  6 [ label="I" t="Manifest" l="284" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="O" ];
+  6 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  3 -> 2 [ label="D" ];
+  4 -> 3 [ label="R" ];
+  6 -> 3 [ label="O" ];
+  6 -> 4 [ label="D" ];
+}

@@ -1,0 +1,20 @@
+digraph "AUG" {
+
+  1 [ label="Builder.isInScope()" shape="box" ];
+  2 [ label="Builder" shape="ellipse" ];
+  3 [ label="Processor.getFile()" shape="box" ];
+  4 [ label="List" shape="ellipse" ];
+  5 [ label="Arrays.asList()" shape="box" ];
+  6 [ label="File" shape="ellipse" ];
+  7 [ label="String" shape="ellipse" ];
+  5 -> 1 [ label="order" style="bold" ];
+  4 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  3 -> 1 [ label="order" style="bold" ];
+  7 -> 3 [ label="para" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  5 -> 4 [ label="def" style="solid" ];
+  6 -> 5 [ label="para" style="solid" ];
+  3 -> 5 [ label="order" style="bold" ];
+  3 -> 6 [ label="def" style="solid" ];
+}

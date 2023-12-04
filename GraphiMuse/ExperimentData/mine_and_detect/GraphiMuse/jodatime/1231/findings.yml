@@ -1,0 +1,560 @@
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    4 [ label="null" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Date" shape="ellipse" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="Date" shape="ellipse" ];
+    2 [ label="AbstractInstant.toDate() L99" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    4 [ label="NullableType" shape="ellipse" ];
+    5 [ label="<nullcheck> L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    8 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    9 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="recv" style="solid" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="recv" style="solid" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 8 [ label="para" style="solid" ];
+    7 -> 8 [ label="para" style="solid" ];
+    9 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 95
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTimeTZ.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L93" shape="box" ];
+    4 [ label="Date" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PreparedStatement" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="NullableType" shape="ellipse" ];
+    2 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    3 [ label="NullableType.nullSafeSet() L93" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="PreparedStatement" shape="ellipse" ];
+    6 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="NullableType.nullSafeSet() L101" shape="box" color="gray" fontcolor="gray" ];
+    8 [ label="NullableType.nullSafeSet() L94" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Date" shape="ellipse" ];
+    10 [ label="<nullcheck> L91" shape="box" color="gray" fontcolor="gray" ];
+    11 [ label="AbstractInstant.toDate() L100" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="recv" style="solid" ];
+    1 -> 3 [ label="recv" style="solid" ];
+    11 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 2 [ label="para" style="solid" ];
+    5 -> 2 [ label="para" style="solid" ];
+    9 -> 2 [ label="para" style="solid" ];
+    10 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 3 [ label="para" style="solid" ];
+    10 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="para" style="solid" ];
+    6 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 7 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    11 -> 9 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 11 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 93
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L104" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    4 [ label="Time" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="PreparedStatement" shape="ellipse" ];
+    2 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    3 [ label="NullableType.nullSafeSet() L104" shape="box" ];
+    4 [ label="int" shape="ellipse" ];
+    5 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    6 [ label="NullableType" shape="ellipse" ];
+    7 [ label="Time" shape="ellipse" ];
+    8 [ label="<nullcheck> L98" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Time.<init> L104" shape="box" color="gray" fontcolor="gray" ];
+    1 -> 2 [ label="para" style="solid" ];
+    1 -> 3 [ label="para" style="solid" ];
+    4 -> 2 [ label="para" style="solid" ];
+    5 -> 2 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    6 -> 2 [ label="recv" style="solid" ];
+    8 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    8 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 100
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/AbstractStringBasedJodaType.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L39" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L41" shape="box" ];
+    4 [ label="null" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PreparedStatement" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="PreparedStatement" shape="ellipse" ];
+    2 [ label="NullableType.nullSafeSet() L39" shape="box" ];
+    3 [ label="NullableType.nullSafeSet() L41" shape="box" ];
+    4 [ label="null" shape="ellipse" ];
+    5 [ label="int" shape="ellipse" ];
+    6 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    7 [ label="NullableType" shape="ellipse" ];
+    1 -> 2 [ label="para" style="solid" ];
+    1 -> 3 [ label="para" style="solid" ];
+    7 -> 2 [ label="recv" style="solid" ];
+    5 -> 2 [ label="para" style="solid" ];
+    4 -> 2 [ label="para" style="solid" ];
+    6 -> 3 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="para" style="solid" ];
+    7 -> 3 [ label="recv" style="solid" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 39
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L107" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    4 [ label="Time" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="Time" shape="ellipse" ];
+    2 [ label="Time.<init> L105" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="NullableType.nullSafeSet() L107" shape="box" ];
+    4 [ label="PreparedStatement" shape="ellipse" ];
+    5 [ label="NullableType.nullSafeSet() L100" shape="box" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="NullableType" shape="ellipse" ];
+    8 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="<nullcheck> L98" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+    4 -> 3 [ label="para" style="solid" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 5 [ label="para" style="solid" ];
+    6 -> 5 [ label="para" style="solid" ];
+    7 -> 5 [ label="recv" style="solid" ];
+    9 -> 5 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 5 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 100
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsString.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L102" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L96" shape="box" ];
+    4 [ label="String" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="String" shape="ellipse" ];
+    2 [ label="Object.toString() L102" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="NullableType.nullSafeSet() L102" shape="box" ];
+    4 [ label="NullableType.nullSafeSet() L96" shape="box" ];
+    5 [ label="NullableType" shape="ellipse" ];
+    6 [ label="PreparedStatement" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    8 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="<nullcheck> L94" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 3 [ label="para" style="solid" ];
+    9 -> 2 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="recv" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    9 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 3 [ label="para" style="solid" ];
+    9 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 4 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 4 [ label="recv" style="solid" ];
+    6 -> 4 [ label="para" style="solid" ];
+    7 -> 4 [ label="para" style="solid" ];
+    8 -> 4 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 96
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L102" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L96" shape="box" ];
+    4 [ label="Integer" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PreparedStatement" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="NullableType.nullSafeSet() L96" shape="box" ];
+    2 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="PreparedStatement" shape="ellipse" ];
+    5 [ label="NullableType" shape="ellipse" ];
+    6 [ label="NullableType.nullSafeSet() L102" shape="box" ];
+    7 [ label="Integer" shape="ellipse" ];
+    8 [ label="<nullcheck> L94" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="Integer.<init> L102" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="para" style="solid" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="recv" style="solid" ];
+    3 -> 6 [ label="para" style="solid" ];
+    4 -> 6 [ label="para" style="solid" ];
+    5 -> 6 [ label="recv" style="solid" ];
+    7 -> 6 [ label="para" style="solid" ];
+    9 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 96
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    4 [ label="Date" shape="ellipse" ];
+    5 [ label="Integer" shape="ellipse" color="red" fontcolor="red" ];
+    6 [ label="PreparedStatement" shape="ellipse" ];
+    7 [ label="int" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    4 -> 1 [ label="para" style="solid" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="int" shape="ellipse" ];
+    4 [ label="PreparedStatement" shape="ellipse" ];
+    5 [ label="<nullcheck> L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Date" shape="ellipse" ];
+    7 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    8 [ label="AbstractInstant.toDate() L99" shape="box" color="gray" fontcolor="gray" ];
+    9 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    3 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="para" style="solid" ];
+    8 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 7 [ label="recv" style="solid" ];
+    3 -> 7 [ label="para" style="solid" ];
+    4 -> 7 [ label="para" style="solid" ];
+    5 -> 8 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    9 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 95
+violation_from_doc: []
+---
+file: /mubench/checkouts/jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalDate.java
+method: nullSafeSet(PreparedStatement, Object, int)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    2 [ label="NullableType" shape="ellipse" ];
+    3 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    4 [ label="null" shape="ellipse" color="red" fontcolor="red" ];
+    5 [ label="Date" shape="ellipse" ];
+    6 [ label="int" shape="ellipse" ];
+    7 [ label="PreparedStatement" shape="ellipse" ];
+    6 -> 1 [ label="para" style="solid" ];
+    7 -> 1 [ label="para" style="solid" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="para" style="solid" ];
+    4 -> 1 [ label="para" style="solid" color="red" fontcolor="red" ];
+    7 -> 3 [ label="para" style="solid" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    6 -> 3 [ label="para" style="solid" ];
+  }
+target_environment_mapping: |
+  digraph "nullSafeSet(PreparedStatement, Object, int)" {
+  nslimit=10000;
+
+    1 [ label="NullableType.nullSafeSet() L99" shape="box" ];
+    2 [ label="int" shape="ellipse" ];
+    3 [ label="NullableType" shape="ellipse" ];
+    4 [ label="PreparedStatement" shape="ellipse" ];
+    5 [ label="<nullcheck> L93" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Date" shape="ellipse" ];
+    7 [ label="NullableType.nullSafeSet() L95" shape="box" ];
+    8 [ label="null" shape="ellipse" color="gray" fontcolor="gray" ];
+    9 [ label="AbstractInstant.toDate() L99" shape="box" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="para" style="solid" ];
+    3 -> 1 [ label="recv" style="solid" ];
+    9 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="para" style="solid" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    6 -> 1 [ label="para" style="solid" ];
+    2 -> 7 [ label="para" style="solid" ];
+    3 -> 7 [ label="recv" style="solid" ];
+    4 -> 7 [ label="para" style="solid" ];
+    5 -> 7 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    9 -> 6 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    8 -> 7 [ label="para" style="solid" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 10
+probability: 0.3599999999999999
+pattern_examples:
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeExact.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentDateTime.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentYearMonthDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentTimeOfDay.java#nullSafeSet(PreparedStatement, Object, int)
+- jodatime/1231/build/JodaTimeContrib/hibernate/src/java/org/joda/time/contrib/hibernate/PersistentLocalTimeAsTime.java#nullSafeSet(PreparedStatement, Object, int)
+startline: 95
+violation_from_doc: []

@@ -1,0 +1,12 @@
+digraph "AUG" {
+
+  1 [ label="InputStream.read()" shape="box" ];
+  2 [ label="InputStream" shape="ellipse" ];
+  3 [ label="AutoCloseable.close()" shape="box" ];
+  4 [ label="byte[]" shape="ellipse" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  4 -> 1 [ label="para" style="solid" ];
+  1 -> 3 [ label="order" style="bold" ];
+  1 -> 3 [ label="finally" style="bold" ];
+  2 -> 3 [ label="recv" style="solid" ];
+}

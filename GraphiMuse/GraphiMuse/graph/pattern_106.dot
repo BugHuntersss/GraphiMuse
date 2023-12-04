@@ -1,0 +1,32 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="process()" t="Macro" l="37" ];
+  2 [ t="String" v="${if;(a!=A);YES;NO}" ];
+  3 [ t="Macro" n="dummy_" ];
+  4 [ label="MC" s="getReplacer()" t="Processor" l="37" ];
+  5 [ label="MC" s="process()" t="Macro" l="29" ];
+  6 [ t="Workspace" n="w" ];
+  7 [ label="MC" s="getReplacer()" t="Processor" l="29" ];
+  8 [ label="MC" s="getReplacer()" t="Processor" l="35" ];
+  9 [ t="Macro" n="dummy_" ];
+  10 [ t="String" v="${js;1+2;}" ];
+  8 -> 1 [ label="O" ];
+  2 -> 1 [ label="P" ];
+  7 -> 1 [ label="O" ];
+  3 -> 1 [ label="R" ];
+  5 -> 1 [ label="O" ];
+  4 -> 1 [ label="O" ];
+  4 -> 3 [ label="D" ];
+  6 -> 4 [ label="R" ];
+  7 -> 4 [ label="O" ];
+  5 -> 4 [ label="O" ];
+  8 -> 4 [ label="O" ];
+  10 -> 5 [ label="P" ];
+  7 -> 5 [ label="O" ];
+  9 -> 5 [ label="R" ];
+  6 -> 7 [ label="R" ];
+  5 -> 8 [ label="O" ];
+  6 -> 8 [ label="R" ];
+  7 -> 8 [ label="O" ];
+  7 -> 9 [ label="D" ];
+}

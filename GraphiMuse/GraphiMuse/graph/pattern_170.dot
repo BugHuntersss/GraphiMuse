@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="append()" t="CompareToBuilder" l="406" ];
+  2 [ t="double" v="NaN" n="Double.NaN" ];
+  3 [ t="CompareToBuilder" n="dummy_" ];
+  4 [ label="I" t="CompareToBuilder" l="406" ];
+  5 [ t="double" v="4.9E-324" n="Double.MIN_VALUE" ];
+  2 -> 1 [ label="P" ];
+  4 -> 1 [ label="O" ];
+  5 -> 1 [ label="P" ];
+  3 -> 1 [ label="R" ];
+  4 -> 3 [ label="D" ];
+}

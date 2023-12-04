@@ -1,0 +1,93 @@
+file: /mubench/checkouts/thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/examiner/Examiner.java
+method: scanAfterQuote(String, Scanner)
+pattern_violation: |
+  digraph "AUG" {
+
+    1 [ label="Iterator.next() L119" shape="box" ];
+    2 [ label="Scanner" shape="ellipse" ];
+    3 [ label="Iterator.hasNext() L121" shape="box" ];
+    4 [ label="Iterable.iterator()" shape="box" color="red" fontcolor="red" ];
+    5 [ label="Set" shape="ellipse" color="red" fontcolor="red" ];
+    4 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="order" style="bold" color="red" fontcolor="red" ];
+    4 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    3 -> 1 [ label="rep" style="bold" color="red" fontcolor="red" ];
+    2 -> 1 [ label="recv" style="solid" ];
+    4 -> 2 [ label="def" style="solid" color="red" fontcolor="red" ];
+    4 -> 3 [ label="order" style="bold" color="red" fontcolor="red" ];
+    2 -> 3 [ label="recv" style="solid" ];
+    5 -> 4 [ label="recv" style="solid" color="red" fontcolor="red" ];
+  }
+target_environment_mapping: |
+  digraph "scanAfterQuote(String, Scanner)" {
+  nslimit=10000;
+
+    1 [ label="Iterator.next() L119" shape="box" ];
+    2 [ label="<r> L118" shape="box" color="gray" fontcolor="gray" ];
+    3 [ label="Examiner.countChar() L118" shape="box" color="gray" fontcolor="gray" ];
+    4 [ label="Scanner" shape="ellipse" ];
+    5 [ label="String.contains() L118" shape="box" color="gray" fontcolor="gray" ];
+    6 [ label="Iterator.next() L122" shape="box" color="gray" fontcolor="gray" ];
+    7 [ label="String" shape="ellipse" color="gray" fontcolor="gray" ];
+    8 [ label="Iterator.hasNext() L121" shape="box" ];
+    9 [ label="<break> L124" shape="box" color="gray" fontcolor="gray" ];
+    10 [ label="String.contains() L120" shape="box" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 1 [ label="recv" style="solid" ];
+    5 -> 1 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 1 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 7 [ label="def" style="solid" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    1 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 2 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    2 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 3 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    3 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    4 -> 6 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    4 -> 8 [ label="recv" style="solid" ];
+    5 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 10 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    5 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 6 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    7 -> 10 [ label="recv" style="solid" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 8 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="sel" style="bold" color="gray" fontcolor="gray" ];
+    8 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="order" style="bold" color="gray" fontcolor="gray" ];
+    10 -> 9 [ label="rep" style="bold" color="gray" fontcolor="gray" ];
+  }
+confidence: 0.3599999999999999
+pattern_support: 22
+probability: 0.3599999999999999
+pattern_examples:
+- thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/examiner/Examiner.java#scanAfterClosedParenthesis(String, Scanner)
+- thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/dependency/boundary/DependencyContainer.java#findAllDependenciesWith(JavaSource, DependencyType)
+- thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/dependency/boundary/DependencyContainer.java#getDependencies(JavaSource)
+- thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/dependency/boundary/DependencyContainer.java#getFilteredJavaSources(DependencyFilter)
+- thomas-s-b-visualee/410a80f/build/src/main/java/de/strullerbaumann/visualee/ui/graph/boundary/GraphCreator.java#buildJSONNodes(DependencyFilter)
+startline: 119
+violation_from_doc: []

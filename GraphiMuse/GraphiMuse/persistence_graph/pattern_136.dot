@@ -1,0 +1,13 @@
+digraph "AUG" {
+
+  1 [ label="Collection.add(E)" shape="box" ];
+  2 [ label="ArrayList" shape="ellipse" ];
+  3 [ label="Collection.toArray(T[])" shape="box" ];
+  4 [ label="Token" shape="ellipse" ];
+  5 [ label="Token[]" shape="ellipse" ];
+  4 -> 1 [ label="para" style="solid" ];
+  2 -> 1 [ label="recv" style="solid" ];
+  5 -> 3 [ label="para" style="solid" ];
+  2 -> 3 [ label="recv" style="solid" ];
+  1 -> 3 [ label="order" style="bold" ];
+}

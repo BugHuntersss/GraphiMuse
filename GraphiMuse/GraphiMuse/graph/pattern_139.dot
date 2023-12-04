@@ -1,0 +1,19 @@
+digraph "AUG" {
+
+  1 [ label="MC" s="isEquals()" t="EqualsBuilder" l="206" ];
+  2 [ t="EqualsBuilder" n="dummy_" ];
+  3 [ label="MC" s="append()" t="EqualsBuilder" l="206" ];
+  4 [ t="boolean[]" n="array3" ];
+  5 [ t="EqualsBuilder" n="dummy_" ];
+  6 [ label="I" t="EqualsBuilder" l="206" ];
+  7 [ t="boolean[]" n="array3" ];
+  3 -> 1 [ label="O" ];
+  2 -> 1 [ label="R" ];
+  6 -> 1 [ label="O" ];
+  3 -> 2 [ label="D" ];
+  6 -> 3 [ label="O" ];
+  5 -> 3 [ label="R" ];
+  7 -> 3 [ label="P" ];
+  4 -> 3 [ label="P" ];
+  6 -> 5 [ label="D" ];
+}
