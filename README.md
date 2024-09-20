@@ -63,3 +63,4 @@ python contraintMining.py
 ```
 
 The rules are stored in data/rule_exp.txt
+# GraphieMuse
